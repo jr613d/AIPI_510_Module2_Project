@@ -1,0 +1,2 @@
+test_used,n,n_parent,n_non_parent,chi_square,df,p_value,p_value_asymptotic_chi_square,min_expected_count,cramers_v,cramers_v_ci_low,cramers_v_ci_high,alpha,reject_h0,min_detectable_v_80pct_power,seed
+"Monte Carlo exact test (chi-square statistic, 100,000 permutations)",1341,1248,93,19.901,3,0.0006299937000629993,0.00017792313045477252,2.7,0.122,0.07,0.201,0.05,True,0.09,510

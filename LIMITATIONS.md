@@ -37,6 +37,9 @@ Running list of limitations, caveats and open data questions for the Module 2 re
 
 | M7 | If Q9 ("one item to keep top of mind") is used, it's a single forced choice among 13 values plus write-ins. | Loses information about everything but the top choice; 13 categories split across groups leave many sparse cells, which breaks chi-square's expected-count rule. | Open: pre-specify how categories are combined (themes or one target value) before looking at Q9. |
 
+| M8 | Two non-parent cells had expected counts below 5 (Community 2.7, Money & buildings 4.0). | The chi-square approximation is unreliable with small expected counts. | Handled: the plan's pre-specified exact fallback (Monte Carlo permutation p-value) is the reported test; the asymptotic p-value is shown for reference only. |
+| M9 | The bootstrap CI for Cramér's V is biased upward: V can't be negative, so resampling noise pushes it up, most when a group is small. | The true effect may sit toward the lower end of the reported interval. | Report |
+
 ## Privacy and data sharing
 
 | # | Limitation | Why it matters | Status |

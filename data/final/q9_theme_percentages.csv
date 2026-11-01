@@ -1,0 +1,9 @@
+group,group_n,theme,count,percent,ci_low,ci_high
+Parent,1248,Student Learning,880,70.51,67.92,72.98
+Parent,1248,Money & buildings,49,3.93,2.98,5.15
+Parent,1248,Community,33,2.64,1.89,3.69
+Parent,1248,Student logistics & well-being,286,22.92,20.67,25.33
+Non-parent,93,Student Learning,47,50.54,40.56,60.47
+Non-parent,93,Money & buildings,9,9.68,5.18,17.38
+Non-parent,93,Community,6,6.45,2.99,13.37
+Non-parent,93,Student logistics & well-being,31,33.33,24.58,43.41

@@ -21,6 +21,7 @@ The results are public, so all stages are committed.
 |---|---|---|---|
 | `raw/CHCCS Community Priorities Asessment (SHARED).xlsx` | raw | Original CHCCS results workbook, eight language tabs, all questions | Downloaded from the CHCCS document library, unmodified |
 | `processed/chccs_respondent_relationships.csv` | processed | Q1 (respondent relationship) for all 1,463 responses, one-hot encoded, with source sheet/row, translations and coding notes | `src/one_hot_encode_q1.py` |
+| `processed/q9_value_themes.csv` | processed | Q9 answer per response (original and English), mapped value and theme, parent/non-parent group, and whether it enters the chi-square test | `src/prepare_q9.py` |
 | `final/respondent_role_counts.csv` | final | Respondents per Q1 role, and how many selected only that role | `src/explore_respondent_groups.py` |
 | `final/candidate_group_sizes.csv` | final | Candidate comparison groups with minimum detectable effects | `src/explore_respondent_groups.py` |
 
@@ -29,4 +30,5 @@ To rebuild from the raw workbook, run from the repo root:
 ```bash
 python src/one_hot_encode_q1.py
 python src/explore_respondent_groups.py
+python src/prepare_q9.py
 ```

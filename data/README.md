@@ -17,10 +17,16 @@ The results are public, so all stages are committed.
 
 ## Datasets
 
-| File | Stage | Contents | Source / produced by |
+| File | Stage | Contents | Produced by |
 |---|---|---|---|
-| `raw/CHCCS_Respondent_Relationships.xls` | raw* | Q1 (respondent relationship) for all 1,463 responses, one-hot encoded, with source sheet/row, translations and coding notes | Coded from the CHCCS workbook outside this repo |
+| `raw/CHCCS Community Priorities Asessment (SHARED).xlsx` | raw | Original CHCCS results workbook, eight language tabs, all questions | Downloaded from the CHCCS document library, unmodified |
+| `processed/chccs_respondent_relationships.csv` | processed | Q1 (respondent relationship) for all 1,463 responses, one-hot encoded, with source sheet/row, translations and coding notes | `src/one_hot_encode_q1.py` |
 | `final/respondent_role_counts.csv` | final | Respondents per Q1 role, and how many selected only that role | `src/explore_respondent_groups.py` |
 | `final/candidate_group_sizes.csv` | final | Candidate comparison groups with minimum detectable effects | `src/explore_respondent_groups.py` |
 
-\* Strictly this is an interim file: it's already coded from the original workbook. Once the original workbook is in `raw/`, the coding should be reproduced by a script (or the coding steps documented) so the pipeline is reproducible from the CHCCS file.
+To rebuild from the raw workbook, run from the repo root:
+
+```bash
+python src/one_hot_encode_q1.py
+python src/explore_respondent_groups.py
+```

@@ -17,7 +17,7 @@ from scipy.stats import norm
 from statsmodels.stats.power import TTestIndPower
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data" / "raw" / "CHCCS_Respondent_Relationships.xls"
+RELATIONSHIPS = ROOT / "data" / "processed" / "chccs_respondent_relationships.csv"
 FINAL = ROOT / "data" / "final"
 FIGURES = ROOT / "figures"
 
@@ -39,15 +39,24 @@ ROLES = {
 
 # Write-ins describing a child not yet in school (pre-specified keyword rule).
 FUTURE_PARENT_PATTERN = r"future|prospective|expect|pregnan|pre-?school|pre-?k|next year|next fall|starting|incoming|will be"
+# Write-ins describing a grandparent or guardian role.
+GUARDIAN_PATTERN = r"grand|guardian|raising"
 
 
 def load():
-    df = pd.read_excel(RAW, sheet_name="Participants")
+    df = pd.read_csv(RELATIONSHIPS)
     flags = pd.DataFrame({k: df[v].eq(1) for k, v in ROLES.items()})
     flags["employee"] = flags.teacher | flags.admin | flags.staff
     flags["english"] = df.source_sheet.eq("English")
     flags["future_parent"] = flags.other & df.other_text_english.fillna("").str.contains(
         FUTURE_PARENT_PATTERN, case=False, regex=True)
+    flags["guardian"] = flags.other & df.other_text_english.fillna("").str.contains(
+        GUARDIAN_PATTERN, case=False, regex=True)
+    # Analysis-plan groups (docs/analysis_plan.md)
+    any_parent_role = (flags.parent | flags.parent_grad | flags.parent_not_chccs
+                       | flags.future_parent | flags.guardian)
+    flags["plan_parent"] = flags.parent
+    flags["plan_non_parent"] = ~any_parent_role
     return df, flags
 
 
@@ -72,6 +81,7 @@ def role_counts(flags):
 def candidate_groups(flags):
     f = flags
     groups = [
+        ("ANALYSIS PLAN: current CHCCS parents vs. non-parents", f.plan_parent, f.plan_non_parent),
         ("Current CHCCS parents vs. CHCCS employees (not current parents)", f.parent, f.employee & ~f.parent),
         ("Current CHCCS parents vs. everyone else", f.parent, ~f.parent),
         ("Current CHCCS parents vs. residents (not current parents)", f.parent, f.resident & ~f.parent),
@@ -133,6 +143,10 @@ def main():
     print(counts.to_string(index=False))
     print()
     print(groups.to_string(index=False))
+    excluded = ~(flags.plan_parent | flags.plan_non_parent)
+    print(f"\nAnalysis-plan groups: parents={flags.plan_parent.sum()}, "
+          f"non-parents={flags.plan_non_parent.sum()} "
+          f"(CHCCS employees: {(flags.plan_non_parent & flags.employee).sum()}), excluded={excluded.sum()}")
 
 
 if __name__ == "__main__":

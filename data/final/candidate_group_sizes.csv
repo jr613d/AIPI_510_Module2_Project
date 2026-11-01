@@ -1,0 +1,8 @@
+comparison,group_a,group_b,mde_d_alpha_0.05,mde_rank_biserial_alpha_0.05,mde_d_alpha_0.0125,mde_rank_biserial_alpha_0.0125
+Current CHCCS parents vs. CHCCS employees (not current parents),1315,98,0.3,0.17,0.36,0.2
+Current CHCCS parents vs. everyone else,1315,148,0.25,0.14,0.3,0.17
+Current CHCCS parents vs. residents (not current parents),1315,33,0.51,0.28,0.6,0.33
+Current CHCCS parents vs. parents of children not in CHCCS only,1282,8,1.02,0.53,1.21,0.61
+Parents who are also CHCCS employees vs. other current parents,84,1231,0.32,0.18,0.39,0.22
+English-language vs. other-language respondents,1392,71,0.35,0.19,0.42,0.23
+Current CHCCS parents vs. future parents (write-ins),1315,13,0.8,0.43,0.95,0.5

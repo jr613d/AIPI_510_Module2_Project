@@ -36,4 +36,5 @@ python src/one_hot_encode_q1.py
 python src/explore_respondent_groups.py
 python src/prepare_q9.py
 python src/run_chi_square.py
+python src/make_result_figures.py
 ```

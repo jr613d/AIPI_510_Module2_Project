@@ -1,0 +1,7 @@
+group,grid,complete_grids,pct_all_same,pct_all_5,pct_10plus_5s,median_5s,mean_rating
+All responses,values,1463,3.49,3.28,9.71,4.0,3.87
+All responses,challenges,1463,1.57,1.37,4.24,3.0,3.54
+Parents,values,1315,3.19,2.97,8.97,4.0,3.84
+Parents,challenges,1315,1.52,1.29,3.95,3.0,3.52
+Non-parents,values,98,8.16,8.16,16.33,5.5,4.16
+Non-parents,challenges,98,3.06,3.06,9.18,4.0,3.8

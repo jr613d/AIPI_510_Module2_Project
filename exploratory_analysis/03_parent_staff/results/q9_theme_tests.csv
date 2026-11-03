@@ -1,0 +1,3 @@
+comparison,n,chi_square,p_monte_carlo,cramers_v
+Parents who work for CHCCS vs. Other parents,1248,17.4,0.0017,0.118
+Parents who work for CHCCS vs. Non-parent CHCCS staff,159,0.54,0.9166,0.058

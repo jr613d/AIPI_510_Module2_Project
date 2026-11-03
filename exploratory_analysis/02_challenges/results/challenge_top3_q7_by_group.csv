@@ -1,0 +1,14 @@
+challenge,parent_pct_top3,non_parent_pct_top3,parent_n,non_parent_n,p_fisher,q_bh
+Cost of maintaining aging buildings,18.0989,35.7143,1315,98,0.0001,0.0006
+School buildings meeting safety codes,46.1597,38.7755,1315,98,0.1723,0.2799
+Length of commute for students riding buses,29.0494,15.3061,1315,98,0.0033,0.0145
+Retaining highly effective employees,81.4449,70.4082,1315,98,0.0112,0.0243
+Partially empty school buildings,3.8783,10.2041,1315,98,0.0074,0.0194
+Overcrowded school buildings,22.1293,32.6531,1315,98,0.024,0.0446
+The number of trailers / mobile classrooms,3.6502,2.0408,1315,98,0.5747,0.6871
+Current school buildings do not fit the modern academic program,12.6996,10.2041,1315,98,0.6342,0.6871
+Current school buildings do not fit the modern operational expectations,9.3536,7.1429,1315,98,0.5874,0.6871
+Unequal access to specialty programs,17.1863,19.3878,1315,98,0.5804,0.6871
+Classroom technology updates,6.8441,6.1224,1315,98,1.0,1.0
+Appeal of the district to current and prospective students,24.6388,12.2449,1315,98,0.0045,0.0145
+"Student populations have shifted, but school boundaries have not been adjusted to accommodate those changes",16.73,34.6939,1315,98,0.0,0.0004

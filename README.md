@@ -6,13 +6,14 @@ Do parents of current Chapel Hill-Carrboro City Schools (CHCCS) students and non
 
 ## Key result
 
-Using a pre-registered analysis, parents (n = 1,248) and non-parents (n = 93, mostly CHCCS staff) differed significantly in which value theme they chose as their single top priority. The difference was small and concentrated in Student Learning, chosen by 71% of parents vs. 51% of non-parents.
+Using a pre-registered analysis, parents (n = 1,248) and non-parents (n = 93, mostly CHCCS staff) differed significantly in which value theme they chose as their single top priority. The difference was small and concentrated in Student Learning, chosen by 70.5% of parents vs. 50.5% of non-parents.
 
 | | |
 |---|---|
 | Test | Monte Carlo exact test, 100,000 permutations (pre-specified fallback for small expected counts) |
 | Result | χ² = 19.90, df = 3, p = 0.0006 |
 | Effect size | Cramér's V = 0.12, 95% bootstrap CI 0.07–0.20 |
+| Student Learning gap | 20.0 percentage points, 95% Newcombe CI 9.7–30.3 (descriptive) |
 
 The respondent pool is about 13 parents for every non-parent, and the design is observational, so the difference can't be attributed causally to parent status. See [`docs/report.md`](docs/report.md) for the full write-up and [`LIMITATIONS.md`](LIMITATIONS.md) for all limitations.
 
@@ -34,11 +35,13 @@ The respondent pool is about 13 parents for every non-parent, and the design is 
 │   ├── processed/              analysis-ready tables (generated)
 │   └── final/                  results tables (generated)
 ├── figures/                    generated figures
+├── exploratory_analysis/       post-project exploration, outside the pre-registered scope (see its README)
 └── src/
     ├── one_hot_encode_q1.py         Q1 respondent roles -> one-hot table
-    ├── explore_respondent_groups.py group sizes, power, Figure 2
+    ├── explore_respondent_groups.py group sizes, power, Figure 3
     ├── prepare_q9.py                Q9 answers -> values, themes, groups
-    └── run_chi_square.py            the pre-registered test, effect size, post hoc, Figure 1
+    ├── run_chi_square.py            the pre-registered test, effect size, post hoc, Figure 1
+    └── make_result_figures.py       residual heatmap and pooled-vs-groups figures (Figures 2 and 4)
 ```
 
 ## Data
@@ -70,6 +73,7 @@ python src/one_hot_encode_q1.py          # data/processed/chccs_respondent_relat
 python src/explore_respondent_groups.py  # group sizes, minimum detectable effects, figures/respondents_by_role.png
 python src/prepare_q9.py                 # data/processed/q9_value_themes.csv
 python src/run_chi_square.py             # data/final/q9_*.csv, figures/q9_theme_by_group.png
+python src/make_result_figures.py        # figures/q9_pooled_vs_groups.png, figures/q9_residuals_heatmap.png
 ```
 
 The whole pipeline runs in under a minute. Random steps (permutations and bootstrap) use a fixed seed, so results reproduce exactly.
@@ -79,8 +83,12 @@ The whole pipeline runs in under a minute. Random steps (permutations and bootst
 - **Groups:** current CHCCS parents vs. respondents with no parent role, from the select-all-that-apply relationship question (50 respondents in other parental roles excluded).
 - **Outcome:** the single value respondents most want kept "top of mind" (Q9), grouped into four themes fixed before the data was examined: Student Learning; Money & buildings; Community; Student logistics & well-being.
 - **Test:** chi-square test of independence, with a pre-specified Monte Carlo exact test when any expected count is below 5 (which occurred).
-- **Effect size and post hoc:** Cramér's V with a bootstrap CI; adjusted standardized residuals with a Bonferroni correction.
+- **Effect size and post hoc:** Cramér's V with a bootstrap CI; adjusted standardized residuals with a Bonferroni correction; the Student Learning gap with a Newcombe CI.
 - **Pre-registration:** the plan in [`docs/analysis_plan.md`](docs/analysis_plan.md) was committed before any script read the outcome data; the commit history shows the order.
+
+## Exploratory analysis
+
+Work done after the pre-registered test, outside the project's scope, lives in [`exploratory_analysis/`](exploratory_analysis/). It has six sub-analyses: the Board vs. survey respondents and individual values, the 13 challenges, parents who work for CHCCS, write-in themes, rating patterns, and parent age and survey language. None of it is confirmatory; its README explains why it's kept separate and summarizes each finding.
 
 ## AI use
 

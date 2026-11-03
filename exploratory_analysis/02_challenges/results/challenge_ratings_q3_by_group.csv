@@ -1,0 +1,14 @@
+challenge,parent_pct_4_5,non_parent_pct_4_5,parent_n,non_parent_n,rank_biserial_pos_nonparents_higher,p_mannwhitney,q_bh
+Cost of maintaining aging buildings,50.4943,77.551,1315,98,0.2605,0.0,0.0
+School buildings meeting safety codes,83.0418,89.7959,1315,98,0.0848,0.1103,0.1593
+Length of commute for students riding buses,59.0114,56.1224,1315,98,-0.0151,0.7958,0.8621
+Retaining highly effective employees,96.0456,92.8571,1315,98,-0.0052,0.8967,0.8967
+Partially empty school buildings,20.3802,31.6327,1315,98,0.2435,0.0,0.0001
+Overcrowded school buildings,68.7452,82.6531,1315,98,0.2285,0.0001,0.0002
+The number of trailers / mobile classrooms,34.9049,40.8163,1315,98,0.1193,0.0425,0.0789
+"Current school buildings do not fit the modern academic program (e.g. classroom layout and size, classroom flexibility, ADA compliance, etc.)",43.8783,60.2041,1315,98,0.2004,0.0006,0.0016
+"Current school buildings do not fit the modern operational expectations (e.g. right sized car rider lines, sports facilities, suitable sidewalks, meal service program, air quality, etc.)",49.8099,55.102,1315,98,0.1141,0.0509,0.0827
+Unequal access to specialty programs,49.8859,57.1429,1315,98,0.0843,0.1518,0.1973
+Classroom technology updates,29.962,37.7551,1315,98,0.1226,0.0369,0.0789
+Appeal of the district to current and prospective students,53.384,47.9592,1315,98,-0.0374,0.5241,0.6194
+"Student populations have shifted, but school boundaries have not been adjusted to accommodate those changes",45.0951,70.4082,1315,98,0.335,0.0,0.0

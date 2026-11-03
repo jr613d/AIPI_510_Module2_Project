@@ -1,4 +1,4 @@
-#Collaboration with AI on this project
+# Collaboration with AI on this project
 
 This file is going to describe how I collaborated with Claude through this project. The headline is that the primary relationship I had with Claude through this project is that I was the pilot, and Claude was my execution partner.
 

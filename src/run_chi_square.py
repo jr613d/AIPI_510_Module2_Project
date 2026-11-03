@@ -12,6 +12,8 @@ Steps, all as specified in the analysis plan:
     4. post hoc adjusted standardized residuals, Bonferroni-corrected over 8 cells
     5. percentage choosing each theme by group with 95% Wilson CIs
     6. sensitivity power analysis with the final counts
+    7. difference between groups in the share choosing Student Learning, with a
+       95% Newcombe (Wilson-based) CI; descriptive, not an additional test
 
 Outputs (data/final/): q9_contingency_table.csv, q9_test_results.csv,
 q9_residuals.csv, q9_theme_percentages.csv; figure: figures/q9_theme_by_group.png
@@ -23,7 +25,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import chi2_contingency, norm
 from statsmodels.stats.power import GofChisquarePower
-from statsmodels.stats.proportion import proportion_confint
+from statsmodels.stats.proportion import confint_proportions_2indep, proportion_confint
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "processed" / "q9_value_themes.csv"
@@ -159,6 +161,13 @@ def main():
     mde_w = float(np.atleast_1d(GofChisquarePower().solve_power(
         nobs=n, n_bins=len(THEMES), alpha=ALPHA, power=0.8))[0])
 
+    # 7. Student Learning difference (parents minus non-parents) with a Newcombe CI
+    learn = THEMES.index("Student Learning")
+    diff = table[0, learn] / table[0].sum() - table[1, learn] / table[1].sum()
+    diff_low, diff_high = confint_proportions_2indep(
+        table[0, learn], table[0].sum(), table[1, learn], table[1].sum(),
+        method="newcomb", compare="diff", alpha=ALPHA)
+
     # Save
     FINAL.mkdir(parents=True, exist_ok=True)
     FIGURES.mkdir(parents=True, exist_ok=True)
@@ -171,7 +180,8 @@ def main():
         "p_value_asymptotic_chi_square": p_asymptotic, "min_expected_count": round(min_expected, 2),
         "cramers_v": round(v, 3), "cramers_v_ci_low": round(v_low, 3), "cramers_v_ci_high": round(v_high, 3),
         "alpha": ALPHA, "reject_h0": p_value < ALPHA, "min_detectable_v_80pct_power": round(mde_w, 3),
-        "seed": SEED,
+        "learning_diff_pct_points": round(100 * diff, 2), "learning_diff_ci_low": round(100 * diff_low, 2),
+        "learning_diff_ci_high": round(100 * diff_high, 2), "seed": SEED,
     }])
     results.to_csv(FINAL / "q9_test_results.csv", index=False)
     resid = pd.DataFrame(z, index=GROUPS, columns=THEMES).round(2)
@@ -188,6 +198,8 @@ def main():
     print(f"Chi-square = {stat:.2f}, df = {dof}, p = {p_value:.4f} (asymptotic chi-square p = {p_asymptotic:.4f})")
     print(f"Cramer's V = {v:.3f}, 95% bootstrap CI [{v_low:.3f}, {v_high:.3f}]")
     print(f"Minimum detectable V at 80% power: {mde_w:.3f}")
+    print(f"Student Learning, parents minus non-parents: {100 * diff:.1f} points, "
+          f"95% Newcombe CI [{100 * diff_low:.1f}, {100 * diff_high:.1f}]")
     print(f"\nAdjusted standardized residuals (|z| > {z_crit:.2f} is significant after Bonferroni):\n", resid.to_string())
     print("\nPercent choosing each theme:\n",
           pct.pivot(index="theme", columns="group", values="percent").loc[THEMES, GROUPS].round(1).to_string())

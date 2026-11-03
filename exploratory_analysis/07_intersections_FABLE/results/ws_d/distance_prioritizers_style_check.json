@@ -1,0 +1,11 @@
+{
+ "n_distance_prioritizers": 123,
+ "prioritizers_parent_share": 97.6,
+ "mean_of_13_challenge_ratings_prioritizers": 3.36,
+ "mean_of_13_challenge_ratings_others": 3.56,
+ "mean_excl_bus_prioritizers": 3.26,
+ "mean_excl_bus_others": 3.55,
+ "either_distance_or_bus_top3_pct_all": 38.1,
+ "both_distance_and_bus_top3_pct_all": 17.0,
+ "walk_or_bus_theme_pct_of_writers": 31.2
+}

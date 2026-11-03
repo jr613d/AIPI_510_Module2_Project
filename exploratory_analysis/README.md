@@ -18,8 +18,11 @@ The main project's credibility rests on the order of work: plan, then data, then
 | [`04_write_ins`](04_write_ins/) | What did respondents raise in their own words? | Teachers and staff, walk zones, buses, and keeping current students in place, several of which aren't among the survey's listed values. |
 | [`05_rating_patterns`](05_rating_patterns/) | Did people rate everything a 5? | Rarely (3% rated all values a 5), but non-parents give more 5s overall, a rating-style caveat for comparing 1–5 ratings. |
 | [`06_age_and_language`](06_age_and_language/) | Do priorities differ by parent age or survey language? | Parents in their 30s and non-English respondents lean toward student logistics and well-being, especially safety. |
+| [`07_intersections_FABLE`](07_intersections_FABLE/) | What do the Module 1 enrollment data (NC DPI membership, Census population, school capacity, geography) and this survey say together about the elementary redistricting? | The survey measures the district's offer, not the demography behind two-thirds of the decline, and it is a survey of current parents. "Well-balanced" is read as a capacity idea, and the two emptiest schools in 2031 are the two most economically disadvantaged. Presented as an interactive data story, [`dashboard/seats_and_voices.html`](07_intersections_FABLE/dashboard/seats_and_voices.html). |
 
-Each subfolder has its own `README.md` (findings and caveats), `run.py`, `figures/` and `results/`.
+Sub-analyses 01 to 06 each have their own `README.md` (findings and caveats), `run.py`, `figures/` and `results/`.
+
+The seventh, [`07_intersections_FABLE`](07_intersections_FABLE/), is a larger piece built with an AI agent team (the FABLE tag marks it as such, as in the Module 1 project): five scripted workstreams under `src/`, an orchestrator's inventory of their 46 findings in `docs/INVENTORY.md`, and a self-contained HTML data story in `dashboard/` written for district stakeholders and the Board. It reads the Module 1 project's cleaned data from sibling folders outside this repository, so its workstream scripts only run on a machine with both projects; its result tables and the finished page are committed. Its own `README.md` and `LIMITATIONS.md` cover the findings and caveats.
 
 ## Shared code and data
 
@@ -43,4 +46,4 @@ done
 
 - Q8 top-three values by theme, as a check on the Q9 result
 - Parent-staff by role (teachers vs. other staff) and by age, to see whether the staff pattern holds
-- Linking the district's school-level capacity worksheet to respondents' concerns about crowding and empty buildings
+- Linking the district's school-level capacity worksheet to respondents' concerns about crowding and empty buildings (since done in `07_intersections_FABLE`, chapters 4 and 5)

@@ -1,0 +1,7 @@
+q8_condition,group,n,k,pct,ci_lo,ci_hi,measure
+both SL values in Q8 top 3,Parent,563,454,80.6,77.2,83.7,Q9 = Student Learning
+both SL values in Q8 top 3,Non-parent,31,23,74.2,56.8,86.3,Q9 = Student Learning
+exactly one SL value in Q8,Parent,668,416,62.3,58.5,65.9,Q9 = Student Learning
+exactly one SL value in Q8,Non-parent,55,23,41.8,29.7,55.0,Q9 = Student Learning
+no SL value in Q8,Parent,84,10,11.9,6.6,20.5,Q9 = Student Learning
+no SL value in Q8,Non-parent,12,1,8.3,1.5,35.4,Q9 = Student Learning

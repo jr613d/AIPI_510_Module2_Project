@@ -1,0 +1,67 @@
+school,year,spg_score,spg_grade,ach_score,eg_status,eg_score
+Carrboro,2018,71.0,B,69.4,Met,79.8
+Carrboro,2019,76.0,B,72.4,Exceeded,92.4
+Carrboro,2022,67.0,C,63.9,Met,81.8
+Carrboro,2023,65.0,C,64.7,NotMet,64.7
+Carrboro,2024,67.0,C,66.3,NotMet,68.1
+Carrboro,2025,74.0,B,70.0,Exceeded,87.5
+Ephesus,2018,80.0,B,79.8,Met,82.1
+Ephesus,2019,79.0,B,78.6,Met,80.9
+Ephesus,2022,75.0,B,70.4,Exceeded,91.8
+Ephesus,2023,74.0,B,71.4,Exceeded,85.8
+Ephesus,2024,69.0,C,69.2,Met,70.6
+Ephesus,2025,75.0,B,71.6,Exceeded,90.2
+Estes Hills,2018,69.0,C,70.7,NotMet,61.8
+Estes Hills,2019,73.0,B,72.8,Met,75.9
+Estes Hills,2022,76.0,B,71.6,Exceeded,94.1
+Estes Hills,2023,71.0,B,70.5,Met,74.3
+Estes Hills,2024,78.0,B,76.4,Exceeded,85.6
+Estes Hills,2025,78.0,B,78.9,Met,76.7
+Frank Porter Graham,2018,70.0,B,66.4,Exceeded,85.2
+Frank Porter Graham,2019,73.0,B,68.5,Exceeded,90.9
+Frank Porter Graham,2022,61.0,C,58.1,Met,73.5
+Frank Porter Graham,2023,63.0,C,57.9,Met,80.9
+Frank Porter Graham,2024,63.0,C,63.5,NotMet,60.1
+Frank Porter Graham,2025,72.0,B,68.9,Exceeded,86.0
+Glenwood,2018,80.0,B,81.9,Met,72.2
+Glenwood,2019,81.0,B,82.0,Met,78.4
+Glenwood,2022,74.0,B,74.7,Met,72.8
+Glenwood,2023,84.0,B,83.2,Exceeded,88.9
+Glenwood,2024,84.0,B,82.9,Exceeded,90.4
+Glenwood,2025,85.0,A,85.2,Met,82.2
+McDougle,2018,74.0,B,72.3,Met,83.1
+McDougle,2019,80.0,B,77.7,Exceeded,86.8
+McDougle,2022,78.0,B,74.2,Exceeded,91.1
+McDougle,2023,69.0,C,70.3,NotMet,63.2
+McDougle,2024,77.0,B,75.0,Met,83.5
+McDougle,2025,72.0,B,71.5,Met,76.2
+Morris Grove,2018,81.0,B,80.6,Met,83.1
+Morris Grove,2019,76.0,B,78.5,NotMet,63.7
+Morris Grove,2022,80.0,B,79.2,Met,82.5
+Morris Grove,2023,78.0,B,76.3,Met,84.4
+Morris Grove,2024,85.0,A,84.1,Exceeded,90.8
+Morris Grove,2025,83.0,B,83.6,Met,80.5
+Northside,2018,58.0,C,54.4,NotMet,69.9
+Northside,2019,63.0,C,57.5,Met,84.3
+Northside,2022,55.0,C,48.9,Met,81.7
+Northside,2023,61.0,C,56.3,Met,79.9
+Northside,2024,57.0,C,55.5,NotMet,65.2
+Northside,2025,64.0,C,60.5,Met,80.4
+Rashkis,2018,79.0,B,78.4,Met,82.2
+Rashkis,2019,84.0,B,84.1,Met,82.7
+Rashkis,2022,70.0,B,64.9,Exceeded,88.4
+Rashkis,2023,72.0,B,68.0,Exceeded,87.3
+Rashkis,2024,71.0,B,66.9,Exceeded,86.8
+Rashkis,2025,68.0,C,64.8,Met,80.5
+Scroggs,2018,80.0,B,79.7,Met,83.3
+Scroggs,2019,79.0,B,78.0,Met,82.1
+Scroggs,2022,76.0,B,73.2,Exceeded,88.3
+Scroggs,2023,79.0,B,76.6,Exceeded,88.9
+Scroggs,2024,74.0,B,74.2,Met,75.5
+Scroggs,2025,69.0,C,67.7,Met,73.9
+Seawell,2018,80.0,B,78.7,Met,82.7
+Seawell,2019,83.0,B,82.0,Met,84.5
+Seawell,2022,81.0,B,79.4,Exceeded,88.5
+Seawell,2023,85.0,A,85.9,Met,82.6
+Seawell,2024,80.0,B,81.8,Met,71.6
+Seawell,2025,79.0,B,78.7,Met,81.1

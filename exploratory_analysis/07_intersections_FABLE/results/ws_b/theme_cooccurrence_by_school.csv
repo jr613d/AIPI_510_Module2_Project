@@ -1,0 +1,183 @@
+school,theme,mentioners,mentioners_with_theme,pct_mentioners,wilson_lo,wilson_hi,other_writers,other_writers_with_theme,pct_other_writers,fisher_p,bh_q,ratio
+Carrboro,Safety & security,8,4,50.0,21.5,78.5,626,59,9.4,0.004583919406272482,0.08342733319415918,5.32
+Carrboro,"Housing, growth & enrollment",8,4,50.0,21.5,78.5,626,72,11.5,0.009194006682985667,0.10458182601896196,4.35
+Carrboro,"Special programs (dual language, magnet, EC)",8,3,37.5,13.7,69.4,626,96,15.3,0.11449796212936497,0.37211837692043614,2.45
+Carrboro,"Teachers & staff (support, pay, retention)",8,0,0.0,0.0,32.4,626,165,26.4,0.11971094240727925,0.37564468134697976,0.0
+Carrboro,Siblings & keeping families together,8,1,12.5,2.2,47.1,626,17,2.7,0.20682932575579538,0.561834884888877,4.63
+Carrboro,"Walking, biking & walk zones",8,3,37.5,13.7,69.4,626,128,20.4,0.3720142819364495,0.7730410135520691,1.84
+Carrboro,Screens & classroom technology,8,1,12.5,2.2,47.1,626,47,7.5,0.4692588349891685,0.871480693551313,1.67
+Carrboro,Keep current students in place / minimize disruption,8,2,25.0,7.1,59.1,626,106,16.9,0.6297069584875051,0.9387680768053819,1.48
+Carrboro,"Buses, commute & traffic",8,2,25.0,7.1,59.1,626,109,17.4,0.6344421617970438,0.9387680768053819,1.44
+Carrboro,"Class size, capacity & crowding",8,0,0.0,0.0,32.4,626,35,5.6,1.0,1.0,0.0
+Carrboro,Criticism of the survey itself,8,0,0.0,0.0,32.4,626,37,5.9,1.0,1.0,0.0
+Carrboro,Equity & the achievement gap,8,0,0.0,0.0,32.4,626,69,11.0,1.0,1.0,0.0
+Carrboro,Neighborhood & community schools,8,1,12.5,2.2,47.1,626,75,12.0,1.0,1.0,1.04
+Carrboro,"Trust, transparency & communication",8,1,12.5,2.2,47.1,626,72,11.5,1.0,1.0,1.09
+Culbreth MS,"Teachers & staff (support, pay, retention)",7,5,71.4,35.9,91.8,627,160,25.5,0.014904593005202207,0.1326679874982965,2.8
+Culbreth MS,"Housing, growth & enrollment",7,3,42.9,15.8,75.0,627,73,11.6,0.04060515174108673,0.20528160046882737,3.7
+Culbreth MS,Neighborhood & community schools,7,3,42.9,15.8,75.0,627,73,11.6,0.04060515174108673,0.20528160046882737,3.7
+Culbreth MS,"Buses, commute & traffic",7,3,42.9,15.8,75.0,627,108,17.2,0.10683751593180842,0.3595507687573594,2.49
+Culbreth MS,"Class size, capacity & crowding",7,1,14.3,2.6,51.3,627,34,5.4,0.3293182988053649,0.7309259802753221,2.65
+Culbreth MS,Equity & the achievement gap,7,1,14.3,2.6,51.3,627,68,10.8,0.5554253304908889,0.9387680768053819,1.32
+Culbreth MS,"Trust, transparency & communication",7,1,14.3,2.6,51.3,627,72,11.5,0.5771078525911608,0.9387680768053819,1.24
+Culbreth MS,Criticism of the survey itself,7,0,0.0,0.0,35.4,627,37,5.9,1.0,1.0,0.0
+Culbreth MS,Keep current students in place / minimize disruption,7,1,14.3,2.6,51.3,627,107,17.1,1.0,1.0,0.84
+Culbreth MS,Safety & security,7,0,0.0,0.0,35.4,627,63,10.0,1.0,1.0,0.0
+Culbreth MS,Screens & classroom technology,7,0,0.0,0.0,35.4,627,48,7.7,1.0,1.0,0.0
+Culbreth MS,Siblings & keeping families together,7,0,0.0,0.0,35.4,627,18,2.9,1.0,1.0,0.0
+Culbreth MS,"Special programs (dual language, magnet, EC)",7,1,14.3,2.6,51.3,627,98,15.6,1.0,1.0,0.92
+Culbreth MS,"Walking, biking & walk zones",7,1,14.3,2.6,51.3,627,130,20.7,1.0,1.0,0.69
+Estes Hills,"Housing, growth & enrollment",6,3,50.0,18.8,81.2,628,73,11.6,0.025369369416618423,0.15266536736476033,4.31
+Estes Hills,Screens & classroom technology,6,2,33.3,9.7,70.0,628,46,7.3,0.06921999599134546,0.3023133815870129,4.56
+Estes Hills,"Buses, commute & traffic",6,3,50.0,18.8,81.2,628,108,17.2,0.06976462652007989,0.3023133815870129,2.91
+Estes Hills,Keep current students in place / minimize disruption,6,2,33.3,9.7,70.0,628,106,16.9,0.2718305786930866,0.6596422042952235,1.97
+Estes Hills,"Class size, capacity & crowding",6,1,16.7,3.0,56.4,628,34,5.4,0.2897333754633544,0.672906117792669,3.09
+Estes Hills,Safety & security,6,1,16.7,3.0,56.4,628,62,9.9,0.4677196230316511,0.871480693551313,1.69
+Estes Hills,Equity & the achievement gap,6,1,16.7,3.0,56.4,628,68,10.8,0.5005493873851127,0.910999885040905,1.55
+Estes Hills,Criticism of the survey itself,6,0,0.0,0.0,39.0,628,37,5.9,1.0,1.0,0.0
+Estes Hills,Neighborhood & community schools,6,0,0.0,0.0,39.0,628,76,12.1,1.0,1.0,0.0
+Estes Hills,Siblings & keeping families together,6,0,0.0,0.0,39.0,628,18,2.9,1.0,1.0,0.0
+Estes Hills,"Special programs (dual language, magnet, EC)",6,1,16.7,3.0,56.4,628,98,15.6,1.0,1.0,1.07
+Estes Hills,"Teachers & staff (support, pay, retention)",6,1,16.7,3.0,56.4,628,164,26.1,1.0,1.0,0.64
+Estes Hills,"Trust, transparency & communication",6,0,0.0,0.0,39.0,628,73,11.6,1.0,1.0,0.0
+Estes Hills,"Walking, biking & walk zones",6,1,16.7,3.0,56.4,628,130,20.7,1.0,1.0,0.81
+Frank Porter Graham,"Housing, growth & enrollment",8,4,50.0,21.5,78.5,626,72,11.5,0.009194006682985667,0.10458182601896196,4.35
+Frank Porter Graham,"Special programs (dual language, magnet, EC)",8,4,50.0,21.5,78.5,626,95,15.2,0.023717654916023196,0.15266536736476033,3.29
+Frank Porter Graham,Screens & classroom technology,8,2,25.0,7.1,59.1,626,46,7.3,0.11726469446385046,0.3744241121477331,3.42
+Frank Porter Graham,Equity & the achievement gap,8,2,25.0,7.1,59.1,626,67,10.7,0.2129539343618601,0.5699649419685079,2.34
+Frank Porter Graham,"Walking, biking & walk zones",8,0,0.0,0.0,32.4,626,131,20.9,0.216519944410969,0.5711105780115414,0.0
+Frank Porter Graham,"Trust, transparency & communication",8,2,25.0,7.1,59.1,626,71,11.3,0.23245412479863006,0.5875923710187594,2.21
+Frank Porter Graham,"Class size, capacity & crowding",8,1,12.5,2.2,47.1,626,34,5.4,0.3667566712803446,0.7730410135520691,2.31
+Frank Porter Graham,"Teachers & staff (support, pay, retention)",8,3,37.5,13.7,69.4,626,162,25.9,0.4350795073292752,0.8650843488026843,1.45
+Frank Porter Graham,Keep current students in place / minimize disruption,8,2,25.0,7.1,59.1,626,106,16.9,0.6297069584875051,0.9387680768053819,1.48
+Frank Porter Graham,"Buses, commute & traffic",8,2,25.0,7.1,59.1,626,109,17.4,0.6344421617970438,0.9387680768053819,1.44
+Frank Porter Graham,Criticism of the survey itself,8,0,0.0,0.0,32.4,626,37,5.9,1.0,1.0,0.0
+Frank Porter Graham,Neighborhood & community schools,8,1,12.5,2.2,47.1,626,75,12.0,1.0,1.0,1.04
+Frank Porter Graham,Safety & security,8,0,0.0,0.0,32.4,626,63,10.1,1.0,1.0,0.0
+Frank Porter Graham,Siblings & keeping families together,8,0,0.0,0.0,32.4,626,18,2.9,1.0,1.0,0.0
+Glenwood,"Trust, transparency & communication",26,14,53.8,35.5,71.2,608,59,9.7,6.902744350111785e-08,4.187664905734483e-06,5.55
+Glenwood,"Teachers & staff (support, pay, retention)",26,13,50.0,32.1,67.9,608,152,25.0,0.00991108240844614,0.10610688225512926,2.0
+Glenwood,Criticism of the survey itself,26,5,19.2,8.5,37.9,608,32,5.3,0.013743373847924482,0.13164705475380292,3.62
+Glenwood,"Walking, biking & walk zones",26,1,3.8,0.7,18.9,608,130,21.4,0.02600344169399764,0.15266536736476033,0.18
+Glenwood,"Housing, growth & enrollment",26,7,26.9,13.7,46.1,608,69,11.3,0.026846078791394914,0.15268707312605856,2.38
+Glenwood,Safety & security,26,0,0.0,0.0,12.9,608,63,10.4,0.09758343429998825,0.3595507687573594,0.0
+Glenwood,"Special programs (dual language, magnet, EC)",26,7,26.9,13.7,46.1,608,92,15.1,0.16072834988410495,0.47181547869205,1.78
+Glenwood,Screens & classroom technology,26,3,11.5,4.0,29.0,608,45,7.4,0.4372953851090492,0.8650843488026843,1.55
+Glenwood,Siblings & keeping families together,26,1,3.8,0.7,18.9,608,17,2.8,0.5343175317137442,0.9387680768053819,1.36
+Glenwood,Neighborhood & community schools,26,4,15.4,6.2,33.5,608,72,11.8,0.5386729429371222,0.9387680768053819,1.31
+Glenwood,"Buses, commute & traffic",26,3,11.5,4.0,29.0,608,108,17.8,0.5987521245208896,0.9387680768053819,0.65
+Glenwood,Equity & the achievement gap,26,3,11.5,4.0,29.0,608,66,10.9,0.7553180258279921,1.0,1.06
+Glenwood,"Class size, capacity & crowding",26,1,3.8,0.7,18.9,608,34,5.6,1.0,1.0,0.68
+Glenwood,Keep current students in place / minimize disruption,26,4,15.4,6.2,33.5,608,104,17.1,1.0,1.0,0.9
+McDougle (elementary or unspecified),Siblings & keeping families together,10,4,40.0,16.8,68.7,624,14,2.2,8.651775160447634e-05,0.003149246158402939,18.18
+McDougle (elementary or unspecified),"Class size, capacity & crowding",10,4,40.0,16.8,68.7,624,31,5.0,0.0012961493677029182,0.03369988356027587,8.0
+McDougle (elementary or unspecified),"Housing, growth & enrollment",10,5,50.0,23.7,76.3,624,71,11.4,0.0033871878606972095,0.06849646562743246,4.39
+McDougle (elementary or unspecified),"Walking, biking & walk zones",10,6,60.0,31.3,83.2,624,125,20.0,0.007077085020404856,0.10458182601896196,3.0
+McDougle (elementary or unspecified),Criticism of the survey itself,10,3,30.0,10.8,60.3,624,34,5.4,0.016548573542231576,0.1326679874982965,5.56
+McDougle (elementary or unspecified),Neighborhood & community schools,10,4,40.0,16.8,68.7,624,72,11.5,0.022833115244985762,0.15266536736476033,3.48
+McDougle (elementary or unspecified),Keep current students in place / minimize disruption,10,4,40.0,16.8,68.7,624,104,16.7,0.07303683896158543,0.30913266723275695,2.4
+McDougle (elementary or unspecified),"Teachers & staff (support, pay, retention)",10,4,40.0,16.8,68.7,624,161,25.8,0.29511985785694855,0.672906117792669,1.55
+McDougle (elementary or unspecified),"Buses, commute & traffic",10,3,30.0,10.8,60.3,624,108,17.3,0.39132868064583826,0.7913535541949174,1.73
+McDougle (elementary or unspecified),Safety & security,10,0,0.0,0.0,27.8,624,63,10.1,0.6094870711736474,0.9387680768053819,0.0
+McDougle (elementary or unspecified),Equity & the achievement gap,10,0,0.0,0.0,27.8,624,69,11.1,0.6113476412769372,0.9387680768053819,0.0
+McDougle (elementary or unspecified),"Special programs (dual language, magnet, EC)",10,2,20.0,5.7,51.0,624,97,15.5,0.6599619319908625,0.9609045729786958,1.29
+McDougle (elementary or unspecified),Screens & classroom technology,10,0,0.0,0.0,27.8,624,48,7.7,1.0,1.0,0.0
+McDougle (elementary or unspecified),"Trust, transparency & communication",10,1,10.0,1.8,40.4,624,72,11.5,1.0,1.0,0.87
+Northside,Equity & the achievement gap,11,3,27.3,9.7,56.6,623,66,10.6,0.10758355969573656,0.3595507687573594,2.58
+Northside,"Buses, commute & traffic",11,4,36.4,15.2,64.6,623,107,17.2,0.10865545209700421,0.3595507687573594,2.12
+Northside,Keep current students in place / minimize disruption,11,0,0.0,0.0,25.9,623,108,17.3,0.22603237353435013,0.5794069293415736,0.0
+Northside,"Walking, biking & walk zones",11,1,9.1,1.6,37.7,623,130,20.9,0.47495493179257114,0.8731494705681612,0.44
+Northside,Screens & classroom technology,11,1,9.1,1.6,37.7,623,47,7.5,0.5823908860678833,0.9387680768053819,1.21
+Northside,Safety & security,11,0,0.0,0.0,25.9,623,63,10.1,0.6131168387813282,0.9387680768053819,0.0
+Northside,"Housing, growth & enrollment",11,2,18.2,5.1,47.7,623,74,11.9,0.6299781861892878,0.9387680768053819,1.53
+Northside,"Special programs (dual language, magnet, EC)",11,2,18.2,5.1,47.7,623,97,15.6,0.6847018811697324,0.9660135067665991,1.17
+Northside,"Class size, capacity & crowding",11,0,0.0,0.0,25.9,623,35,5.6,1.0,1.0,0.0
+Northside,Criticism of the survey itself,11,0,0.0,0.0,25.9,623,37,5.9,1.0,1.0,0.0
+Northside,Neighborhood & community schools,11,1,9.1,1.6,37.7,623,75,12.0,1.0,1.0,0.76
+Northside,Siblings & keeping families together,11,0,0.0,0.0,25.9,623,18,2.9,1.0,1.0,0.0
+Northside,"Teachers & staff (support, pay, retention)",11,3,27.3,9.7,56.6,623,162,26.0,1.0,1.0,1.05
+Northside,"Trust, transparency & communication",11,1,9.1,1.6,37.7,623,72,11.6,1.0,1.0,0.78
+Rashkis,"Special programs (dual language, magnet, EC)",10,4,40.0,16.8,68.7,624,95,15.2,0.05534748617307816,0.25828826880769806,2.63
+Rashkis,"Buses, commute & traffic",10,4,40.0,16.8,68.7,624,107,17.1,0.07957163814727627,0.3148269161479192,2.34
+Rashkis,"Trust, transparency & communication",10,3,30.0,10.8,60.3,624,70,11.2,0.09705060779800058,0.3595507687573594,2.68
+Rashkis,"Housing, growth & enrollment",10,3,30.0,10.8,60.3,624,73,11.7,0.10685778777827168,0.3595507687573594,2.56
+Rashkis,Neighborhood & community schools,10,3,30.0,10.8,60.3,624,73,11.7,0.10685778777827168,0.3595507687573594,2.56
+Rashkis,Siblings & keeping families together,10,1,10.0,1.8,40.4,624,17,2.7,0.2518226291274908,0.6193475473135585,3.7
+Rashkis,"Teachers & staff (support, pay, retention)",10,4,40.0,16.8,68.7,624,161,25.8,0.29511985785694855,0.672906117792669,1.55
+Rashkis,Criticism of the survey itself,10,1,10.0,1.8,40.4,624,36,5.8,0.45434218501707474,0.871480693551313,1.72
+Rashkis,Screens & classroom technology,10,1,10.0,1.8,40.4,624,47,7.5,0.5475901265735406,0.9387680768053819,1.33
+Rashkis,Safety & security,10,0,0.0,0.0,27.8,624,63,10.1,0.6094870711736474,0.9387680768053819,0.0
+Rashkis,Keep current students in place / minimize disruption,10,2,20.0,5.7,51.0,624,106,17.0,0.6819478534622936,0.9660135067665991,1.18
+Rashkis,"Class size, capacity & crowding",10,0,0.0,0.0,27.8,624,35,5.6,1.0,1.0,0.0
+Rashkis,Equity & the achievement gap,10,1,10.0,1.8,40.4,624,68,10.9,1.0,1.0,0.92
+Rashkis,"Walking, biking & walk zones",10,2,20.0,5.7,51.0,624,129,20.7,1.0,1.0,0.97
+Scroggs,"Buses, commute & traffic",10,5,50.0,23.7,76.3,624,106,17.0,0.01814122260935962,0.13407926361265668,2.94
+Scroggs,Neighborhood & community schools,10,4,40.0,16.8,68.7,624,72,11.5,0.022833115244985762,0.15266536736476033,3.48
+Scroggs,"Walking, biking & walk zones",10,4,40.0,16.8,68.7,624,127,20.4,0.13115143191051298,0.39912925225703866,1.96
+Scroggs,Screens & classroom technology,10,2,20.0,5.7,51.0,624,46,7.4,0.17123529252726552,0.49198784076344576,2.7
+Scroggs,"Teachers & staff (support, pay, retention)",10,4,40.0,16.8,68.7,624,161,25.8,0.29511985785694855,0.672906117792669,1.55
+Scroggs,"Housing, growth & enrollment",10,2,20.0,5.7,51.0,624,74,11.9,0.3414739764565178,0.748774261627545,1.68
+Scroggs,Criticism of the survey itself,10,1,10.0,1.8,40.4,624,36,5.8,0.45434218501707474,0.871480693551313,1.72
+Scroggs,Equity & the achievement gap,10,0,0.0,0.0,27.8,624,69,11.1,0.6113476412769372,0.9387680768053819,0.0
+Scroggs,"Special programs (dual language, magnet, EC)",10,2,20.0,5.7,51.0,624,97,15.5,0.6599619319908625,0.9609045729786958,1.29
+Scroggs,"Class size, capacity & crowding",10,0,0.0,0.0,27.8,624,35,5.6,1.0,1.0,0.0
+Scroggs,Keep current students in place / minimize disruption,10,1,10.0,1.8,40.4,624,107,17.1,1.0,1.0,0.58
+Scroggs,Safety & security,10,1,10.0,1.8,40.4,624,62,9.9,1.0,1.0,1.01
+Scroggs,Siblings & keeping families together,10,0,0.0,0.0,27.8,624,18,2.9,1.0,1.0,0.0
+Scroggs,"Trust, transparency & communication",10,1,10.0,1.8,40.4,624,72,11.5,1.0,1.0,0.87
+Seawell,"Housing, growth & enrollment",8,4,50.0,21.5,78.5,626,72,11.5,0.009194006682985667,0.10458182601896196,4.35
+Seawell,"Buses, commute & traffic",8,4,50.0,21.5,78.5,626,107,17.1,0.03523421596752897,0.19432203957849312,2.92
+Seawell,Neighborhood & community schools,8,2,25.0,7.1,59.1,626,74,11.8,0.2472395492314057,0.6164054515084361,2.12
+Seawell,Keep current students in place / minimize disruption,8,0,0.0,0.0,32.4,626,108,17.3,0.3630247583982177,0.7730410135520691,0.0
+Seawell,"Class size, capacity & crowding",8,1,12.5,2.2,47.1,626,34,5.4,0.3667566712803446,0.7730410135520691,2.31
+Seawell,Criticism of the survey itself,8,1,12.5,2.2,47.1,626,36,5.8,0.38357235221674735,0.7843839112746969,2.16
+Seawell,Screens & classroom technology,8,1,12.5,2.2,47.1,626,47,7.5,0.4692588349891685,0.871480693551313,1.67
+Seawell,Safety & security,8,1,12.5,2.2,47.1,626,62,9.9,0.5692345896323254,0.9387680768053819,1.26
+Seawell,Equity & the achievement gap,8,1,12.5,2.2,47.1,626,68,10.9,0.6043498156521784,0.9387680768053819,1.15
+Seawell,"Walking, biking & walk zones",8,2,25.0,7.1,59.1,626,129,20.6,0.6721545148344699,0.9660135067665991,1.21
+Seawell,Siblings & keeping families together,8,0,0.0,0.0,32.4,626,18,2.9,1.0,1.0,0.0
+Seawell,"Special programs (dual language, magnet, EC)",8,1,12.5,2.2,47.1,626,98,15.7,1.0,1.0,0.8
+Seawell,"Teachers & staff (support, pay, retention)",8,2,25.0,7.1,59.1,626,163,26.0,1.0,1.0,0.96
+Seawell,"Trust, transparency & communication",8,1,12.5,2.2,47.1,626,72,11.5,1.0,1.0,1.09
+any_elem_school,"Housing, growth & enrollment",79,25,31.6,22.4,42.5,555,51,9.2,3.8726937928351005e-07,1.7620756757399706e-05,3.43
+any_elem_school,"Trust, transparency & communication",79,19,24.1,16.0,34.5,555,54,9.7,0.0009733580612451016,0.029525194524434747,2.48
+any_elem_school,"Buses, commute & traffic",79,24,30.4,21.3,41.2,555,87,15.7,0.00241372549654894,0.054912255046488376,1.94
+any_elem_school,"Special programs (dual language, magnet, EC)",79,21,26.6,18.1,37.2,555,78,14.1,0.0073316064617303086,0.10458182601896196,1.89
+any_elem_school,Neighborhood & community schools,79,17,21.5,13.9,31.8,555,59,10.6,0.008894352075756427,0.10458182601896196,2.03
+any_elem_school,Criticism of the survey itself,79,10,12.7,7.0,21.8,555,27,4.9,0.016746677916204638,0.1326679874982965,2.59
+any_elem_school,Siblings & keeping families together,79,6,7.6,3.5,15.6,555,12,2.2,0.016765734683850658,0.1326679874982965,3.45
+any_elem_school,"Teachers & staff (support, pay, retention)",79,28,35.4,25.8,46.4,555,137,24.7,0.054187920028489406,0.25828826880769806,1.43
+any_elem_school,"Class size, capacity & crowding",79,8,10.1,5.2,18.7,555,27,4.9,0.06518080840869336,0.2965726782595548,2.06
+any_elem_school,Screens & classroom technology,79,10,12.7,7.0,21.8,555,38,6.8,0.10678669568620065,0.3595507687573594,1.87
+any_elem_school,"Walking, biking & walk zones",79,19,24.1,16.0,34.5,555,112,20.2,0.457715548423713,0.871480693551313,1.19
+any_elem_school,Keep current students in place / minimize disruption,79,15,19.0,11.9,29.0,555,93,16.8,0.6318542426457495,0.9387680768053819,1.13
+any_elem_school,Safety & security,79,7,8.9,4.4,17.2,555,56,10.1,0.8427713406434677,1.0,0.88
+any_elem_school,Equity & the achievement gap,79,9,11.4,6.1,20.3,555,60,10.8,0.8475421078057621,1.0,1.06
+prog: dual language / immersion,"Special programs (dual language, magnet, EC)",45,40,88.9,76.5,95.2,589,59,10.0,1.4291840831476875e-30,2.601115031328791e-28,8.89
+prog: dual language / immersion,"Walking, biking & walk zones",45,3,6.7,2.3,17.9,589,128,21.7,0.012721807085779926,0.12863160497844148,0.31
+prog: dual language / immersion,Keep current students in place / minimize disruption,45,13,28.9,17.7,43.4,589,95,16.1,0.03814493915931382,0.20418761549985634,1.8
+prog: dual language / immersion,"Housing, growth & enrollment",45,10,22.2,12.5,36.3,589,66,11.2,0.05171618658957543,0.25438772862980347,1.98
+prog: dual language / immersion,Equity & the achievement gap,45,9,20.0,10.9,33.8,589,60,10.2,0.076304208527981,0.3112122185514988,1.96
+prog: dual language / immersion,"Teachers & staff (support, pay, retention)",45,17,37.8,25.1,52.4,589,148,25.1,0.07694807601548047,0.3112122185514988,1.51
+prog: dual language / immersion,"Trust, transparency & communication",45,9,20.0,10.9,33.8,589,64,10.9,0.08511515541787164,0.3295948571500561,1.83
+prog: dual language / immersion,Criticism of the survey itself,45,5,11.1,4.8,23.5,589,32,5.4,0.17300671323549743,0.49198784076344576,2.06
+prog: dual language / immersion,Safety & security,45,2,4.4,1.2,14.8,589,61,10.4,0.29948019528135267,0.672906117792669,0.42
+prog: dual language / immersion,Screens & classroom technology,45,5,11.1,4.8,23.5,589,43,7.3,0.37377807248671474,0.7730410135520691,1.52
+prog: dual language / immersion,Siblings & keeping families together,45,0,0.0,0.0,7.9,589,18,3.1,0.6306874560134018,0.9387680768053819,0.0
+prog: dual language / immersion,"Buses, commute & traffic",45,9,20.0,10.9,33.8,589,102,17.3,0.6835478758867456,0.9660135067665991,1.16
+prog: dual language / immersion,"Class size, capacity & crowding",45,3,6.7,2.3,17.9,589,32,5.4,0.7306224080280579,1.0,1.24
+prog: dual language / immersion,Neighborhood & community schools,45,5,11.1,4.8,23.5,589,71,12.1,1.0,1.0,0.92
+prog: magnet / lottery,"Special programs (dual language, magnet, EC)",28,27,96.4,82.3,99.4,606,72,11.9,1.461714466795097e-22,1.3301601647835381e-20,8.1
+prog: magnet / lottery,"Buses, commute & traffic",28,10,35.7,20.7,54.2,606,101,16.7,0.01841748126547482,0.13407926361265668,2.14
+prog: magnet / lottery,Equity & the achievement gap,28,7,25.0,12.7,43.4,606,62,10.2,0.02432764557858641,0.15266536736476033,2.45
+prog: magnet / lottery,Neighborhood & community schools,28,6,21.4,10.2,39.5,606,70,11.6,0.1315810721726501,0.39912925225703866,1.84
+prog: magnet / lottery,Screens & classroom technology,28,4,14.3,5.7,31.5,606,44,7.3,0.15407563830542428,0.4597010847801184,1.96
+prog: magnet / lottery,Safety & security,28,5,17.9,7.9,35.6,606,58,9.6,0.1846126198803108,0.5169153356648702,1.86
+prog: magnet / lottery,"Class size, capacity & crowding",28,3,10.7,3.7,27.2,606,32,5.3,0.19624476626654705,0.5411598100077509,2.02
+prog: magnet / lottery,Criticism of the survey itself,28,3,10.7,3.7,27.2,606,34,5.6,0.21985339423767708,0.5716188250179604,1.91
+prog: magnet / lottery,Keep current students in place / minimize disruption,28,7,25.0,12.7,43.4,606,101,16.7,0.2994046015908125,0.672906117792669,1.5
+prog: magnet / lottery,"Trust, transparency & communication",28,4,14.3,5.7,31.5,606,69,11.4,0.5512745877197247,0.9387680768053819,1.25
+prog: magnet / lottery,"Housing, growth & enrollment",28,2,7.1,2.0,22.6,606,74,12.2,0.5616877328896911,0.9387680768053819,0.58
+prog: magnet / lottery,Siblings & keeping families together,28,0,0.0,0.0,12.1,606,18,3.0,1.0,1.0,0.0
+prog: magnet / lottery,"Teachers & staff (support, pay, retention)",28,7,25.0,12.7,43.4,606,158,26.1,1.0,1.0,0.96
+prog: magnet / lottery,"Walking, biking & walk zones",28,6,21.4,10.2,39.5,606,125,20.6,1.0,1.0,1.04

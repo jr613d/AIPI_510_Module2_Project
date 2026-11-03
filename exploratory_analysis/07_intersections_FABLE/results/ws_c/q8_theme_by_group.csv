@@ -1,0 +1,25 @@
+theme,group,measure,n,k,pct,ci_lo,ci_hi
+Student Learning,Parent,any value from theme in Q8 top 3,1315,1231.0,93.6,92.2,94.8
+Student Learning,Parent,mean number of Q8 picks from theme (0-3),1315,,1.364,,
+Student Learning,Parent,Q9 single choice from theme (pre-registered framing),1315,880.0,66.9,64.3,69.4
+Student Learning,Non-parent,any value from theme in Q8 top 3,98,86.0,87.8,79.8,92.9
+Student Learning,Non-parent,mean number of Q8 picks from theme (0-3),98,,1.194,,
+Student Learning,Non-parent,Q9 single choice from theme (pre-registered framing),98,47.0,48.0,38.3,57.7
+Money & buildings,Parent,any value from theme in Q8 top 3,1315,454.0,34.5,32.0,37.1
+Money & buildings,Parent,mean number of Q8 picks from theme (0-3),1315,,0.395,,
+Money & buildings,Parent,Q9 single choice from theme (pre-registered framing),1315,49.0,3.7,2.8,4.9
+Money & buildings,Non-parent,any value from theme in Q8 top 3,98,51.0,52.0,42.3,61.7
+Money & buildings,Non-parent,mean number of Q8 picks from theme (0-3),98,,0.653,,
+Money & buildings,Non-parent,Q9 single choice from theme (pre-registered framing),98,9.0,9.2,4.9,16.5
+Community,Parent,any value from theme in Q8 top 3,1315,213.0,16.2,14.3,18.3
+Community,Parent,mean number of Q8 picks from theme (0-3),1315,,0.174,,
+Community,Parent,Q9 single choice from theme (pre-registered framing),1315,33.0,2.5,1.8,3.5
+Community,Non-parent,any value from theme in Q8 top 3,98,17.0,17.3,11.1,26.0
+Community,Non-parent,mean number of Q8 picks from theme (0-3),98,,0.173,,
+Community,Non-parent,Q9 single choice from theme (pre-registered framing),98,6.0,6.1,2.8,12.7
+Student logistics & well-being,Parent,any value from theme in Q8 top 3,1315,1038.0,78.9,76.6,81.1
+Student logistics & well-being,Parent,mean number of Q8 picks from theme (0-3),1315,,1.045,,
+Student logistics & well-being,Parent,Q9 single choice from theme (pre-registered framing),1315,286.0,21.7,19.6,24.1
+Student logistics & well-being,Non-parent,any value from theme in Q8 top 3,98,72.0,73.5,64.0,81.2
+Student logistics & well-being,Non-parent,mean number of Q8 picks from theme (0-3),98,,0.929,,
+Student logistics & well-being,Non-parent,Q9 single choice from theme (pre-registered framing),98,31.0,31.6,23.3,41.4

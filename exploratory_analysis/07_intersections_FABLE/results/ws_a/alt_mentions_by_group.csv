@@ -1,0 +1,4 @@
+group,n,wrote_any_text,alt_mentions,pct_of_group,pct_of_writers,alt_mentions_reported,wilson_lo_of_group,wilson_hi_of_group
+Excluded,50,30,2,4.0,6.7,<10,1.1,13.5
+Non-parent,98,32,0,0.0,0.0,0,0.0,3.8
+Parent,1315,572,39,3.0,6.8,39,2.2,4.0

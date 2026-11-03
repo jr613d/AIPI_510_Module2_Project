@@ -1,0 +1,5 @@
+measure,n_schools,min,min_school,max,max_school,range,mean,sd,cv_pct,n_under_75,n_over_100,enrollment_weighted_mean
+2024-25 ADM / SAPFO capacity,11,64.8,Estes Hills,117.42,Seawell,52.6,86.2,15.1,17.5,4,1,87.2
+2026 forecast / 2026 program capacity,11,69.2,Northside,108.6,McDougle,39.4,83.3,11.6,13.9,3,1,84.2
+"2031 projected (study, program capacity)",11,55.0,Rashkis,118.0,McDougle,63.0,81.6,19.2,23.5,4,1,82.1
+2036 forecast / 2026 program capacity,11,55.4,Rashkis,114.6,McDougle,59.2,81.7,18.5,22.7,4,2,81.9

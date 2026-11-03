@@ -1,0 +1,14 @@
+challenge,n_distance_prioritizers,n_others,mean_prioritizers,mean_others,pct45_prioritizers,pct45_others,U,p,rank_biserial,p_bh
+Length of commute for students riding buses,123,1290,4.45,3.64,84.6,56.4,113622.0,0.0,0.432,0.0
+Retaining highly effective employees,123,1290,4.53,4.79,89.4,96.4,67103.0,0.0,-0.154,0.0001
+Unequal access to specialty programs,123,1290,2.89,3.47,30.1,52.3,59532.5,0.0,-0.25,0.0
+"Current school buildings do not fit the modern academic program (e.g. classroom layout and size, classroom flexibility, ADA compliance, etc.)",123,1290,2.97,3.38,31.7,46.3,64121.5,0.0003,-0.192,0.0009
+"Student populations have shifted, but school boundaries have not been adjusted to accommodate those changes",123,1290,3.01,3.39,35.0,48.0,66508.0,0.0022,-0.162,0.0053
+Cost of maintaining aging buildings,123,1290,3.24,3.56,39.8,53.6,66795.0,0.0024,-0.158,0.0053
+"Current school buildings do not fit the modern operational expectations (e.g. right sized car rider lines, sports facilities, suitable sidewalks, meal service program, air quality, etc.)",123,1290,3.19,3.48,37.4,51.4,67765.5,0.0056,-0.146,0.0105
+School buildings meeting safety codes,123,1290,4.15,4.39,73.2,84.5,69193.0,0.0075,-0.128,0.0123
+Classroom technology updates,123,1290,2.67,2.91,21.1,31.4,70511.5,0.0356,-0.111,0.0486
+Overcrowded school buildings,123,1290,3.72,3.92,61.0,70.5,70762.0,0.0374,-0.108,0.0486
+Partially empty school buildings,123,1290,2.5,2.71,16.3,21.6,71960.5,0.0766,-0.093,0.0906
+Appeal of the district to current and prospective students,123,1290,3.33,3.56,44.7,53.8,72876.0,0.1234,-0.081,0.1336
+The number of trailers / mobile classrooms,123,1290,2.98,3.08,31.7,35.7,75709.0,0.3883,-0.046,0.3883

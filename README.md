@@ -36,6 +36,7 @@ The respondent pool is about 13 parents for every non-parent, and the design is 
 │   └── final/                  results tables (generated)
 ├── figures/                    generated figures
 ├── exploratory_analysis/       post-project exploration, outside the pre-registered scope (see its README)
+│   └── 07_intersections_FABLE/ joins the survey to the Module 1 enrollment data; interactive data story in dashboard/
 └── src/
     ├── redact_raw_workbook.py       makes the committed workbook from the district's original (free text blanked)
     ├── one_hot_encode_q1.py         Q1 respondent roles -> one-hot table
@@ -90,6 +91,8 @@ The whole pipeline runs in under a minute. Random steps (permutations and bootst
 ## Exploratory analysis
 
 Work done after the pre-registered test, outside the project's scope, lives in [`exploratory_analysis/`](exploratory_analysis/). It has six sub-analyses: the Board vs. survey respondents and individual values, the 13 challenges, parents who work for CHCCS, write-in themes, rating patterns, and parent age and survey language. None of it is confirmatory; its README explains why it's kept separate and summarizes each finding.
+
+A seventh piece, [`07_intersections_FABLE`](exploratory_analysis/07_intersections_FABLE/), joins the survey to the Module 1 project's enrollment data (NC DPI membership, Census population, school capacity and geography) and asks what the two say together about the elementary redistricting the Board is deciding between November 2026 and January 2027. Its result is a self-contained interactive data story, [`seats_and_voices.html`](exploratory_analysis/07_intersections_FABLE/dashboard/seats_and_voices.html), with its own README and limitations file.
 
 ## AI use
 

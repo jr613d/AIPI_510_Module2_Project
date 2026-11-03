@@ -1,0 +1,4 @@
+school,enrollment_in_study,bus_eligible,buses,am_riders,ntz_tims,srts_walkers,srts_bikers,driven_by_parents,avg_ride_min,bus_eligible_pct,am_riders_pct_of_enrollment,driven_pct,note,source
+Ephesus,373,253,3,140,125,64,14,160,30,68.0,38.0,43.0,,"CHCCS closure study 2026-05-07, p.26 (Criteria #7 transportation)"
+Glenwood,391,389,7,170,2,38,7,210,38,99.0,43.0,54.0,study: most of the 38 observed walkers came from an adjacent retail lot; SRTS estimates 2-4 true walkers; ~220 driven,"CHCCS closure study 2026-05-07, p.26 (Criteria #7 transportation)"
+Seawell,402,282,4,147,120,25,23,207,28,70.0,37.0,51.0,,"CHCCS closure study 2026-05-07, p.26 (Criteria #7 transportation)"

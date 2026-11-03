@@ -1,0 +1,27 @@
+pattern,regex,respondents,pct_of_writers,parent,non_parent,excluded
+Northside,\bnorthside\b,11,1.7,10,1,0
+Carrboro,\bcarrboro\s+(elementary|elem\b|es\b)|\bCES\b,8,1.3,8,0,0
+"Carrboro (raw, any use)",\bcarrboro\b,22,3.5,19,0,3
+Carrboro (loose),(?<!chapel hill[- ])(?<!chapel hill and )(?<!town of )\bcarrboro\b(?!\s+(high|city|hs\b|town|planning|government|school district)),10,1.6,10,0,0
+Seawell,\bseawell\b,8,1.3,8,0,0
+Ephesus,\bephesus\b(?!\s+(church|rd\b|road|park)),2,0.3,2,0,0
+Estes Hills,\bestes\b(?!\s+(dr\b|drive)),6,0.9,5,0,1
+Frank Porter Graham,\bFPGB?\b|frank\s+porter|biling[uü]e?\b,8,1.3,8,0,0
+Glenwood,\bglenwood\b,26,4.1,23,2,1
+McDougle,\bmcdougle\b,11,1.7,10,0,1
+McDougle (elementary stated),\bmcdougle\s+(elementary|elem\b|es\b),4,0.6,4,0,0
+McDougle (middle stated),\bmcdougle\s+(middle|ms\b)|\bMMS\b,4,0.6,4,0,0
+Scroggs,\b(mary\s+)?scroggs\b,10,1.6,9,0,1
+Morris Grove,\bmorris\s+grove\b,0,0.0,0,0,0
+Rashkis,\brashkis\b,10,1.6,9,1,0
+Culbreth MS,\bculbreth\b(?!\s+ridge),7,1.1,6,0,1
+Smith MS,\bsmith\s+(middle|ms\b),2,0.3,2,0,0
+Phillips MS,\bphillips\b,2,0.3,1,0,1
+McDougle MS,\bmcdougle\s+(middle|ms\b)|\bMMS\b,4,0.6,4,0,0
+Chapel Hill HS,(?<!east )chapel\s+hill\s+high|\bCHHS\b,3,0.5,3,0,0
+East Chapel Hill HS,east\s+chapel\s+hill|\bECHHS\b,1,0.2,1,0,0
+Carrboro HS,carrboro\s+high|\bCHS\b,3,0.5,2,0,1
+prog: dual language / immersion,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,45,7.1,43,1,1
+prog: magnet / lottery,\bmagnet|\blottery,28,4.4,28,0,0
+McDougle (elementary or unspecified),derived,10,1.6,9,0,1
+McDougle (unspecified),derived,6,0.9,5,0,1

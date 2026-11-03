@@ -1,0 +1,6 @@
+theme,indicator,n,chi_square,p_monte_carlo,cramers_v,parent_pct,non_parent_pct,q_bh
+Student Learning,any in Q8 top 3,1413,4.94,0.0365,0.059,93.6,87.8,0.0608
+Money & buildings,any in Q8 top 3,1413,12.18,0.0009,0.093,34.5,52.0,0.0045
+Community,any in Q8 top 3,1413,0.09,0.7761,0.008,16.2,17.3,0.7761
+Student logistics & well-being,any in Q8 top 3,1413,1.62,0.2505,0.034,78.9,73.5,0.3131
+Student Learning,number of Student Learning picks in Q8 (0/1/2),1413,7.82,0.0206,0.074,42.8,31.6,0.0515

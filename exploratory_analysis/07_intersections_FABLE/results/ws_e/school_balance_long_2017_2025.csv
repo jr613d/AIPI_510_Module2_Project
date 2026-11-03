@@ -1,0 +1,109 @@
+school,year,pct_eds,chronic_pct,chronic_masked_lt5,adm
+"CHCCS (district, all grades)",2017,27.1,,,
+"CHCCS (district, all grades)",2018,26.1,9.89,False,
+"CHCCS (district, all grades)",2019,25.8,10.45,False,
+"CHCCS (district, all grades)",2020,27.4,5.72,False,
+"CHCCS (district, all grades)",2021,23.1,6.93,False,
+"CHCCS (district, all grades)",2022,22.6,19.61197807,False,
+"CHCCS (district, all grades)",2023,29.9,20.76271186,False,
+"CHCCS (district, all grades)",2024,31.1,20.75358852,False,
+"CHCCS (district, all grades)",2025,30.5,19.276270009999998,False,
+Carrboro,2017,30.3,,,498.0
+Carrboro,2018,31.0,,True,487.0
+Carrboro,2019,31.9,5.94,False,491.0
+Carrboro,2020,33.1,,True,513.0
+Carrboro,2021,28.2,12.55,False,478.0
+Carrboro,2022,28.0,15.049504950000001,False,491.0
+Carrboro,2023,34.6,15.43086172,False,487.0
+Carrboro,2024,34.9,10.33797217,False,489.0
+Carrboro,2025,33.5,8.70445344,False,484.0
+Ephesus,2017,26.8,,,410.0
+Ephesus,2018,27.3,,,402.0
+Ephesus,2019,31.8,,True,442.0
+Ephesus,2020,32.9,,True,393.0
+Ephesus,2021,34.0,7.180000000000001,False,348.0
+Ephesus,2022,32.5,15.193370170000001,False,341.0
+Ephesus,2023,35.1,12.12121212,False,349.0
+Ephesus,2024,37.2,7.2580645200000005,False,359.0
+Ephesus,2025,35.3,11.02362205,False,358.0
+Estes Hills,2017,27.7,,,505.0
+Estes Hills,2018,27.7,,True,493.0
+Estes Hills,2019,26.2,5.27,False,473.0
+Estes Hills,2020,30.3,,True,436.0
+Estes Hills,2021,26.1,5.06,False,375.0
+Estes Hills,2022,29.2,9.510869569999999,False,349.0
+Estes Hills,2023,31.5,13.42857143,False,334.0
+Estes Hills,2024,27.0,7.62942779,False,340.0
+Estes Hills,2025,27.7,8.01186944,False,324.0
+Frank Porter Graham,2017,39.9,,,579.0
+Frank Porter Graham,2018,40.6,6.87,False,596.0
+Frank Porter Graham,2019,41.3,6.16,False,615.0
+Frank Porter Graham,2020,42.5,,True,583.0
+Frank Porter Graham,2021,34.2,,True,563.0
+Frank Porter Graham,2022,29.2,23.46153846,False,510.0
+Frank Porter Graham,2023,40.6,23.26923077,False,509.0
+Frank Porter Graham,2024,41.1,14.500941619999999,False,510.0
+Frank Porter Graham,2025,39.1,10.2661597,False,510.0
+Glenwood,2017,28.2,,,483.0
+Glenwood,2018,24.9,5.16,False,503.0
+Glenwood,2019,23.6,5.34,False,490.0
+Glenwood,2020,21.3,,True,453.0
+Glenwood,2021,17.2,,True,431.0
+Glenwood,2022,17.1,8.98876404,False,420.0
+Glenwood,2023,19.8,10.83521445,False,431.0
+Glenwood,2024,21.2,5.4631829,False,407.0
+Glenwood,2025,20.3,5.67901235,False,390.0
+McDougle,2017,31.5,,,512.0
+McDougle,2018,30.5,10.280000000000001,False,525.0
+McDougle,2019,31.9,7.59,False,544.0
+McDougle,2020,31.3,,True,549.0
+McDougle,2021,22.4,7.59,False,487.0
+McDougle,2022,25.6,13.48547718,False,460.0
+McDougle,2023,31.9,15.49295775,False,478.0
+McDougle,2024,32.4,12.090163930000001,False,465.0
+McDougle,2025,32.9,13.97637795,False,482.0
+Morris Grove,2017,21.5,,,545.0
+Morris Grove,2018,20.3,,True,543.0
+Morris Grove,2019,17.9,5.4399999999999995,False,554.0
+Morris Grove,2020,17.6,,True,548.0
+Morris Grove,2021,13.8,,True,489.0
+Morris Grove,2022,13.4,8.64978903,False,460.0
+Morris Grove,2023,22.9,12.442396310000001,False,423.0
+Morris Grove,2024,21.8,9.48905109,False,399.0
+Morris Grove,2025,23.6,9.92366412,False,380.0
+Northside,2017,49.0,,,485.0
+Northside,2018,47.3,6.38,False,454.0
+Northside,2019,46.3,7.76,False,444.0
+Northside,2020,50.4,5.0200000000000005,False,458.0
+Northside,2021,40.8,10.42,False,403.0
+Northside,2022,47.2,17.661097849999997,False,389.0
+Northside,2023,47.5,15.97051597,False,381.0
+Northside,2024,53.1,21.16788321,False,380.0
+Northside,2025,52.9,18.70503597,False,392.0
+Rashkis,2017,34.1,,,508.0
+Rashkis,2018,32.5,5.25,False,476.0
+Rashkis,2019,29.6,8.129999999999999,False,460.0
+Rashkis,2020,35.0,,True,487.0
+Rashkis,2021,34.2,,True,443.0
+Rashkis,2022,35.0,21.90265487,False,424.0
+Rashkis,2023,44.3,20.39473684,False,421.0
+Rashkis,2024,47.4,20.38626609,False,424.0
+Rashkis,2025,48.5,16.88034188,False,427.0
+Scroggs,2017,26.6,,,504.0
+Scroggs,2018,27.7,6.569999999999999,False,502.0
+Scroggs,2019,26.4,7.21,False,472.0
+Scroggs,2020,25.6,,True,422.0
+Scroggs,2021,19.8,13.209999999999999,False,401.0
+Scroggs,2022,18.8,11.401425179999999,False,397.0
+Scroggs,2023,29.1,13.602015109999998,False,380.0
+Scroggs,2024,29.6,11.111111110000001,False,383.0
+Scroggs,2025,31.6,12.5,False,384.0
+Seawell,2017,24.9,,,547.0
+Seawell,2018,24.9,6.05,False,545.0
+Seawell,2019,24.5,5.76,False,503.0
+Seawell,2020,27.3,,True,514.0
+Seawell,2021,23.8,,True,468.0
+Seawell,2022,23.3,11.819887430000001,False,501.0
+Seawell,2023,30.7,14.519427400000001,False,464.0
+Seawell,2024,31.2,10.26200873,False,427.0
+Seawell,2025,32.5,8.93719807,False,391.0

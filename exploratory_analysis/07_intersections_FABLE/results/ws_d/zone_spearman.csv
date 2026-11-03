@@ -1,0 +1,17 @@
+x,y,n,spearman_rho,p,sample,p_bh
+bg_value_median,growth_2026_2031_pct,10,0.47,0.174,zones with values,0.348
+bg_value_median,growth_2026_2036_pct,10,0.48,0.162,zones with values,0.348
+bg_value_median,projected_utilization_2030_31,10,0.18,0.614,zones with values,0.893
+bg_value_median,adm_utilization_percent,10,-0.66,0.038,zones with values,0.348
+bg_value_median,walk_area_share,10,0.22,0.532,zones with values,0.851
+bg_value_median,walk_pct,7,0.64,0.119,SRTS schools,0.348
+renter_share,growth_2026_2031_pct,10,-0.59,0.074,zones with values,0.348
+renter_share,projected_utilization_2030_31,10,-0.38,0.275,zones with values,0.489
+renter_share,walk_pct,7,-0.68,0.094,SRTS schools,0.348
+walk_area_share,walk_pct,7,-0.14,0.76,SRTS schools,0.935
+walk_segment_share,walk_pct,7,0.11,0.819,SRTS schools,0.936
+area_sqmi,walk_pct,7,0.61,0.148,SRTS schools,0.348
+adm_per_sqmi,walk_pct,7,-0.61,0.148,SRTS schools,0.348
+area_sqmi,projected_utilization_2030_31,10,0.02,0.947,zones,0.947
+walk_area_share,projected_utilization_2030_31,10,0.13,0.718,zones,0.935
+walk_area_share,growth_2026_2031_pct,10,0.02,0.947,zones,0.947

@@ -1,0 +1,82 @@
+{
+ "closure_candidates": {
+  "schools": [
+   "Ephesus",
+   "Glenwood",
+   "Seawell"
+  ],
+  "srts_walkers_observed": 127,
+  "srts_bikers": 44,
+  "srts_active_observed": 171,
+  "srts_active_adjusted_glenwood": 137,
+  "enrollment_at_count": 1265,
+  "active_pct_observed": 13.5,
+  "active_pct_adjusted": 10.8,
+  "ntz_tims": 247,
+  "ntz_cost_at_936_53": 231323,
+  "study_stated_extra_cost": {
+   "Ephesus": 117000,
+   "Seawell": 112383,
+   "Glenwood": null
+  },
+  "students_within_1_5mi": 456,
+  "driven_by_parent": 577,
+  "am_riders": 457
+ },
+ "lowest_utilization_2031": {
+  "schools": [
+   "Rashkis",
+   "Northside",
+   "Scroggs"
+  ],
+  "srts_walkers_observed": 204,
+  "srts_bikers": 40,
+  "srts_active_observed": 244,
+  "enrollment_at_count": 1242,
+  "active_pct_observed": 19.6,
+  "projected_utilization_2031": {
+   "Rashkis": 55.0,
+   "Northside": 60.0,
+   "Scroggs": 62.0
+  }
+ },
+ "all_8_srts_elementary": {
+  "walkers": 419,
+  "bikers": 96,
+  "active": 515,
+  "enrollment_at_count": 3390,
+  "active_pct": 15.2,
+  "walk_pct_range": [
+   5.5,
+   28.3
+  ],
+  "missing_schools": [
+   "Carrboro",
+   "McDougle",
+   "Morris Grove"
+  ]
+ },
+ "district_bus": {
+  "buses": 55,
+  "riders": 3880,
+  "miles": 728860,
+  "cost_usd": 3013692,
+  "cost_per_mile": 4.13,
+  "cost_per_bus": 54794.4,
+  "cost_per_pupil": 936.53,
+  "source": "Closure study p.29 citing NCDPI Table 32, 2024-25"
+ },
+ "survey": {
+  "distance_top3_pct_all": 27.1,
+  "distance_q5_45_pct_all": 59.7,
+  "bus_top3_pct_all": 27.9,
+  "bus_q3_45_pct_all": 58.8,
+  "walk_theme_pct_of_writers": 20.6,
+  "bus_theme_pct_of_writers": 17.4,
+  "n_writers": 637,
+  "board_distance_45": 57,
+  "board_distance_top3": 0,
+  "board_bus_45": 43,
+  "board_bus_top3": 0
+ }
+}

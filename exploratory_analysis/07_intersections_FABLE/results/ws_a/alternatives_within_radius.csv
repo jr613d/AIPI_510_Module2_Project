@@ -1,0 +1,5 @@
+radius_miles,type,n_schools,total_enrollment,enrollment_year,vouchers_2024_sum,n_with_voucher_data
+5,charter,0,0,,0,0
+5,private,4,685,2021-22 (NCES survey),151,4
+10,charter,3,989,2024-25 ADM,0,0
+10,private,19,4373,2021-22 (NCES survey),489,18

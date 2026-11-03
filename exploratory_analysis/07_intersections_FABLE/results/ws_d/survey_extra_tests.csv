@@ -1,0 +1,7 @@
+test,chi2,p_mc,cramers_v,n,p_bh
+Parents: Q5 distance rated 4-5 x age band (30-39/40-49/50+),6.38,0.0411,0.07,1301,0.0616
+Parents: Q8 distance in top 3 x age band,0.63,0.7221,0.022,1301,0.7221
+Parent vs non-parent: Q8 distance in top 3,8.68,0.0035,0.078,1413,0.0105
+Parent vs non-parent: Q7 bus commute in top 3,8.53,0.0035,0.078,1413,0.0105
+"Parents: staff vs not, Q8 distance in top 3",4.57,0.0326,0.059,1315,0.0616
+English vs other-language sheet: Q5 distance rated 4-5,1.95,0.1756,0.037,1463,0.2107

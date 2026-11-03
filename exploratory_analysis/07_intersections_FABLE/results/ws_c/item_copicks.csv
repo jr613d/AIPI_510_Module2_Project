@@ -1,0 +1,40 @@
+target,co_item,lever,pct_among_pickers,pct_among_non_pickers,diff_pts
+Appeal of the district (Q7 top 3),Cost of maintaining aging buildings,SUPPLY-FACILITIES/COST,14.9,20.7,-5.8
+Appeal of the district (Q7 top 3),School buildings meeting safety codes,SUPPLY-FACILITIES/COST,25.9,51.8,-25.9
+Appeal of the district (Q7 top 3),Length of commute for students riding buses,LOGISTICS/COMMUNITY,22.0,30.0,-8.0
+Appeal of the district (Q7 top 3),Retaining highly effective employees,DEMAND-CAPTURE,83.6,79.8,3.8
+Appeal of the district (Q7 top 3),Partially empty school buildings,SUPPLY-FACILITIES/COST,2.4,4.9,-2.5
+Appeal of the district (Q7 top 3),Overcrowded school buildings,SUPPLY-FACILITIES/COST,8.0,27.5,-19.5
+Appeal of the district (Q7 top 3),The number of trailers / mobile classrooms,SUPPLY-FACILITIES/COST,0.9,4.4,-3.5
+Appeal of the district (Q7 top 3),"Current school buildings do not fit the modern academic program (e.g. classroom layout and size, classroom flexibility, ADA compliance, etc.)",SUPPLY-FACILITIES/COST,7.7,14.0,-6.3
+Appeal of the district (Q7 top 3),"Current school buildings do not fit the modern operational expectations (e.g. right sized car rider lines, sports facilities, suitable sidewalks, meal service program, air quality, etc.)",SUPPLY-FACILITIES/COST,5.7,10.3,-4.6
+Appeal of the district (Q7 top 3),Unequal access to specialty programs,DEMAND-CAPTURE,11.0,19.3,-8.3
+Appeal of the district (Q7 top 3),Classroom technology updates,DEMAND-CAPTURE,4.8,7.4,-2.6
+Appeal of the district (Q7 top 3),Appeal of the district to current and prospective students,DEMAND-CAPTURE,100.0,0.0,100.0
+Appeal of the district (Q7 top 3),"Student populations have shifted, but school boundaries have not been adjusted to accommodate those changes",SUPPLY-FACILITIES/COST,10.7,20.2,-9.5
+Retaining highly effective employees (Q7 top 3),Cost of maintaining aging buildings,SUPPLY-FACILITIES/COST,17.1,28.6,-11.5
+Retaining highly effective employees (Q7 top 3),School buildings meeting safety codes,SUPPLY-FACILITIES/COST,45.4,46.9,-1.5
+Retaining highly effective employees (Q7 top 3),Length of commute for students riding buses,LOGISTICS/COMMUNITY,25.3,39.9,-14.6
+Retaining highly effective employees (Q7 top 3),Retaining highly effective employees,DEMAND-CAPTURE,100.0,0.0,100.0
+Retaining highly effective employees (Q7 top 3),Partially empty school buildings,SUPPLY-FACILITIES/COST,3.0,9.9,-6.9
+Retaining highly effective employees (Q7 top 3),Overcrowded school buildings,SUPPLY-FACILITIES/COST,20.6,32.2,-11.6
+Retaining highly effective employees (Q7 top 3),The number of trailers / mobile classrooms,SUPPLY-FACILITIES/COST,3.1,5.5,-2.4
+Retaining highly effective employees (Q7 top 3),"Current school buildings do not fit the modern academic program (e.g. classroom layout and size, classroom flexibility, ADA compliance, etc.)",SUPPLY-FACILITIES/COST,10.4,21.2,-10.8
+Retaining highly effective employees (Q7 top 3),"Current school buildings do not fit the modern operational expectations (e.g. right sized car rider lines, sports facilities, suitable sidewalks, meal service program, air quality, etc.)",SUPPLY-FACILITIES/COST,8.1,13.9,-5.8
+Retaining highly effective employees (Q7 top 3),Unequal access to specialty programs,DEMAND-CAPTURE,15.8,23.8,-8.0
+Retaining highly effective employees (Q7 top 3),Classroom technology updates,DEMAND-CAPTURE,6.1,9.5,-3.4
+Retaining highly effective employees (Q7 top 3),Appeal of the district to current and prospective students,DEMAND-CAPTURE,24.6,20.1,4.5
+Retaining highly effective employees (Q7 top 3),"Student populations have shifted, but school boundaries have not been adjusted to accommodate those changes",SUPPLY-FACILITIES/COST,14.0,34.4,-20.4
+Fiscal responsibility (Q8 top 3),Educational excellence (quality & student outcomes),DEMAND-CAPTURE,86.8,82.4,4.4
+Fiscal responsibility (Q8 top 3),Student-centered focus,DEMAND-CAPTURE,31.5,56.9,-25.4
+Fiscal responsibility (Q8 top 3),Fiscal responsibility,SUPPLY-FACILITIES/COST,100.0,0.0,100.0
+Fiscal responsibility (Q8 top 3),Community engagement & trust building,LOGISTICS/COMMUNITY,6.2,14.7,-8.5
+Fiscal responsibility (Q8 top 3),Minimizing the distance students travel between home and school,LOGISTICS/COMMUNITY,12.5,30.5,-18.0
+Fiscal responsibility (Q8 top 3),Maximizing the use of currently available buildings,SUPPLY-FACILITIES/COST,9.9,8.2,1.7
+Fiscal responsibility (Q8 top 3),School safety,DEMAND-CAPTURE,27.8,54.1,-26.3
+Fiscal responsibility (Q8 top 3),Long-term planning,SUPPLY-FACILITIES/COST,9.9,10.0,-0.1
+Fiscal responsibility (Q8 top 3),Collaboration between schools and county leadership,LOGISTICS/COMMUNITY,0.7,2.0,-1.3
+Fiscal responsibility (Q8 top 3),Community partnerships,LOGISTICS/COMMUNITY,0.7,3.0,-2.3
+Fiscal responsibility (Q8 top 3),High quality school meal service,DEMAND-CAPTURE,3.3,13.9,-10.6
+Fiscal responsibility (Q8 top 3),Increasing the use of renewable energy districtwide,SUPPLY-FACILITIES/COST,1.5,3.9,-2.4
+Fiscal responsibility (Q8 top 3),Ensuring well-balanced student populations across all school sites,SUPPLY-FACILITIES/COST,9.5,17.2,-7.7

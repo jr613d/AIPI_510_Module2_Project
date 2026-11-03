@@ -1,0 +1,158 @@
+{
+  "representation": {
+    "n_respondents": 1463,
+    "parents_of_school_age_children_in_survey": 1323,
+    "parents_excl_non_chccs": 8,
+    "parents_excl_non_chccs_pct_of_school_age_parents": 0.6,
+    "parents_excl_non_chccs_wilson": [
+      0.31,
+      1.19
+    ],
+    "parents_any_non_chccs": 41,
+    "parents_any_non_chccs_pct": 3.1,
+    "parents_any_non_chccs_wilson": [
+      2.29,
+      4.18
+    ],
+    "pct_children_not_enrolled_2024": 8.5,
+    "pct_children_not_enrolled_2019": 5.6,
+    "underrep_factor_excl_2024": 14.1,
+    "underrep_factor_any_2024": 2.7
+  },
+  "age_pipeline": {
+    "per_year_cohort_under5_2024": 1231,
+    "per_year_cohort_5_9_2024": 1422,
+    "under5_vs_5_9_ratio_2024": 0.866,
+    "under5_vs_5_9_ratio_2010": 0.857,
+    "k5_2027_28_share_not_in_school_fall_2026": 15.5,
+    "k5_first_six_years_share_not_in_school_fall_2026": 52.3,
+    "note": "K-5 taken as ages 5-10 at fall. Children in K-5 at any point in 2027-28..2032-33 were born 2017-2027 (11 single-year cohorts). Born 2017-2021 are already enrolled in fall 2026; born 2022-2027 are not. Per-year sizes use the 2024 county 5-year bands divided by 5; births after 2024 assumed equal to the under-5 per-year size. County-wide, so includes Orange County Schools."
+  },
+  "parent_age_vs_county": {
+    "parents_30_39": 289,
+    "parents_40_49": 852,
+    "parents_30_39_share_of_30_49": 25.3,
+    "county_adults_30_39": 16607,
+    "county_adults_40_49": 17768,
+    "county_30_39_share_of_30_49": 48.3,
+    "future_parent_writeins": 19,
+    "future_parent_by_age": {
+      "40 to 49 years": 10,
+      "30 to 39 years": 8
+    },
+    "future_parent_by_group": {
+      "Excluded": 13,
+      "Parent": 6
+    }
+  },
+  "language": {
+    "non_english_n": 71,
+    "non_english_pct": 4.9,
+    "non_english_wilson": [
+      3.9,
+      6.1
+    ],
+    "spanish_pct": 2.5,
+    "east_asian_tabs_pct": 1.6,
+    "benchmarks_available": {
+      "district_multilingual_share": "not in local files (closure-study district table is an image)",
+      "school_multilingual_share": "Seawell 16.5% only (closure study text)",
+      "school_latinx_share": "Ephesus 13.0, Glenwood 4.6, Seawell 11.1 (closure study text)",
+      "school_asian_share": "Ephesus 14.3, Glenwood 38.0, Seawell 28.6 (closure study text)",
+      "district_eds_2024": 31.1,
+      "district_eds_2025": 30.5,
+      "survey_income_item": "none; the CPA asks no income, race/ethnicity, home-language or school-of-attendance question"
+    }
+  },
+  "staff": {
+    "chccs_staff_respondents_any_role": 182,
+    "teacher": 103,
+    "staff": 80,
+    "admin": 10,
+    "staff_who_are_also_current_parents": 84,
+    "staff_pct_of_respondents": 12.4,
+    "parent_respondents": 1315,
+    "students_2024_25_adm": 11065,
+    "parent_responses_per_100_students": 11.9,
+    "employee_count_found_locally": false,
+    "employee_count_regex_hits_board_deck": 0,
+    "employee_count_regex_hits_closure_study": 0,
+    "board_deck_salaries_benefits_total": "Salaries, Wages, and Employee Benefits: $78.7M"
+  },
+  "alt_mentions": {
+    "respondents_with_any_text": 634,
+    "respondents_mentioning_alternatives": 41,
+    "pct_of_all": 2.8,
+    "pct_of_writers": 6.5,
+    "among_parents_excl_non_chccs": "<10",
+    "among_parents_any_non_chccs": "<10",
+    "among_non_english": 0,
+    "caveat": "Non-English text fields in responses_wide are untranslated for several tabs, so keyword counts under-count non-English respondents. 'private' also matches 'private' in other senses.",
+    "dnpe_only_rows_within_10mi_excluded": 14,
+    "fisher_parent_vs_nonparent": {
+      "table": [
+        [
+          39,
+          1276
+        ],
+        [
+          0,
+          98
+        ]
+      ],
+      "odds_ratio": Infinity,
+      "p": 0.106
+    }
+  },
+  "pooled_vs_parent": {
+    "mean_abs_pooled_minus_parent": 0.58,
+    "max_abs_pooled_minus_parent": 1.4,
+    "mean_abs_pooled_minus_nonparent": 6.98,
+    "max_abs_pooled_minus_nonparent": 16.8,
+    "mean_abs_pooled_minus_district_reported": 0.28,
+    "largest_parent_nonparent_gaps": [
+      {
+        "section": "challenge",
+        "item": "Boundaries not adjusted to shifted student populations",
+        "pct_Parent": 16.7,
+        "pct_Non-parent": 34.7,
+        "parent_minus_nonparent": -18.0
+      },
+      {
+        "section": "challenge",
+        "item": "Cost of maintaining aging buildings",
+        "pct_Parent": 18.1,
+        "pct_Non-parent": 35.7,
+        "parent_minus_nonparent": -17.6
+      },
+      {
+        "section": "value",
+        "item": "Ensuring well-balanced student populations",
+        "pct_Parent": 14.8,
+        "pct_Non-parent": 29.6,
+        "parent_minus_nonparent": -14.8
+      },
+      {
+        "section": "value",
+        "item": "Maximizing the use of currently available buildings",
+        "pct_Parent": 7.5,
+        "pct_Non-parent": 21.4,
+        "parent_minus_nonparent": -13.9
+      },
+      {
+        "section": "value",
+        "item": "Minimizing the distance students travel",
+        "pct_Parent": 28.0,
+        "pct_Non-parent": 14.3,
+        "parent_minus_nonparent": 13.7
+      },
+      {
+        "section": "challenge",
+        "item": "Length of commute for students riding buses",
+        "pct_Parent": 29.0,
+        "pct_Non-parent": 15.3,
+        "parent_minus_nonparent": 13.7
+      }
+    ]
+  }
+}

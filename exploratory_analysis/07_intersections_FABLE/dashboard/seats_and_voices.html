@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Seats and Voices</title>
+<meta name="description" content="What the enrollment data and the community priorities survey say together about CHCCS elementary redistricting">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column for prose (about 68ch), charts widen to 880px, a full-width timeline band. */
+:root {
+  --bg: #f9f9f7;          /* page plane */
+  --surface: #fcfcfb;     /* chart surface */
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --ring: rgba(11,11,11,0.10);
+  --parents: #2a78d6;     /* categorical slot 1 */
+  --staff: #eb6834;       /* slot 2 */
+  --board: #1baf7a;       /* slot 3 */
+  --seq-2: #86b6ef; --seq-4: #3987e5; --seq-6: #184f95;
+  --de: #c3c2b7;          /* de-emphasis */
+  --wash: rgba(42,120,214,0.10);
+  --band: rgba(137,135,129,0.12);
+  --display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --parents: #3987e5; --staff: #d95926; --board: #199e70;
+    --seq-2: #1c5cab; --seq-4: #3987e5; --seq-6: #9ec5f4; --de: #52514e;
+    --wash: rgba(57,135,229,0.14); --band: rgba(195,194,183,0.10);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+  --parents: #3987e5; --staff: #d95926; --board: #199e70;
+  --seq-2: #1c5cab; --seq-4: #3987e5; --seq-6: #9ec5f4; --de: #52514e;
+  --wash: rgba(57,135,229,0.14); --band: rgba(195,194,183,0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 17px; line-height: 1.55;
+  padding-block: 0 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: inherit; text-decoration-color: var(--muted); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--parents); outline-offset: 2px; }
+.col { max-width: 68ch; margin-inline: auto; }
+.wide { max-width: 880px; margin-inline: auto; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.55rem, 3.4vw, 2.05rem); margin-top: 0.4rem; }
+h3 { font-size: 1.2rem; margin-top: 1.6rem; }
+p { margin: 0 0 1em; }
+.eyebrow { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); font-weight: 600; }
+.lede { font-size: 1.22rem; line-height: 1.5; color: var(--ink); }
+.byline { color: var(--ink-2); font-size: 0.95rem; }
+header.hero { padding-block: 56px 28px; }
+header.hero .col > * + * { margin-top: 18px; }
+.audience { border-top: 1px solid var(--grid); border-bottom: 1px solid var(--grid); padding: 14px 0; font-size: 0.98rem; color: var(--ink-2); }
+.audience strong { color: var(--ink); }
+
+/* Timeline band */
+.timeline { margin: 28px auto 8px; }
+.timeline ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px 0; }
+.timeline li { padding: 12px 12px 0 0; font-size: 0.9rem; position: relative; min-width: 0; border-top: 2px solid var(--axis); }
+.timeline li::before { content: ""; position: absolute; top: -8px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--axis); border: 2px solid var(--bg); }
+.timeline li.survey::before { background: var(--parents); }
+.timeline li.vote::before { background: var(--ink); }
+.timeline .when { display: block; font-weight: 600; color: var(--ink); }
+.timeline .what { color: var(--ink-2); }
+
+/* Chapter nav */
+nav.toc { margin: 28px auto 8px; font-size: 0.95rem; }
+nav.toc ol { margin: 0; padding-left: 1.3em; columns: 2; column-gap: 32px; }
+nav.toc li { break-inside: avoid; padding: 2px 0; }
+@media (max-width: 560px) { nav.toc ol { columns: 1; } }
+
+section.chapter { padding-block: 40px 8px; border-top: 1px solid var(--grid); margin-top: 32px; }
+section.chapter .num { font-family: var(--display); color: var(--muted); font-size: 1rem; font-weight: 500; }
+.callout { background: var(--surface); border-left: 3px solid var(--parents); padding: 14px 18px; margin: 20px 0; font-size: 1.02rem; }
+.callout.staff { border-left-color: var(--staff); }
+.callout.board { border-left-color: var(--board); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 22px 0; }
+.kpi { background: var(--surface); border: 1px solid var(--ring); padding: 14px 16px; min-width: 0; }
+.kpi .label { font-size: 0.85rem; color: var(--ink-2); }
+.kpi .value { font-size: clamp(1.45rem, 2.3vw, 1.9rem); font-weight: 600; line-height: 1.15; margin-top: 4px; }
+.kpi .sub { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+
+/* Chart figure */
+figure.chart { margin: 26px auto; background: var(--surface); border: 1px solid var(--ring); padding: 18px 18px 12px; }
+figure.chart .head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+figure.chart .title { font-weight: 600; font-size: 1.05rem; line-height: 1.3; margin: 0; }
+figure.chart .subtitle { color: var(--ink-2); font-size: 0.92rem; margin: 4px 0 0; }
+figure.chart .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 12px 0 4px; font-size: 0.85rem; color: var(--ink-2); }
+.legend .key { display: inline-flex; align-items: center; gap: 6px; }
+.legend .sw { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+.legend .sw.line { height: 2px; width: 18px; border-radius: 1px; }
+.legend .sw.dot { border-radius: 50%; }
+.legend .sw.hollow { background: transparent !important; border: 2px solid var(--ink-2); }
+figure.chart .mount { width: 100%; min-width: 0; }
+figure.chart svg { display: block; width: 100%; height: auto; font-family: var(--body); }
+figure.chart .foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin-top: 8px; font-size: 0.8rem; color: var(--muted); }
+figure.chart .foot .src { min-width: 0; }
+figure.chart button.tbl { background: none; border: 1px solid var(--axis); color: var(--ink-2); font: inherit; font-size: 0.8rem; padding: 3px 9px; border-radius: 3px; cursor: pointer; }
+figure.chart button.tbl:hover { border-color: var(--ink-2); }
+figure.chart .tablewrap { overflow-x: auto; margin-top: 10px; }
+figure.chart table { border-collapse: collapse; font-size: 0.85rem; width: 100%; }
+figure.chart th, figure.chart td { text-align: left; padding: 5px 10px 5px 0; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+figure.chart td.num, figure.chart th.num { text-align: right; font-variant-numeric: tabular-nums; }
+svg text { fill: var(--ink-2); font-size: 12px; }
+svg text.lab { fill: var(--ink); }
+svg text.val { fill: var(--ink); font-weight: 600; }
+svg .grid line { stroke: var(--grid); stroke-width: 1; }
+svg .axis line, svg .axis path { stroke: var(--axis); stroke-width: 1; fill: none; }
+svg .ring { stroke: var(--surface); stroke-width: 2; }
+.tip { position: fixed; pointer-events: none; z-index: 20; background: var(--surface); color: var(--ink); border: 1px solid var(--ring); box-shadow: 0 4px 16px rgba(0,0,0,0.12); padding: 8px 10px; font-size: 0.85rem; line-height: 1.35; max-width: 260px; opacity: 0; transition: opacity 0.1s; }
+.tip strong { font-size: 0.95rem; }
+.tip .k { display: inline-block; width: 14px; height: 2px; vertical-align: middle; margin-right: 6px; }
+
+table.plain { border-collapse: collapse; width: 100%; font-size: 0.95rem; margin: 18px 0; }
+table.plain th, table.plain td { text-align: left; padding: 7px 12px 7px 0; border-bottom: 1px solid var(--grid); vertical-align: top; white-space: nowrap; }
+table.plain td.num, table.plain th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tablewrap { overflow-x: auto; }
+ul.takeaways { padding-left: 1.2em; }
+ul.takeaways li { margin-bottom: 12px; }
+ul.takeaways li strong { display: block; }
+.limits li { margin-bottom: 8px; }
+details { margin: 10px 0; }
+summary { cursor: pointer; font-weight: 600; }
+footer { margin-top: 48px; color: var(--muted); font-size: 0.85rem; }
+.small { font-size: 0.9rem; color: var(--ink-2); }
+</style>
+</head>
+<body>
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<header class="hero">
+  <div class="col">
+    <div class="eyebrow">Chapel Hill-Carrboro City Schools · elementary redistricting · exploratory analysis</div>
+    <h1>Seats and Voices</h1>
+    <p class="lede">The district is redrawing its elementary boundaries with two kinds of evidence on the table: twenty years of enrollment data that explain why the seats emptied, and a community survey about what should matter when they are refilled. Read together, the two say something neither says alone. The survey is a survey of today's parents of today's students. The seats that need filling belong to the children who are not here yet, the families who already left, and the two schools whose students the survey's parents are least willing to move.</p>
+    <p class="byline">Jim Redden, with Claude Fable 5.1 as analysis partner · November 2, 2026 · Built from the AIPI 510 Module 1 enrollment project and the Module 2 survey project, with no new data collection.</p>
+    <div class="audience"><strong>Who this is for.</strong> A parent in the district trying to understand the decision, and the seven members of the CHCCS Board of Education who will see draft boundary scenarios in November and vote on January 21, 2027. Every number comes from a public source and every chart has a table view. Nothing here is a confirmatory test; the only pre-registered result is the one in the Module 2 report.</div>
+  </div>
+</header>
+
+<div class="timeline wide">
+  <ol>
+    <li><span class="when">2019 to 2024</span><span class="what">Elementary enrollment falls 16.5%; two-thirds fewer children, one-third enrolling elsewhere</span></li>
+    <li><span class="when">Dec 11, 2025</span><span class="what">Board retreat: five-year deficit of $37.9M at current staffing</span></li>
+    <li><span class="when">Mar to May 2026</span><span class="what">Closure study of Ephesus, Glenwood and Seawell</span></li>
+    <li class="vote"><span class="when">Jun 4, 2026</span><span class="what">Board votes unanimously to close Glenwood by fall 2027</span></li>
+    <li><span class="when">Aug to Sep 17, 2026</span><span class="what">Mandarin dual-language track moved to Rashkis; World Language track ended (4-2)</span></li>
+    <li class="survey"><span class="when">Sep 28 to Oct 9, 2026</span><span class="what">Community Priorities Assessment, 1,463 responses</span></li>
+    <li><span class="when">Nov 2026</span><span class="what">Draft boundary scenarios</span></li>
+    <li class="vote"><span class="when">Jan 21, 2027</span><span class="what">Board vote on final boundaries</span></li>
+  </ol>
+</div>
+
+<nav class="toc col" aria-label="Chapters">
+  <ol>
+    <li><a href="#ch1">Two datasets, one decision</a></li>
+    <li><a href="#ch2">Who answered, and who the boundaries are for</a></li>
+    <li><a href="#ch3">The money depends on which forecast</a></li>
+    <li><a href="#ch4">The board's top challenge, in one number</a></li>
+    <li><a href="#ch5">What "well-balanced" means</a></li>
+    <li><a href="#ch6">Distance, walking and the price of a rider</a></li>
+    <li><a href="#ch7">The loudest voice is about trust</a></li>
+    <li><a href="#ch8">For the board</a></li>
+  </ol>
+</nav>
+
+<!-- ------------------------------------------------------------------ 1 -->
+<section class="chapter" id="ch1">
+  <div class="col">
+    <div class="num">Chapter 1</div>
+    <h2>Two datasets, one decision</h2>
+    <p>The Module 1 project stacked four measures of the same community for 2019 to 2024. The district's population grew slightly. Its school-age population shrank. Its enrollment shrank faster, and its elementary enrollment fastest of all. The gap between the second and third lines is the part of the decline that is not demographic: children who live in the district and go to school somewhere else.</p>
+  </div>
+  <figure class="chart wide" id="fig-layers"></figure>
+  <div class="col">
+    <p>Holding the 2019 capture rate fixed splits the 1,069 lost K-12 students into two parts: 714 (67%) because fewer school-age children live here, and 355 (33%) because a smaller share of the ones who do enroll in CHCCS. The first part no board can change. The second is the part a district can compete for.</p>
+    <p>The Module 2 project then asked whether parents and non-parents chose different top priorities in the district's Community Priorities Assessment. They did, by a small margin: 70.5% of parents put a Student Learning value first, against 50.5% of non-parents, who are mostly CHCCS staff. This page starts where that report stopped, by putting the survey's 26 rated items next to the two drivers of the decline.</p>
+  </div>
+  <figure class="chart wide" id="fig-levers"></figure>
+  <div class="col">
+    <p>None of the 26 items asks about the number of children in the district, birth rates or housing cost. Eight ask about things that shape whether resident families choose CHCCS: the district's appeal, access to specialty programs, retaining effective teachers, educational excellence, safety. Thirteen ask about buildings, boundaries and money. Five ask about getting to school and the district's relationship with the community. The survey measures the district's offer and its plant. It cannot measure its demography, so it cannot be read as a diagnosis of the decline.</p>
+    <p>Where each group spends its top-three picks shows which question it thinks it is answering. Other parents put 56% of their picks on the "will families choose us" items and 31% on buildings and money. The board, answering the same instrument, put 42% and 56%. Staff sit in between. Parents are answering a question about demand. The board is answering a question about supply.</p>
+  </div>
+  <figure class="chart wide" id="fig-lever-share"></figure>
+</section>
+
+<!-- ------------------------------------------------------------------ 2 -->
+<section class="chapter" id="ch2">
+  <div class="col">
+    <div class="num">Chapter 2</div>
+    <h2>Who answered, and who the boundaries are for</h2>
+    <p>Ninety percent of the 1,463 responses came from parents of current CHCCS students. That is not a flaw in the survey so much as a fact about it, and it has three consequences for a board reading the pooled results.</p>
+    <h3>The families who left are nearly absent</h3>
+    <p>In 2024 about 1,043 of the district's 12,309 school-age residents were not enrolled in CHCCS, 8.5%, up from 5.6% in 2019. In the survey, 8 of the 1,323 respondents who are parents of school-age children have all their children outside CHCCS, 0.6%. Relative to a proportional sample, that group is under-represented by a factor of about 14. Even the loosest definition, any child outside CHCCS, reaches only 3.1%. The alternatives are real: 19 private and 3 charter schools serve K-5 within ten miles, and county-wide non-CHCCS enrollment grew 32% between 2015 and 2025. The survey contains almost nobody who uses them.</p>
+  </div>
+  <figure class="chart wide" id="fig-represent"></figure>
+  <div class="col">
+    <h3>Half of the children the boundaries will serve are not in school yet</h3>
+    <p>New boundaries take effect in fall 2027 and the district reviews them about every five years. Children who will be in K-5 at some point in those first six years were born between 2017 and 2027. Using Orange County's 2024 age structure, the cohorts born 2022 and later, the ones not enrolled when the survey ran, are about 52% of that pool. Their parents had no role to select; 19 wrote one in. Seven respondents identified only as county residents. The survey heard from the families who will have left elementary school before the boundaries have run their course.</p>
+  </div>
+  <figure class="chart wide" id="fig-ladder"></figure>
+  <div class="col">
+    <h3>The pooled results are the parents' results</h3>
+    <p>The district reported every item pooled. Across all 26 items, the pooled top-three percentage sits a mean of 0.6 points from the parent-only figure and 7.0 points from the staff figure. The items where parents and staff disagree most are the ones the board cares most about. On every one of the six largest gaps, the board's own answers sit on the staff side.</p>
+  </div>
+  <figure class="chart wide" id="fig-dumbbell"></figure>
+  <div class="col">
+    <p class="small">The 84 parents who also work for CHCCS answer like staff on these items, not like other parents, which the Module 2 exploratory work already found. The "Retaining highly effective employees" consensus (80% top-three) is an English-form consensus: respondents on the seven non-English forms chose it at 60%.</p>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------------ 3 -->
+<section class="chapter" id="ch3">
+  <div class="col">
+    <div class="num">Chapter 3</div>
+    <h2>The money depends on which forecast</h2>
+    <p>The district's case for closing a school is financial. State funding follows enrollment at about $8,356 per pupil in FY2027, and the December 2025 retreat deck projected a cumulative $38.3M reduction in state funding over five years. That figure replicates exactly as the deck's year-by-year ADM shortfall times its per-pupil rate, which means the same arithmetic can price the two halves of the Module 1 decomposition, and alternative enrollment paths.</p>
+  </div>
+  <div class="wide kpis" id="kpis-money"></div>
+  <div class="col">
+    <p>The 714 demographic students are worth about $6.0M a year in state funding at the FY2027 rate. The 355 capture-rate students are worth about $3.0M a year. Fewer children is not recoverable: no capture rate could have held 2024 enrollment at the 2019 level, because it would have needed 100.2% of resident children. The capture third is the recoverable part, and it is the part the survey's parents are already thinking about: a quarter of them rank "Appeal of the district" in their top three challenges, against 12% of staff.</p>
+    <h3>Three forecasts, one and a half schools apart</h3>
+    <p>The board is looking at two projections of its own. The closure study adopted Carolina Demography's elementary forecast, which is nearly flat: 4,294 students in 2025-26, 4,177 in 2031, 4,183 in 2036. The retreat deck projected district-wide ADM falling 2.4% a year. Scaled to elementary, the deck reaches about 3,897 in 2031. The last six years of actual elementary ADM fell 3.2% a year.</p>
+  </div>
+  <figure class="chart wide" id="fig-forecast"></figure>
+  <div class="col">
+    <p>Rolling the 2024 figures forward with the Census trend in school-age residents produces two simple scenarios. If the capture rate holds at its 2024 level, elementary enrollment lands near 4,144 in 2031, within 33 students of the closure study's line. If the capture rate keeps sliding at its 2019-24 pace, it lands near 3,987. The deck is steeper than either. In the deck's own units, demographics alone would produce a five-year state-funding reduction of about $21.5M; demographics plus a continuing capture slide, $30.7M; the deck's path, $38.3M.</p>
+  </div>
+  <div class="wide tablewrap"><table class="plain" id="tbl-scenarios"></table></div>
+  <div class="col">
+    <p>The deck's projection is cohort-based, so it can see small kindergarten classes rolling up through the grades in a way a flat-capture model cannot, and the deck itself notes it was prepared before Carolina Demography's final data. The point is not that one is right. It is that the district is sizing its buildings on the flat line and its deficit on the steep one, and the difference in 2031 is between 0.7 and 1.6 average elementary schools of students.</p>
+    <div class="callout board">The survey item closest to this question is "Long-term planning." All seven board members rated it 4 or 5 and three ranked it in their top three. Among respondents, 67% rated it high and 10% ranked it. The group that most values long-term planning is the one holding two incompatible long-term projections.</div>
+    <h3>Fiscal responsibility has a constituency, and the next decade's parents are not in it</h3>
+    <p>Two-thirds of respondents rated "Fiscal responsibility" 4 or 5, and 19% kept it in their top three values. The share that keeps it rises with age: 11% of respondents in their 30s, 20% in their 40s, 30% of those 50 to 64. The board rated it 100% and ranked it 57%. The parents of the children in the cohort ladder above are the ones least likely to keep money in their top three when forced to choose.</p>
+  </div>
+  <figure class="chart wide" id="fig-fiscal"></figure>
+</section>
+
+<!-- ------------------------------------------------------------------ 4 -->
+<section class="chapter" id="ch4">
+  <div class="col">
+    <div class="num">Chapter 4</div>
+    <h2>The board's top challenge, in one number</h2>
+    <p>Six of seven board members put "Student populations have shifted, but school boundaries have not been adjusted" in their top three challenges. Seventeen percent of parents did, and 35% of staff. The district's own forecast, run at current boundaries, says the board is right that the imbalance is growing.</p>
+  </div>
+  <figure class="chart wide" id="fig-slope"></figure>
+  <div class="col">
+    <p>On a consistent program-capacity basis, the spread between the emptiest and fullest elementary school grows from 39 points in 2026 to 63 points in 2031, and the coefficient of variation across the eleven schools rises from 14% to 23%. The district-wide average barely moves, from 83% to 82%. The problem is not how many seats there are. It is where they are.</p>
+    <h3>The closure did not close the empty schools</h3>
+    <p>The three schools the district studied were chosen on building age and recent decline: Glenwood opened in 1952, Seawell in 1969, Ephesus in 1972, and all three lost about a fifth of their students since 2019. On the forecast, Ephesus and Glenwood reach 100% of program capacity by 2031. The three schools forecast to be emptiest are Rashkis (55%), Northside (60%) and Scroggs (62%). The board chose Glenwood because it is a lottery magnet with no attendance boundary, which displaces fewer students and avoids new busing. That reasoning is sound on its own terms, and it leaves the three emptiest schools open. Filling them is what the November scenarios have to do.</p>
+  </div>
+  <div class="wide tablewrap"><table class="plain" id="tbl-sixschools"></table></div>
+  <div class="col">
+    <p class="small">Building years are published only for the three studied schools. Utilization in the first column uses 2024-25 ADM against certified SAPFO capacity; the second uses the closure study's 2031 projection against 2026 program capacity, which counts program and room use and excludes mobile classrooms. The two measures barely agree with each other across the eleven schools, so compare within a column, not across.</p>
+    <div class="callout">Respondents who named a specific school in their write-ins rated the boundaries challenge lower than everyone else (31% vs 48% rating it 4 or 5). The people most attached to the current map are the ones least persuaded by the premise of redrawing it.</div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------------ 5 -->
+<section class="chapter" id="ch5">
+  <div class="col">
+    <div class="num">Chapter 5</div>
+    <h2>What "well-balanced" means</h2>
+    <p>"Ensuring well-balanced student populations across all school sites" is the single value on which parents and staff disagree most. Half of other parents rated it 4 or 5; 84% of staff did, and so did 83% of the parents who work for CHCCS. On the single-choice question it was the top value for 2.5% of other parents and 18% of staff. The gap is not a rating-style artifact: excluding the respondents who gave ten or more values a 5 moves it by less than a point.</p>
+  </div>
+  <figure class="chart wide" id="fig-wb"></figure>
+  <div class="col">
+    <p>The survey never defines "well-balanced." Enrollment against capacity, or demographics, or both? Respondents' other choices say which they heard. People who kept it in their top three values were 3.5 times as likely to also flag "boundaries not adjusted" as a top challenge, and 2.8 times as likely to flag "partially empty buildings." The 69 respondents whose write-ins raised equity were 2.6 times as likely to keep it. In respondents' minds "balance" is a boundary-and-capacity idea first and an equity idea second. The data show both kinds of imbalance, and they point at the same two schools.</p>
+  </div>
+  <figure class="chart wide" id="fig-or"></figure>
+  <div class="col">
+    <h3>The demographic spread has widened</h3>
+    <p>NC DPI reports each school's share of economically disadvantaged students. Across the eleven elementary schools the gap between the highest and lowest share grew from 27.5 points in 2017 to 32.6 in 2025. Northside has been the top of the range every year and stands at 52.9%. Glenwood, the school that is closing, is the bottom at 20.3%, down from 28.2%. Rashkis moved the most, from 34.1% to 48.5%.</p>
+  </div>
+  <figure class="chart wide" id="fig-edsband"></figure>
+  <div class="col">
+    <h3>The emptiest schools are the poorest</h3>
+    <p>Northside and Rashkis are the two most economically disadvantaged elementary schools in the district. They are also the two the forecast says will be emptiest in 2031, and between them they hold 402 of the 1,064 projected empty elementary seats, 38%. Across all eleven schools there is no clean gradient (Spearman rank correlation about −0.3 on eleven points), so this is a fact about two schools, not a law. But they are the two schools a boundary process most needs to fill, and filling them from neighboring zones moves students across the district's socioeconomic range in a way that filling Scroggs or Morris Grove would not.</p>
+    <p>Rashkis is also where the board sent Glenwood's Mandarin dual-language track, a program drawn by lottery from the district's least economically disadvantaged school. Rashkis staff and parents told the board in September they feared displacement. Whatever the scenarios do with the boundaries, the demographic question and the capacity question arrive at Rashkis together.</p>
+  </div>
+  <figure class="chart wide" id="fig-scatter"></figure>
+  <div class="col">
+    <p class="small">One more pattern worth carrying into the scenarios: the schools that lost the most students since 2019 are the low-poverty ones (Estes Hills and Morris Grove each down 31%), while the forecast puts the next decade's losses at the high-poverty ones (Rashkis down 30% from 2026 to 2036). The past and the forecast point at different schools. Economic disadvantage tracks school performance grades and chronic absenteeism across the eleven schools, which is what the gradient means for students.</p>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------------ 6 -->
+<section class="chapter" id="ch6">
+  <div class="col">
+    <div class="num">Chapter 6</div>
+    <h2>Distance, walking and the price of a rider</h2>
+    <p>"Minimizing the distance students travel" is the value where the board's rating and its ranking diverge most. Four of seven board members rated it 4 or 5; none put it in their top three. Among respondents, 60% rated it high and 27% ranked it, and parents ranked it twice as often as staff (28% vs 14%). The bus-commute challenge shows the same split. Walking and walk zones is the second most common theme in the free text, raised by one in five of the 637 people who wrote anything.</p>
+  </div>
+  <figure class="chart wide" id="fig-distance"></figure>
+  <div class="col">
+    <h3>Walk-zone lines do not predict who walks</h3>
+    <p>The Carrboro GIS map that feeds the Module 1 atlas flags 40 of 166 assignment segments as elementary walk zones. The Town of Chapel Hill counted who arrived on foot one November morning in 2024. The two do not agree. Seawell has the largest walk-flagged share of its zone (56%) and the lowest observed walk rate (5.5%); no Seawell student lives within half a mile of the campus. Scroggs has 8% of its zone flagged and the highest walk rate in the district (28%). A boundary scenario that "preserves walk zones" on the map will not necessarily preserve walking.</p>
+  </div>
+  <figure class="chart wide" id="fig-walkflag"></figure>
+  <div class="col">
+    <h3>The empty schools are where the walkers are</h3>
+    <p>At the three schools the district studied for closure, the Town counted 171 walkers and bikers (137 after the Town's correction for Glenwood, where most "walkers" came from an adjacent parking lot). At the three schools forecast to be emptiest, it counted 244. Scroggs alone, with 131, nearly matches the three studied schools combined. The under-filled schools the scenarios have to fill are the ones with the most children arriving on foot.</p>
+  </div>
+  <figure class="chart wide" id="fig-walkers"></figure>
+  <div class="col">
+    <p>The closure study put a price on moving a walker onto a bus: the district's average cost per rider is $936.53 a year, and closing Ephesus or Seawell would have added about 120 to 125 riders, roughly $112,000 to $117,000 a year, and 9 to 12 minutes to the affected routes. The same arithmetic applies to any boundary that moves a walking family out of walking distance. At the three studied schools the largest mode of arrival was a parent's car (46% of students), and only about half of bus-eligible students rode.</p>
+    <div class="callout">The 123 respondents who chose distance as their single top value rate the bus-commute challenge far above everyone else (85% vs 56%) and rate the boundaries challenge below everyone else (35% vs 48%). The constituency most invested in proximity is the one least persuaded by the challenge the board ranks first. That is the collision the boundary process has to manage.</div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------------ 7 -->
+<section class="chapter" id="ch7">
+  <div class="col">
+    <div class="num">Chapter 7</div>
+    <h2>The loudest voice is about trust</h2>
+    <p>The survey did not ask which school a respondent's children attend, but 634 people wrote something, and 79 named an elementary school. One school dominates. Twenty-six writers named Glenwood; the next most-named school, Northside, had eleven, and Morris Grove, which lost 31% of its students since 2019, had none. Fourteen of the 26 Glenwood mentions sit beside words about closing. None mention walking.</p>
+    <p>What Glenwood writers raise is not buildings. More than half of them (54%) wrote about trust, transparency or communication, against 10% of all other writers, the strongest school-by-theme association in the data by a wide margin. Half wrote about teachers and staff. The survey opened eleven days after the board ended Glenwood's World Language track, after the district had said in June that the programs would be preserved regardless of building.</p>
+  </div>
+  <figure class="chart wide" id="fig-glenwood"></figure>
+  <div class="col">
+    <h3>Exit talk is rare, and it is about programs</h3>
+    <p>Only 41 respondents, 2.8% of the sample, mention private schools, charters, home schooling, vouchers or leaving the district anywhere in their free text, and all of them are parents. Where it appears, it travels with special programs (39% of these writers, 2.8 times the rate of other writers), housing and growth (34%, 3.3 times) and neighborhood schools (27%, 2.5 times). It does not travel with money. The Glenwood PTA's own survey of its families, reported in July, found that 76% had chosen the district for the program and 41% said they were likely to leave if it was split. That is Module 1's capture-rate third, in miniature, and it is a redistricting lever, not a budget line.</p>
+  </div>
+  <figure class="chart wide" id="fig-exit"></figure>
+</section>
+
+<!-- ------------------------------------------------------------------ 8 -->
+<section class="chapter" id="ch8">
+  <div class="col">
+    <div class="num">Chapter 8</div>
+    <h2>For the board</h2>
+    <p>Six things the two datasets say together that neither says alone, each with the number that carries it.</p>
+    <ul class="takeaways">
+      <li><strong>Read the survey as what parents of current students want, and say so.</strong> Pooled results sit 0.6 points from the parent figure and 7 points from staff. The families who left (14x under-represented) and the families not yet arrived (about half of the first six years' K-5 children) are the ones the boundaries are being drawn for.</li>
+      <li><strong>Name the forecast the scenarios are built on, and the one the deficit is built on.</strong> The closure study's flat line is the demographics-only path; the deck's path is steeper than a continued capture slide. The two differ by 0.7 to 1.6 schools' worth of students in 2031 and by $21.5M to $38.3M in the deck's own arithmetic.</li>
+      <li><strong>Treat the capture third as the recoverable third.</strong> About $3.0M a year in state funding rides on families who live here choosing CHCCS. "Appeal of the district" is the survey item that measures it, and a quarter of parents already rank it. Program decisions like the Mandarin track are capture decisions.</li>
+      <li><strong>Say which "balance" each scenario balances.</strong> Respondents heard capacity (odds ratio 3.5 with the boundaries challenge) more than equity (2.6). The emptiest two schools in 2031 are the two most economically disadvantaged, holding 38% of empty seats, and one of them is receiving the program from the least disadvantaged school.</li>
+      <li><strong>Price walkers, not walk zones.</strong> Map flags do not predict walking (Seawell 56% flagged, 5.5% walking; Scroggs 8% and 28%). The schools to be filled have 244 observed walkers and bikers against 137 to 171 at the studied schools, and the district's own figure for converting one is $937 and 9 to 12 minutes a year.</li>
+      <li><strong>Expect the loudest school-specific feedback to be about process.</strong> Glenwood writers raise trust at five times the rate of everyone else, and the only exit talk in the survey is about programs and growth, not money. The PTA's 41% is the number to watch.</li>
+    </ul>
+    <h3>What this cannot say</h3>
+    <ul class="limits">
+      <li><strong>Nothing here is confirmatory.</strong> The only pre-registered test is the Module 2 parent vs non-parent comparison. Every test on this page was chosen after looking at the data and is corrected within its family, but a reader should treat p-values as flags, not findings.</li>
+      <li><strong>The survey is a self-selected sample with no geography.</strong> It does not record a respondent's school, neighborhood, income or home language, so none of the school-level comparisons can be made at the respondent level. School mentions in free text are a proxy for attachment, not attendance.</li>
+      <li><strong>"Non-parent" means staff.</strong> 87 of 98 non-parents work for CHCCS. Every parent vs non-parent contrast is a parent vs staff contrast, and the 84 parents who are also staff answer like staff.</li>
+      <li><strong>Eleven schools is eleven points.</strong> Every school-level correlation is a ranking of eleven schools; none is a population estimate. The two utilization measures (2024-25 ADM against SAPFO capacity; 2031 forecast against 2026 program capacity) rank the schools differently.</li>
+      <li><strong>The forecasts are not mine.</strong> The closure study's line is Carolina Demography's; the deck's is the district's finance office; the two scenarios are linear extrapolations of Census estimates that carry their own sampling error. None is a prediction.</li>
+      <li><strong>Walk counts are one morning.</strong> The Town counted eight of eleven elementary schools on November 12, 2024. Carrboro, McDougle and Morris Grove were not counted; the first two are the largest and most car-dependent zones.</li>
+      <li><strong>Economic disadvantage is a reporting construct.</strong> The 2021 and 2022 dips in every school reflect pandemic-era identification, not real change; the 2017 to 2025 widening uses the endpoints.</li>
+      <li><strong>Free text is counted, not read.</strong> Themes come from transparent keyword rules and under-count the 71 non-English respondents, whose text is partly untranslated. No respondent is quoted.</li>
+    </ul>
+    <h3>Sources and method</h3>
+    <p class="small">Enrollment: NC DPI School Report Card researcher tables (Average Daily Membership by school, 2006 to 2025; economically disadvantaged share; chronic absenteeism; performance grades). Population: Census SAIPE school-district estimates and county population estimates by age. Capacity and forecasts: 2025 SAPFOTAC certified report; CHCCS closure study, May 7, 2026 (program capacity, Carolina Demography forecast, transportation and Safe Routes to School counts); CHCCS board retreat deck, December 11, 2025. Geography: Carrboro GIS assignment segments and walk flags; ACS 2020-24 home values by block group. Survey: CHCCS Community Priorities Assessment raw response workbook and the district's Priorities and Values Conversations report, Fall 2026 (board percentages). Public record of the Glenwood decisions: WUNC, Chapelboro and ABC11 reporting, June to September 2026.</p>
+    <p class="small">Five parallel analyses (representation, schools in the write-ins, priorities against the drivers and the money, geography of distance and walking, balance across schools) produced 46 findings; this page keeps the 23 that are at the intersection of the two projects, would change what a board member does, and hold up to their caveats. The inventory, the scripts and every table behind every chart are in the project repository. Analysis and charts by Claude Fable 5.1; questions, review and judgment by Jim Redden.</p>
+  </div>
+</section>
+
+<footer class="col">Seats and Voices · an exploratory companion to the AIPI 510 Module 1 and Module 2 projects · November 2026</footer>
+
+<script id="story-data" type="application/json">{"layers":{"years":[2019,2020,2021,2022,2023,2024],"series":[{"key":"pop_total","label":"Total population","values":[93239,93625,91444,92423,92514,93897],"index":[100.0,100.4,98.1,99.1,99.2,100.7],"pct_change":0.7},{"key":"pop_5_17","label":"Ages 5-17","values":[13065,13120,12678,12421,12495,12309],"index":[100.0,100.4,97.0,95.1,95.6,94.2],"pct_change":-5.8},{"key":"total_adm","label":"K-12 enrollment (ADM)","values":[12335,12270,11645,11425,11371,11266],"index":[100.0,99.5,94.4,92.6,92.2,91.3],"pct_change":-8.7},{"key":"elem_adm","label":"Elementary enrollment","values":[5488.0,5356.0,4886.0,4742.0,4657.0,4583.0],"index":[100.0,97.6,89.0,86.4,84.9,83.5],"pct_change":-16.5}],"capture":[0.9441,0.9352,0.9185,0.9198,0.91,0.9153]},"levers":{"order":["DEMAND-DEMOGRAPHIC","DEMAND-CAPTURE","SUPPLY-FACILITIES/COST","LOGISTICS/COMMUNITY"],"labels":{"DEMAND-DEMOGRAPHIC":"Fewer children living here","DEMAND-CAPTURE":"Whether families choose CHCCS","SUPPLY-FACILITIES/COST":"Buildings, boundaries and money","LOGISTICS/COMMUNITY":"Getting to school, community"},"n_items":{"DEMAND-CAPTURE":8,"LOGISTICS/COMMUNITY":5,"SUPPLY-FACILITIES/COST":13,"DEMAND-DEMOGRAPHIC":0},"items":{"DEMAND-CAPTURE":["Retaining highly effective employees","Unequal access to specialty programs","Classroom technology updates","Appeal of the district to current and prospective students","Educational excellence","Student-centered focus","School safety","High-quality school meal service"],"LOGISTICS/COMMUNITY":["Length of commute for students riding buses","Community engagement & trust building","Minimizing the distance students travel","Collaboration between schools and county leadership","Community partnerships"],"SUPPLY-FACILITIES/COST":["Cost of maintaining aging buildings","School buildings meeting safety codes","Partially empty school buildings","Overcrowded school buildings","The number of trailers / mobile classrooms","Buildings do not fit the modern academic program","Buildings do not fit modern operational expectations","Boundaries not adjusted to shifted student populations","Fiscal responsibility","Maximizing the use of currently available buildings","Long-term planning","Increasing the use of renewable energy","Ensuring well-balanced student populations"]},"top3_share":{"Other parents":{"DEMAND-DEMOGRAPHIC":0.0,"DEMAND-CAPTURE":55.5,"SUPPLY-FACILITIES/COST":30.5,"LOGISTICS/COMMUNITY":12.7},"Non-parent":{"DEMAND-DEMOGRAPHIC":0.0,"DEMAND-CAPTURE":46.6,"SUPPLY-FACILITIES/COST":44.9,"LOGISTICS/COMMUNITY":7.9},"Board (n=7)":{"DEMAND-DEMOGRAPHIC":0.0,"DEMAND-CAPTURE":41.6,"SUPPLY-FACILITIES/COST":56.0,"LOGISTICS/COMMUNITY":2.4}}},"decomposition":{"Total K-12 ADM decline 2019->2024":{"students":1069,"share_pct":100.0,"state_per_year_fy2027":8932564},"Demographic (fewer 5-17 residents; Module 1 convention)":{"students":714,"share_pct":66.8,"state_per_year_fy2027":5966184},"Capture-rate loss (residents enrolling elsewhere; Module 1 convention)":{"students":355,"share_pct":33.2,"state_per_year_fy2027":2966380}},"forecasts":{"actual":[[2015,5540],[2016,5493],[2017,5576],[2018,5526],[2019,5488],[2020,5356],[2021,4886],[2022,4742],[2023,4657],[2024,4583],[2025,4522],[2026,null],[2027,null],[2028,null],[2029,null],[2030,null],[2031,null],[2032,null],[2033,null],[2034,null],[2035,null],[2036,null]],"closure_study":[[2015,null],[2016,null],[2017,null],[2018,null],[2019,null],[2020,null],[2021,null],[2022,null],[2023,null],[2024,null],[2025,null],[2026,4294],[2027,4254],[2028,4232],[2029,4160],[2030,4191],[2031,4177],[2032,4187],[2033,4189],[2034,4191],[2035,4182],[2036,4184]],"deck_scaled":[[2015,null],[2016,null],[2017,null],[2018,null],[2019,null],[2020,null],[2021,null],[2022,null],[2023,null],[2024,null],[2025,null],[2026,4397],[2027,4292],[2028,4179],[2029,4082],[2030,3974],[2031,3897],[2032,null],[2033,null],[2034,null],[2035,null],[2036,null]],"scenario_A":[[2015,null],[2016,null],[2017,null],[2018,null],[2019,null],[2020,null],[2021,null],[2022,null],[2023,null],[2024,null],[2025,null],[2026,4459],[2027,4396],[2028,4333],[2029,4270],[2030,4207],[2031,4144],[2032,null],[2033,null],[2034,null],[2035,null],[2036,null]],"scenario_B":[[2015,null],[2016,null],[2017,null],[2018,null],[2019,null],[2020,null],[2021,null],[2022,null],[2023,null],[2024,null],[2025,null],[2026,4431],[2027,4341],[2028,4251],[2029,4162],[2030,4074],[2031,3987],[2032,null],[2033,null],[2034,null],[2035,null],[2036,null]],"trend_linear":[[2015,null],[2016,null],[2017,null],[2018,null],[2019,null],[2020,null],[2021,null],[2022,null],[2023,null],[2024,null],[2025,null],[2026,4355],[2027,4188],[2028,4021],[2029,3854],[2030,3688],[2031,3521],[2032,3354],[2033,3187],[2034,3020],[2035,2853],[2036,2686]]},"scenarios":[{"name":"A: demographics only (capture held at 2024 = 0.9153)","adm_2031":10141,"pct_change":-8.3,"elementary_2031":4144,"state_reduction_m":21.5},{"name":"B: demographics + capture keeps falling (-0.0058 pts/yr)","adm_2031":9755,"pct_change":-11.8,"elementary_2031":3987,"state_reduction_m":30.7},{"name":"Board deck (cohort-based, -2.4%/yr)","adm_2031":9535,"pct_change":-13.8,"elementary_2031":3897,"state_reduction_m":38.3}],"forecast_gap_2031":[{"comparison":"Naive linear trend 2019-25","value_2031":3521.0,"closure_study_2031":4177,"gap_students":656,"gap_in_avg_elementary_schools":1.6},{"comparison":"Naive CAGR trend 2019-25","value_2031":3726.0,"closure_study_2031":4177,"gap_students":451,"gap_in_avg_elementary_schools":1.1},{"comparison":"Board deck K-12 x 2025 elementary share","value_2031":3897.0,"closure_study_2031":4177,"gap_students":280,"gap_in_avg_elementary_schools":0.68},{"comparison":"Scenario A demographics only (scaled)","value_2031":4144.0,"closure_study_2031":4177,"gap_students":33,"gap_in_avg_elementary_schools":0.08},{"comparison":"Scenario B capture keeps falling (scaled)","value_2031":3987.0,"closure_study_2031":4177,"gap_students":190,"gap_in_avg_elementary_schools":0.46}],"representation":{"pct_children_not_enrolled_2024":8.5,"pct_children_not_enrolled_2019":5.6,"survey_pct_excl":0.6,"survey_pct_any":3.1,"factor_excl":14.1,"factor_any":2.7,"n_excl":8,"n_any":41,"by_year":[{"year":2019,"total_adm":12335,"pop_5_17":13065,"not_enrolled":730,"pct_not_enrolled":5.6},{"year":2020,"total_adm":12270,"pop_5_17":13120,"not_enrolled":850,"pct_not_enrolled":6.5},{"year":2021,"total_adm":11645,"pop_5_17":12678,"not_enrolled":1033,"pct_not_enrolled":8.1},{"year":2022,"total_adm":11425,"pop_5_17":12421,"not_enrolled":996,"pct_not_enrolled":8.0},{"year":2023,"total_adm":11371,"pop_5_17":12495,"not_enrolled":1124,"pct_not_enrolled":9.0},{"year":2024,"total_adm":11266,"pop_5_17":12309,"not_enrolled":1043,"pct_not_enrolled":8.5}]},"cohort_ladder":{"rows":[{"birth_year":2017,"size":1422,"in_school_fall_2026":true,"k5_years":"2022-2028"},{"birth_year":2018,"size":1422,"in_school_fall_2026":true,"k5_years":"2023-2029"},{"birth_year":2019,"size":1422,"in_school_fall_2026":true,"k5_years":"2024-2030"},{"birth_year":2020,"size":1231,"in_school_fall_2026":true,"k5_years":"2025-2031"},{"birth_year":2021,"size":1231,"in_school_fall_2026":true,"k5_years":"2026-2032"},{"birth_year":2022,"size":1231,"in_school_fall_2026":false,"k5_years":"2027-2033"},{"birth_year":2023,"size":1231,"in_school_fall_2026":false,"k5_years":"2028-2034"},{"birth_year":2024,"size":1231,"in_school_fall_2026":false,"k5_years":"2029-2035"},{"birth_year":2025,"size":1231,"in_school_fall_2026":false,"k5_years":"2030-2036"},{"birth_year":2026,"size":1231,"in_school_fall_2026":false,"k5_years":"2031-2037"},{"birth_year":2027,"size":1231,"in_school_fall_2026":false,"k5_years":"2032-2038"}],"share_not_yet":52.3,"share_not_yet_first_year":15.5},"roles":[{"role":"Parent of current CHCCS student(s)","n_reported":"1315","pct_of_respondents":89.9},{"role":"Parent of school-age children NOT attending CHCCS (any)","n_reported":"41","pct_of_respondents":2.8},{"role":"Parent whose school-age children are ALL outside CHCCS","n_reported":"<10","pct_of_respondents":0.5},{"role":"Parent with children both in and outside CHCCS","n_reported":"33","pct_of_respondents":2.3},{"role":"Parent of graduated CHCCS student(s)","n_reported":"118","pct_of_respondents":8.1},{"role":"Future parent (write-in flag)","n_reported":"19","pct_of_respondents":1.3},{"role":"Orange County resident and nothing else","n_reported":"<10","pct_of_respondents":0.5},{"role":"Orange County resident (any)","n_reported":"270","pct_of_respondents":18.5},{"role":"CHCCS teacher, administrator or staff (any)","n_reported":"182","pct_of_respondents":12.4},{"role":"Teacher in CHCCS","n_reported":"103","pct_of_respondents":7.0},{"role":"Staff in CHCCS","n_reported":"80","pct_of_respondents":5.5},{"role":"Administrator in CHCCS","n_reported":"10","pct_of_respondents":0.7},{"role":"Current CHCCS student","n_reported":"<10","pct_of_respondents":0.6},{"role":"CHCCS graduate","n_reported":"91","pct_of_respondents":6.2},{"role":"Educator who does NOT work in CHCCS","n_reported":"26","pct_of_respondents":1.8},{"role":"Orange County elected official or staff","n_reported":"<10","pct_of_respondents":0.2},{"role":"Local municipal elected official or staff","n_reported":"<10","pct_of_respondents":0.1},{"role":"Other (write-in)","n_reported":"43","pct_of_respondents":2.9}],"parent_age":[{"age_band":"13 to 17 years","Parent":1,"pct_Parent":0.1},{"age_band":"18 to 29 years","Parent":8,"pct_Parent":0.6},{"age_band":"30 to 39 years","Parent":289,"pct_Parent":22.1},{"age_band":"40 to 49 years","Parent":852,"pct_Parent":65.0},{"age_band":"50 to 64 years","Parent":156,"pct_Parent":11.9},{"age_band":"65+ years","Parent":4,"pct_Parent":0.3}],"orange_cohorts":[{"year":2010,"under5":6857,"age5_9":7997,"age10_14":8119,"pop_total":133981},{"year":2011,"under5":6643,"age5_9":8027,"age10_14":8279,"pop_total":134825},{"year":2012,"under5":6663,"age5_9":8114,"age10_14":8456,"pop_total":137817},{"year":2013,"under5":6658,"age5_9":8137,"age10_14":8608,"pop_total":139397},{"year":2014,"under5":6530,"age5_9":7991,"age10_14":8752,"pop_total":140321},{"year":2015,"under5":6653,"age5_9":7877,"age10_14":8803,"pop_total":141298},{"year":2016,"under5":6635,"age5_9":7754,"age10_14":8853,"pop_total":142800},{"year":2017,"under5":6578,"age5_9":7759,"age10_14":8952,"pop_total":143626},{"year":2018,"under5":6625,"age5_9":7736,"age10_14":8874,"pop_total":147980},{"year":2019,"under5":6466,"age5_9":7848,"age10_14":8801,"pop_total":148476},{"year":2020,"under5":6256,"age5_9":7900,"age10_14":9168,"pop_total":143732},{"year":2021,"under5":6076,"age5_9":7603,"age10_14":8920,"pop_total":148798},{"year":2022,"under5":6116,"age5_9":7539,"age10_14":8813,"pop_total":150744},{"year":2023,"under5":6112,"age5_9":7356,"age10_14":8583,"pop_total":152239},{"year":2024,"under5":6156,"age5_9":7108,"age10_14":8472,"pop_total":152877}],"top3_dumbbell":[{"item":"Boundaries not adjusted to population shifts","section":"challenge","parent":16.7,"nonparent":34.7,"pooled":17.9,"board":86},{"item":"Cost of maintaining aging buildings","section":"challenge","parent":18.1,"nonparent":35.7,"pooled":19.4,"board":29},{"item":"Well-balanced student populations","section":"value","parent":14.8,"nonparent":29.6,"pooled":16.2,"board":14},{"item":"Maximizing use of current buildings","section":"value","parent":7.5,"nonparent":21.4,"pooled":8.7,"board":0},{"item":"Overcrowded school buildings","section":"challenge","parent":22.1,"nonparent":32.7,"pooled":22.6,"board":14},{"item":"Partially empty school buildings","section":"challenge","parent":3.9,"nonparent":10.2,"pooled":4.3,"board":29},{"item":"Fiscal responsibility","section":"value","parent":18.9,"nonparent":24.5,"pooled":19.3,"board":57},{"item":"Long-term planning","section":"value","parent":9.7,"nonparent":14.3,"pooled":9.8,"board":43},{"item":"School safety","section":"value","parent":49.7,"nonparent":40.8,"pooled":49.2,"board":29},{"item":"Retaining highly effective employees","section":"challenge","parent":81.4,"nonparent":70.4,"pooled":80.4,"board":43},{"item":"Appeal of the district","section":"challenge","parent":24.6,"nonparent":12.2,"pooled":23.7,"board":29},{"item":"Educational excellence","section":"value","parent":84.1,"nonparent":71.4,"pooled":82.9,"board":86},{"item":"Length of bus commute","section":"challenge","parent":29.0,"nonparent":15.3,"pooled":27.9,"board":0},{"item":"Minimizing distance to school","section":"value","parent":28.0,"nonparent":14.3,"pooled":27.1,"board":0}],"pooled_gap_summary":{"mean_abs_pooled_minus_parent":0.6,"max_abs_pooled_minus_parent":1.4,"mean_abs_pooled_minus_nonparent":7.0,"max_abs_pooled_minus_nonparent":16.8},"fiscal_by_age":[{"measure":"rated 4-5","age":"40 to 49 years","pct":64.5,"lo":61.3,"hi":67.6,"n":873},{"measure":"rated 4-5","age":"30 to 39 years","pct":65.1,"lo":59.7,"hi":70.1,"n":318},{"measure":"rated 4-5","age":"50 to 64 years","pct":81.8,"lo":75.7,"hi":86.7,"n":187},{"measure":"top-3","age":"40 to 49 years","pct":19.6,"lo":17.1,"hi":22.4,"n":873},{"measure":"top-3","age":"30 to 39 years","pct":11.0,"lo":8.0,"hi":14.9,"n":318},{"measure":"top-3","age":"50 to 64 years","pct":29.9,"lo":23.8,"hi":36.9,"n":187}],"q8_check":[{"theme":"Student Learning","group":"Parent","measure":"Q8 any in top 3","pct":93.6,"lo":92.2,"hi":94.8},{"theme":"Student Learning","group":"Parent","measure":"Q9 single choice","pct":66.9,"lo":64.3,"hi":69.4},{"theme":"Student Learning","group":"Non-parent","measure":"Q8 any in top 3","pct":87.8,"lo":79.8,"hi":92.9},{"theme":"Student Learning","group":"Non-parent","measure":"Q9 single choice","pct":48.0,"lo":38.3,"hi":57.7},{"theme":"Money & buildings","group":"Parent","measure":"Q8 any in top 3","pct":34.5,"lo":32.0,"hi":37.1},{"theme":"Money & buildings","group":"Parent","measure":"Q9 single choice","pct":3.7,"lo":2.8,"hi":4.9},{"theme":"Money & buildings","group":"Non-parent","measure":"Q8 any in top 3","pct":52.0,"lo":42.3,"hi":61.7},{"theme":"Money & buildings","group":"Non-parent","measure":"Q9 single choice","pct":9.2,"lo":4.9,"hi":16.5},{"theme":"Community","group":"Parent","measure":"Q8 any in top 3","pct":16.2,"lo":14.3,"hi":18.3},{"theme":"Community","group":"Parent","measure":"Q9 single choice","pct":2.5,"lo":1.8,"hi":3.5},{"theme":"Community","group":"Non-parent","measure":"Q8 any in top 3","pct":17.3,"lo":11.1,"hi":26.0},{"theme":"Community","group":"Non-parent","measure":"Q9 single choice","pct":6.1,"lo":2.8,"hi":12.7},{"theme":"Student logistics & well-being","group":"Parent","measure":"Q8 any in top 3","pct":78.9,"lo":76.6,"hi":81.1},{"theme":"Student logistics & well-being","group":"Parent","measure":"Q9 single choice","pct":21.7,"lo":19.6,"hi":24.1},{"theme":"Student logistics & well-being","group":"Non-parent","measure":"Q8 any in top 3","pct":73.5,"lo":64.0,"hi":81.2},{"theme":"Student logistics & well-being","group":"Non-parent","measure":"Q9 single choice","pct":31.6,"lo":23.3,"hi":41.4}],"schools":[{"school":"Glenwood","closure_candidate":true,"dli_program":"Mandarin DLI (lottery magnet)","year_built":1952.0,"adm_2024_25":390,"sapfo_capacity_2025":400,"util_2024_25_pct":97.5,"program_capacity_2026":420.0,"forecast_2026":394,"forecast_2031":421,"forecast_2036":418,"util_2026_forecast_on_program_cap_pct":93.8,"util_2031_projected_pct":100.0,"util_2036_forecast_on_program_cap_pct":99.5,"adm_2019":490.0,"adm_change_2019_2025_pct":-20.4,"eds_pct_2024_25":20.3,"srts_walkers":38.0,"srts_bikers":7.0,"srts_walk_pct":9.3,"srts_walk_pct_adjusted":1.0,"mentions_total":26,"mentions_per_100_adm":6.67},{"school":"Northside","closure_candidate":false,"dli_program":null,"year_built":null,"adm_2024_25":392,"sapfo_capacity_2025":523,"util_2024_25_pct":74.95,"program_capacity_2026":484.0,"forecast_2026":335,"forecast_2031":291,"forecast_2036":289,"util_2026_forecast_on_program_cap_pct":69.2,"util_2031_projected_pct":60.0,"util_2036_forecast_on_program_cap_pct":59.7,"adm_2019":444.0,"adm_change_2019_2025_pct":-11.7,"eds_pct_2024_25":52.9,"srts_walkers":51.0,"srts_bikers":5.0,"srts_walk_pct":12.8,"srts_walk_pct_adjusted":12.8,"mentions_total":11,"mentions_per_100_adm":2.81},{"school":"McDougle","closure_candidate":false,"dli_program":null,"year_built":null,"adm_2024_25":482,"sapfo_capacity_2025":537,"util_2024_25_pct":89.76,"program_capacity_2026":432.0,"forecast_2026":469,"forecast_2031":511,"forecast_2036":495,"util_2026_forecast_on_program_cap_pct":108.6,"util_2031_projected_pct":118.0,"util_2036_forecast_on_program_cap_pct":114.6,"adm_2019":544.0,"adm_change_2019_2025_pct":-11.4,"eds_pct_2024_25":32.9,"srts_walkers":null,"srts_bikers":null,"srts_walk_pct":null,"srts_walk_pct_adjusted":null,"mentions_total":10,"mentions_per_100_adm":2.07},{"school":"Scroggs","closure_candidate":false,"dli_program":null,"year_built":null,"adm_2024_25":384,"sapfo_capacity_2025":482,"util_2024_25_pct":79.67,"program_capacity_2026":496.0,"forecast_2026":366,"forecast_2031":307,"forecast_2036":314,"util_2026_forecast_on_program_cap_pct":73.8,"util_2031_projected_pct":62.0,"util_2036_forecast_on_program_cap_pct":63.3,"adm_2019":472.0,"adm_change_2019_2025_pct":-18.6,"eds_pct_2024_25":31.6,"srts_walkers":115.0,"srts_bikers":16.0,"srts_walk_pct":28.3,"srts_walk_pct_adjusted":28.3,"mentions_total":10,"mentions_per_100_adm":2.6},{"school":"Rashkis","closure_candidate":false,"dli_program":null,"year_built":null,"adm_2024_25":427,"sapfo_capacity_2025":486,"util_2024_25_pct":87.86,"program_capacity_2026":462.0,"forecast_2026":367,"forecast_2031":253,"forecast_2036":256,"util_2026_forecast_on_program_cap_pct":79.4,"util_2031_projected_pct":55.0,"util_2036_forecast_on_program_cap_pct":55.4,"adm_2019":460.0,"adm_change_2019_2025_pct":-7.2,"eds_pct_2024_25":48.5,"srts_walkers":38.0,"srts_bikers":19.0,"srts_walk_pct":8.7,"srts_walk_pct_adjusted":8.7,"mentions_total":10,"mentions_per_100_adm":2.34},{"school":"Carrboro","closure_candidate":false,"dli_program":"Spanish DLI","year_built":null,"adm_2024_25":484,"sapfo_capacity_2025":500,"util_2024_25_pct":96.8,"program_capacity_2026":520.0,"forecast_2026":462,"forecast_2031":398,"forecast_2036":388,"util_2026_forecast_on_program_cap_pct":88.8,"util_2031_projected_pct":77.0,"util_2036_forecast_on_program_cap_pct":74.6,"adm_2019":491.0,"adm_change_2019_2025_pct":-1.4,"eds_pct_2024_25":33.5,"srts_walkers":null,"srts_bikers":null,"srts_walk_pct":null,"srts_walk_pct_adjusted":null,"mentions_total":8,"mentions_per_100_adm":1.65},{"school":"Seawell","closure_candidate":true,"dli_program":null,"year_built":1969.0,"adm_2024_25":391,"sapfo_capacity_2025":333,"util_2024_25_pct":117.42,"program_capacity_2026":416.0,"forecast_2026":364,"forecast_2031":336,"forecast_2036":340,"util_2026_forecast_on_program_cap_pct":87.5,"util_2031_projected_pct":81.0,"util_2036_forecast_on_program_cap_pct":81.7,"adm_2019":503.0,"adm_change_2019_2025_pct":-22.3,"eds_pct_2024_25":32.5,"srts_walkers":25.0,"srts_bikers":23.0,"srts_walk_pct":5.5,"srts_walk_pct_adjusted":5.5,"mentions_total":8,"mentions_per_100_adm":2.05},{"school":"Frank Porter Graham","closure_candidate":false,"dli_program":"Spanish DLI (Biling\u00fce magnet)","year_built":null,"adm_2024_25":510,"sapfo_capacity_2025":542,"util_2024_25_pct":94.1,"program_capacity_2026":576.0,"forecast_2026":499,"forecast_2031":498,"forecast_2036":487,"util_2026_forecast_on_program_cap_pct":86.6,"util_2031_projected_pct":87.0,"util_2036_forecast_on_program_cap_pct":84.5,"adm_2019":615.0,"adm_change_2019_2025_pct":-17.1,"eds_pct_2024_25":39.1,"srts_walkers":30.0,"srts_bikers":1.0,"srts_walk_pct":5.7,"srts_walk_pct_adjusted":5.7,"mentions_total":8,"mentions_per_100_adm":1.57},{"school":"Estes Hills","closure_candidate":false,"dli_program":null,"year_built":null,"adm_2024_25":324,"sapfo_capacity_2025":500,"util_2024_25_pct":64.8,"program_capacity_2026":464.0,"forecast_2026":324,"forecast_2031":389,"forecast_2036":403,"util_2026_forecast_on_program_cap_pct":69.8,"util_2031_projected_pct":84.0,"util_2036_forecast_on_program_cap_pct":86.9,"adm_2019":473.0,"adm_change_2019_2025_pct":-31.5,"eds_pct_2024_25":27.7,"srts_walkers":58.0,"srts_bikers":11.0,"srts_walk_pct":16.3,"srts_walk_pct_adjusted":16.3,"mentions_total":6,"mentions_per_100_adm":1.85},{"school":"Ephesus","closure_candidate":true,"dli_program":null,"year_built":1972.0,"adm_2024_25":358,"sapfo_capacity_2025":493,"util_2024_25_pct":72.62,"program_capacity_2026":416.0,"forecast_2026":343,"forecast_2031":417,"forecast_2036":423,"util_2026_forecast_on_program_cap_pct":82.5,"util_2031_projected_pct":100.0,"util_2036_forecast_on_program_cap_pct":101.7,"adm_2019":442.0,"adm_change_2019_2025_pct":-19.0,"eds_pct_2024_25":35.3,"srts_walkers":64.0,"srts_bikers":14.0,"srts_walk_pct":16.0,"srts_walk_pct_adjusted":16.0,"mentions_total":2,"mentions_per_100_adm":0.56},{"school":"Morris Grove","closure_candidate":false,"dli_program":null,"year_built":null,"adm_2024_25":380,"sapfo_capacity_2025":519,"util_2024_25_pct":73.22,"program_capacity_2026":484.0,"forecast_2026":371,"forecast_2031":356,"forecast_2036":371,"util_2026_forecast_on_program_cap_pct":76.7,"util_2031_projected_pct":74.0,"util_2036_forecast_on_program_cap_pct":76.7,"adm_2019":554.0,"adm_change_2019_2025_pct":-31.4,"eds_pct_2024_25":23.6,"srts_walkers":null,"srts_bikers":null,"srts_walk_pct":null,"srts_walk_pct_adjusted":null,"mentions_total":0,"mentions_per_100_adm":0.0}],"utilization_spread":[{"measure":"2024-25 ADM / SAPFO capacity","n_schools":11,"min":64.8,"min_school":"Estes Hills","max":117.42,"max_school":"Seawell","range":52.6,"mean":86.2,"sd":15.1,"cv_pct":17.5,"n_under_75":4,"n_over_100":1,"enrollment_weighted_mean":87.2},{"measure":"2026 forecast / 2026 program capacity","n_schools":11,"min":69.2,"min_school":"Northside","max":108.6,"max_school":"McDougle","range":39.4,"mean":83.3,"sd":11.6,"cv_pct":13.9,"n_under_75":3,"n_over_100":1,"enrollment_weighted_mean":84.2},{"measure":"2031 projected (study, program capacity)","n_schools":11,"min":55.0,"min_school":"Rashkis","max":118.0,"max_school":"McDougle","range":63.0,"mean":81.6,"sd":19.2,"cv_pct":23.5,"n_under_75":4,"n_over_100":1,"enrollment_weighted_mean":82.1},{"measure":"2036 forecast / 2026 program capacity","n_schools":11,"min":55.4,"min_school":"Rashkis","max":114.6,"max_school":"McDougle","range":59.2,"mean":81.7,"sd":18.5,"cv_pct":22.7,"n_under_75":4,"n_over_100":2,"enrollment_weighted_mean":81.9}],"eds_scatter":[{"school":"Northside","pct_eds_2025":52.9,"util_projected_2031":60.0,"projected_empty_seats_2031":194.0,"adm_2024_25":392,"share_of_2031_empty_seats":18.23308270676692},{"school":"Rashkis","pct_eds_2025":48.5,"util_projected_2031":55.0,"projected_empty_seats_2031":208.0,"adm_2024_25":427,"share_of_2031_empty_seats":19.548872180451127},{"school":"Frank Porter Graham","pct_eds_2025":39.1,"util_projected_2031":87.0,"projected_empty_seats_2031":75.0,"adm_2024_25":510,"share_of_2031_empty_seats":7.048872180451128},{"school":"Ephesus","pct_eds_2025":35.3,"util_projected_2031":100.0,"projected_empty_seats_2031":0.0,"adm_2024_25":358,"share_of_2031_empty_seats":0.0},{"school":"Carrboro","pct_eds_2025":33.5,"util_projected_2031":77.0,"projected_empty_seats_2031":120.0,"adm_2024_25":484,"share_of_2031_empty_seats":11.278195488721805},{"school":"McDougle","pct_eds_2025":32.9,"util_projected_2031":118.0,"projected_empty_seats_2031":-78.0,"adm_2024_25":482,"share_of_2031_empty_seats":0.0},{"school":"Seawell","pct_eds_2025":32.5,"util_projected_2031":81.0,"projected_empty_seats_2031":79.0,"adm_2024_25":391,"share_of_2031_empty_seats":7.424812030075188},{"school":"Scroggs","pct_eds_2025":31.6,"util_projected_2031":62.0,"projected_empty_seats_2031":188.0,"adm_2024_25":384,"share_of_2031_empty_seats":17.669172932330827},{"school":"Estes Hills","pct_eds_2025":27.7,"util_projected_2031":84.0,"projected_empty_seats_2031":74.0,"adm_2024_25":324,"share_of_2031_empty_seats":6.954887218045113},{"school":"Morris Grove","pct_eds_2025":23.6,"util_projected_2031":74.0,"projected_empty_seats_2031":126.0,"adm_2024_25":380,"share_of_2031_empty_seats":11.842105263157896},{"school":"Glenwood","pct_eds_2025":20.3,"util_projected_2031":100.0,"projected_empty_seats_2031":0.0,"adm_2024_25":390,"share_of_2031_empty_seats":0.0}],"eds_band":{"years":[2017,2018,2019,2020,2021,2022,2023,2024,2025],"min":[21.5,20.3,17.9,17.6,13.8,13.4,19.8,21.2,20.3],"max":[49.0,47.3,46.3,50.4,40.8,47.2,47.5,53.1,52.9],"district":[27.1,26.1,25.8,27.4,23.1,22.6,29.9,31.1,30.5],"schools":{"Carrboro":[30.3,31.0,31.9,33.1,28.2,28.0,34.6,34.9,33.5],"Ephesus":[26.8,27.3,31.8,32.9,34.0,32.5,35.1,37.2,35.3],"Estes Hills":[27.7,27.7,26.2,30.3,26.1,29.2,31.5,27.0,27.7],"Frank Porter Graham":[39.9,40.6,41.3,42.5,34.2,29.2,40.6,41.1,39.1],"Glenwood":[28.2,24.9,23.6,21.3,17.2,17.1,19.8,21.2,20.3],"McDougle":[31.5,30.5,31.9,31.3,22.4,25.6,31.9,32.4,32.9],"Morris Grove":[21.5,20.3,17.9,17.6,13.8,13.4,22.9,21.8,23.6],"Northside":[49.0,47.3,46.3,50.4,40.8,47.2,47.5,53.1,52.9],"Rashkis":[34.1,32.5,29.6,35.0,34.2,35.0,44.3,47.4,48.5],"Scroggs":[26.6,27.7,26.4,25.6,19.8,18.8,29.1,29.6,31.6],"Seawell":[24.9,24.9,24.5,27.3,23.8,23.3,30.7,31.2,32.5]}},"wellbalanced":[{"group":"Other parents (not staff)","rated_4_5":48.7,"lo":46.0,"hi":51.5,"rated_5":21.5,"top3":13.1,"n":1231},{"group":"Parents who are staff","rated_4_5":83.3,"lo":73.9,"hi":89.8,"rated_5":48.8,"top3":38.1,"n":84},{"group":"Non-parent (mostly staff)","rated_4_5":83.7,"lo":75.1,"hi":89.7,"rated_5":55.1,"top3":29.6,"n":98}],"wellbalanced_excl_heavy":{"Parent (all)":47.1,"Other parents (not staff)":44.9,"Parents who are staff":81.1,"Non-parent (mostly staff)":80.5},"wellbalanced_or":[{"item":"Boundaries not adjusted to shifted student populations","or":3.51,"pct_given":36.9,"pct_not":14.3,"q":2.314723488411784e-13},{"item":"Partially empty school buildings","or":2.76,"pct_given":8.9,"pct_not":3.4,"q":0.0015892608932718},{"item":"Unequal access to specialty programs","or":1.91,"pct_given":26.3,"pct_not":15.7,"q":0.0007330874984468},{"item":"Buildings do not fit modern operational expectations","or":1.5,"pct_given":12.3,"pct_not":8.6,"q":0.1356704611939954},{"item":"Overcrowded school buildings","or":1.24,"pct_given":25.8,"pct_not":21.9,"q":0.291760247400561},{"item":"Cost of maintaining aging buildings","or":1.07,"pct_given":20.3,"pct_not":19.2,"q":0.8500843800878689},{"item":"Classroom technology updates","or":1.0,"pct_given":6.8,"pct_not":6.8,"q":1.0},{"item":"Buildings do not fit the modern academic program","or":0.85,"pct_given":11.0,"pct_not":12.7,"q":0.6749205393407496},{"item":"The number of trailers / mobile classrooms","or":0.82,"pct_given":3.0,"pct_not":3.6,"q":0.9164712499872146},{"item":"Length of commute for students riding buses","or":0.63,"pct_given":20.8,"pct_not":29.3,"q":0.013745953102762},{"item":"Appeal of the district to current and prospective students","or":0.61,"pct_given":16.9,"pct_not":25.0,"q":0.013745953102762},{"item":"School buildings meeting safety codes","or":0.6,"pct_given":35.6,"pct_not":47.9,"q":0.0015892608932718},{"item":"Retaining highly effective employees","or":0.52,"pct_given":70.8,"pct_not":82.2,"q":0.0006933178056025}],"equity_or":{"or":2.58,"pct_given":31.9,"pct_not":15.4,"q":0.0018291181898676},"four_items":[{"item":"Well-balanced populations","respondent":"Board (n=7, district report)","measure":"rated 4-5","n":7,"pct":71.0,"wilson_lo":35.89344518326191,"wilson_hi":91.77810759959432},{"item":"Well-balanced populations","respondent":"Board (n=7, district report)","measure":"top-3","n":7,"pct":14.0,"wilson_lo":2.5679624344743552,"wilson_hi":51.31278292743189},{"item":"Well-balanced populations","respondent":"All CPA respondents (district report)","measure":"rated 4-5","n":1463,"pct":53.0,"wilson_lo":null,"wilson_hi":null},{"item":"Well-balanced populations","respondent":"All CPA respondents (district report)","measure":"top-3","n":1463,"pct":16.0,"wilson_lo":null,"wilson_hi":null},{"item":"Well-balanced populations","respondent":"Other parents (not staff)","measure":"rated 4-5","n":1231,"pct":48.7408610885459,"wilson_lo":45.9568911100431,"wilson_hi":51.53266515820808},{"item":"Well-balanced populations","respondent":"Other parents (not staff)","measure":"top-3","n":1231,"pct":13.078797725426485,"wilson_lo":11.309582375877593,"wilson_hi":15.07772884477751},{"item":"Well-balanced populations","respondent":"Parents who are staff","measure":"rated 4-5","n":84,"pct":83.33333333333333,"wilson_lo":73.9469602546601,"wilson_hi":89.80425785102926},{"item":"Well-balanced populations","respondent":"Parents who are staff","measure":"top-3","n":84,"pct":38.095238095238095,"wilson_lo":28.44714924548898,"wilson_hi":48.784558573907674},{"item":"Well-balanced populations","respondent":"Non-parent (mostly staff)","measure":"rated 4-5","n":98,"pct":83.6734693877551,"wilson_lo":75.11341643197603,"wilson_hi":89.6931964781965},{"item":"Well-balanced populations","respondent":"Non-parent (mostly staff)","measure":"top-3","n":98,"pct":29.59183673469388,"wilson_lo":21.463180671461895,"wilson_hi":39.26008423146385},{"item":"Boundaries not adjusted","respondent":"Board (n=7, district report)","measure":"rated 4-5","n":7,"pct":86.0,"wilson_lo":48.68721707256809,"wilson_hi":97.43203756552565},{"item":"Boundaries not adjusted","respondent":"Board (n=7, district report)","measure":"top-3","n":7,"pct":86.0,"wilson_lo":48.68721707256809,"wilson_hi":97.43203756552565},{"item":"Boundaries not adjusted","respondent":"All CPA respondents (district report)","measure":"rated 4-5","n":1463,"pct":47.0,"wilson_lo":null,"wilson_hi":null},{"item":"Boundaries not adjusted","respondent":"All CPA respondents (district report)","measure":"top-3","n":1463,"pct":18.0,"wilson_lo":null,"wilson_hi":null},{"item":"Boundaries not adjusted","respondent":"Other parents (not staff)","measure":"rated 4-5","n":1231,"pct":43.21689683184403,"wilson_lo":40.47493076157638,"wilson_hi":46.001065909325064},{"item":"Boundaries not adjusted","respondent":"Other parents (not staff)","measure":"top-3","n":1231,"pct":15.272136474411049,"wilson_lo":13.37092003317936,"wilson_hi":17.389422204070485},{"item":"Boundaries not adjusted","respondent":"Parents who are staff","measure":"rated 4-5","n":84,"pct":72.61904761904762,"wilson_lo":62.252580838915605,"wilson_hi":81.00717430423072},{"item":"Boundaries not adjusted","respondent":"Parents who are staff","measure":"top-3","n":84,"pct":38.095238095238095,"wilson_lo":28.44714924548898,"wilson_hi":48.784558573907674},{"item":"Boundaries not adjusted","respondent":"Non-parent (mostly staff)","measure":"rated 4-5","n":98,"pct":70.40816326530613,"wilson_lo":60.73991576853616,"wilson_hi":78.5368193285381},{"item":"Boundaries not adjusted","respondent":"Non-parent (mostly staff)","measure":"top-3","n":98,"pct":34.69387755102041,"wilson_lo":26.00859166796014,"wilson_hi":44.53385700923416},{"item":"Partially empty buildings","respondent":"Board (n=7, district report)","measure":"rated 4-5","n":7,"pct":71.0,"wilson_lo":35.89344518326191,"wilson_hi":91.77810759959432},{"item":"Partially empty buildings","respondent":"Board (n=7, district report)","measure":"top-3","n":7,"pct":29.0,"wilson_lo":8.221892400405661,"wilson_hi":64.10655481673807},{"item":"Partially empty buildings","respondent":"All CPA respondents (district report)","measure":"rated 4-5","n":1463,"pct":21.0,"wilson_lo":null,"wilson_hi":null},{"item":"Partially empty buildings","respondent":"All CPA respondents (district report)","measure":"top-3","n":1463,"pct":4.0,"wilson_lo":null,"wilson_hi":null},{"item":"Partially empty buildings","respondent":"Other parents (not staff)","measure":"rated 4-5","n":1231,"pct":19.252640129975628,"wilson_lo":17.147078092175818,"wilson_hi":21.549505619634868},{"item":"Partially empty buildings","respondent":"Other parents (not staff)","measure":"top-3","n":1231,"pct":3.4118602761982126,"wilson_lo":2.5339592787110674,"wilson_hi":4.579622646582},{"item":"Partially empty buildings","respondent":"Parents who are staff","measure":"rated 4-5","n":84,"pct":36.904761904761905,"wilson_lo":27.370118509020248,"wilson_hi":47.58476009231609},{"item":"Partially empty buildings","respondent":"Parents who are staff","measure":"top-3","n":84,"pct":10.714285714285714,"wilson_lo":5.740021287664479,"wilson_hi":19.12461451634451},{"item":"Partially empty buildings","respondent":"Non-parent (mostly staff)","measure":"rated 4-5","n":98,"pct":31.632653061224488,"wilson_lo":23.26706012892279,"wilson_hi":41.38387828371039},{"item":"Partially empty buildings","respondent":"Non-parent (mostly staff)","measure":"top-3","n":98,"pct":10.20408163265306,"wilson_lo":5.637600332589364,"wilson_hi":17.772766228115827},{"item":"Unequal access to specialty programs","respondent":"Board (n=7, district report)","measure":"rated 4-5","n":7,"pct":86.0,"wilson_lo":48.68721707256809,"wilson_hi":97.43203756552565},{"item":"Unequal access to specialty programs","respondent":"Board (n=7, district report)","measure":"top-3","n":7,"pct":14.0,"wilson_lo":2.5679624344743552,"wilson_hi":51.31278292743189},{"item":"Unequal access to specialty programs","respondent":"All CPA respondents (district report)","measure":"rated 4-5","n":1463,"pct":50.0,"wilson_lo":null,"wilson_hi":null},{"item":"Unequal access to specialty programs","respondent":"All CPA respondents (district report)","measure":"top-3","n":1463,"pct":17.0,"wilson_lo":null,"wilson_hi":null},{"item":"Unequal access to specialty programs","respondent":"Other parents (not staff)","measure":"rated 4-5","n":1231,"pct":49.959382615759544,"wilson_lo":47.17074119686535,"wilson_hi":52.748276747271795},{"item":"Unequal access to specialty programs","respondent":"Other parents (not staff)","measure":"top-3","n":1231,"pct":16.815597075548336,"wilson_lo":14.830251964998778,"wilson_hi":19.007408395039967},{"item":"Unequal access to specialty programs","respondent":"Parents who are staff","measure":"rated 4-5","n":84,"pct":48.80952380952381,"wilson_lo":38.408353671938514,"wilson_hi":59.31481711000114},{"item":"Unequal access to specialty programs","respondent":"Parents who are staff","measure":"top-3","n":84,"pct":22.61904761904762,"wilson_lo":14.986020837445109,"wilson_hi":32.64690714716722},{"item":"Unequal access to specialty programs","respondent":"Non-parent (mostly staff)","measure":"rated 4-5","n":98,"pct":57.142857142857146,"wilson_lo":47.25843630037067,"wilson_hi":66.4884209836053},{"item":"Unequal access to specialty programs","respondent":"Non-parent (mostly staff)","measure":"top-3","n":98,"pct":19.387755102040817,"wilson_lo":12.778072974537736,"wilson_hi":28.30682437985087}],"zones":[{"zone":"Carrboro","area_sqmi":2.52,"n_segments":14,"n_walk_segments":7,"walk_area_share":0.393,"renter_share":0.674,"bg_value_median":566000.0},{"zone":"Ephesus","area_sqmi":5.72,"n_segments":18,"n_walk_segments":6,"walk_area_share":0.216,"renter_share":0.373,"bg_value_median":617950.0},{"zone":"Estes Hills","area_sqmi":4.22,"n_segments":25,"n_walk_segments":5,"walk_area_share":0.321,"renter_share":0.485,"bg_value_median":652600.0},{"zone":"Glenwood","area_sqmi":0.97,"n_segments":5,"n_walk_segments":0,"walk_area_share":0.0,"renter_share":0.612,"bg_value_median":379300.0},{"zone":"McDougle","area_sqmi":13.3,"n_segments":20,"n_walk_segments":8,"walk_area_share":0.14,"renter_share":0.395,"bg_value_median":579900.0},{"zone":"Morris Grove","area_sqmi":11.33,"n_segments":11,"n_walk_segments":0,"walk_area_share":0.0,"renter_share":0.258,"bg_value_median":628000.0},{"zone":"Northside","area_sqmi":11.23,"n_segments":34,"n_walk_segments":6,"walk_area_share":0.055,"renter_share":0.534,"bg_value_median":508600.0},{"zone":"Rashkis","area_sqmi":2.75,"n_segments":15,"n_walk_segments":1,"walk_area_share":0.145,"renter_share":0.701,"bg_value_median":491900.0},{"zone":"Scroggs","area_sqmi":7.0,"n_segments":13,"n_walk_segments":3,"walk_area_share":0.081,"renter_share":0.405,"bg_value_median":587850.0},{"zone":"Seawell","area_sqmi":3.42,"n_segments":11,"n_walk_segments":4,"walk_area_share":0.562,"renter_share":0.533,"bg_value_median":586150.0}],"srts":[{"zone":"Ephesus","walk":64,"bike":14,"enrollment_at_count":401,"walk_pct":16.0,"bike_pct":3.5},{"zone":"Estes Hills","walk":58,"bike":11,"enrollment_at_count":355,"walk_pct":16.3,"bike_pct":3.1},{"zone":"Frank Porter Graham","walk":30,"bike":1,"enrollment_at_count":528,"walk_pct":5.7,"bike_pct":0.2},{"zone":"Glenwood","walk":38,"bike":7,"enrollment_at_count":408,"walk_pct":9.3,"bike_pct":1.7},{"zone":"Northside","walk":51,"bike":5,"enrollment_at_count":399,"walk_pct":12.8,"bike_pct":1.3},{"zone":"Rashkis","walk":38,"bike":19,"enrollment_at_count":437,"walk_pct":8.7,"bike_pct":4.3},{"zone":"Scroggs","walk":115,"bike":16,"enrollment_at_count":406,"walk_pct":28.3,"bike_pct":3.9},{"zone":"Seawell","walk":25,"bike":23,"enrollment_at_count":456,"walk_pct":5.5,"bike_pct":5.0}],"walk_synthesis":{"closure_candidates":{"schools":["Ephesus","Glenwood","Seawell"],"srts_walkers_observed":127,"srts_bikers":44,"srts_active_observed":171,"srts_active_adjusted_glenwood":137,"enrollment_at_count":1265,"active_pct_observed":13.5,"active_pct_adjusted":10.8,"ntz_tims":247,"ntz_cost_at_936_53":231323,"study_stated_extra_cost":{"Ephesus":117000,"Seawell":112383,"Glenwood":null},"students_within_1_5mi":456,"driven_by_parent":577,"am_riders":457},"lowest_utilization_2031":{"schools":["Rashkis","Northside","Scroggs"],"srts_walkers_observed":204,"srts_bikers":40,"srts_active_observed":244,"enrollment_at_count":1242,"active_pct_observed":19.6,"projected_utilization_2031":{"Rashkis":55.0,"Northside":60.0,"Scroggs":62.0}},"all_8_srts_elementary":{"walkers":419,"bikers":96,"active":515,"enrollment_at_count":3390,"active_pct":15.2,"walk_pct_range":[5.5,28.3],"missing_schools":["Carrboro","McDougle","Morris Grove"]},"district_bus":{"buses":55,"riders":3880,"miles":728860,"cost_usd":3013692,"cost_per_mile":4.13,"cost_per_bus":54794.4,"cost_per_pupil":936.53,"source":"Closure study p.29 citing NCDPI Table 32, 2024-25"},"survey":{"distance_top3_pct_all":27.1,"distance_q5_45_pct_all":59.7,"bus_top3_pct_all":27.9,"bus_q3_45_pct_all":58.8,"walk_theme_pct_of_writers":20.6,"bus_theme_pct_of_writers":17.4,"n_writers":637,"board_distance_45":57,"board_distance_top3":0,"board_bus_45":43,"board_bus_top3":0}},"transport":[{"zone":"Ephesus","study_enrollment":373,"bus_eligible":253,"buses":3,"am_riders":140,"ntz_infinite_campus":164,"ntz_tims":125,"srts_walkers_observed":64,"srts_walkers_adjusted":64,"srts_bikers":14,"driven_by_parent":160,"avg_bus_ride_min":30,"study_bus_share_pct":38,"study_active_share_pct":19.0,"study_driven_share_pct":43,"srts_within_0_5mi":99,"srts_0_5_to_1mi":93,"srts_1_to_1_5mi":59,"closure_extra_miles":"2.3-3.3","closure_extra_minutes":"9-12","closure_extra_cost_usd":117000.0,"closure_extra_cost_basis":"125 NTZ students x $936.53","receiving_schools":"Estes Hills, Rashkis","new_housing_students_forecast":49,"source_pages":"25-29","within_1_5mi":251,"eligible_who_ride_pct":55.0},{"zone":"Glenwood","study_enrollment":391,"bus_eligible":389,"buses":7,"am_riders":170,"ntz_infinite_campus":0,"ntz_tims":2,"srts_walkers_observed":38,"srts_walkers_adjusted":4,"srts_bikers":7,"driven_by_parent":210,"avg_bus_ride_min":38,"study_bus_share_pct":43,"study_active_share_pct":0.5,"study_driven_share_pct":56,"srts_within_0_5mi":6,"srts_0_5_to_1mi":22,"srts_1_to_1_5mi":10,"closure_extra_miles":"not estimated (lottery magnet; program relocates)","closure_extra_minutes":"not estimated","closure_extra_cost_usd":null,"closure_extra_cost_basis":null,"receiving_schools":"to be determined","new_housing_students_forecast":12,"source_pages":"58-62","within_1_5mi":38,"eligible_who_ride_pct":44.0},{"zone":"Seawell","study_enrollment":402,"bus_eligible":282,"buses":4,"am_riders":147,"ntz_infinite_campus":121,"ntz_tims":120,"srts_walkers_observed":25,"srts_walkers_adjusted":25,"srts_bikers":23,"driven_by_parent":207,"avg_bus_ride_min":28,"study_bus_share_pct":37,"study_active_share_pct":12.0,"study_driven_share_pct":51,"srts_within_0_5mi":0,"srts_0_5_to_1mi":60,"srts_1_to_1_5mi":107,"closure_extra_miles":"3.0-5.0","closure_extra_minutes":"8-12","closure_extra_cost_usd":112383.0,"closure_extra_cost_basis":"120 NTZ students x $936.53; up to 2 extra buses","receiving_schools":"Estes Hills, Morris Grove, Northside","new_housing_students_forecast":18,"source_pages":"90-94","within_1_5mi":167,"eligible_who_ride_pct":52.0}],"distance_splits":[{"split":"All respondents","n":1463,"dist_q5_pct_4_5":59.7,"dist_q5_pct_4_5_ci":"57.1-62.2","dist_q8_top3_pct":27.1,"dist_q8_top3_pct_ci":"24.9-29.5","dist_q9_pct":8.8,"dist_q9_pct_ci":"7.5-10.4","bus_q3_pct_4_5":58.8,"bus_q3_pct_4_5_ci":"56.2-61.3","bus_q7_top3_pct":27.9,"bus_q7_top3_pct_ci":"25.7-30.2","dist_q5_mean":3.77,"bus_q3_mean":3.71,"writers":637.0,"walk_theme_pct_of_writers":20.6,"walk_theme_ci":"17.6-23.9","bus_theme_pct_of_writers":17.4,"bus_theme_ci":"14.7-20.6","keep_theme_pct_of_writers":17.0,"keep_theme_ci":"14.2-20.1","nbhd_theme_pct_of_writers":11.9,"nbhd_theme_ci":"9.6-14.7"},{"split":"Parent","n":1315,"dist_q5_pct_4_5":59.9,"dist_q5_pct_4_5_ci":"57.3-62.5","dist_q8_top3_pct":28.0,"dist_q8_top3_pct_ci":"25.6-30.5","dist_q9_pct":9.1,"dist_q9_pct_ci":"7.7-10.8","bus_q3_pct_4_5":59.0,"bus_q3_pct_4_5_ci":"56.3-61.6","bus_q7_top3_pct":29.0,"bus_q7_top3_pct_ci":"26.7-31.6","dist_q5_mean":3.78,"bus_q3_mean":3.71,"writers":575.0,"walk_theme_pct_of_writers":20.3,"walk_theme_ci":"17.3-23.8","bus_theme_pct_of_writers":17.0,"bus_theme_ci":"14.2-20.3","keep_theme_pct_of_writers":17.2,"keep_theme_ci":"14.4-20.5","nbhd_theme_pct_of_writers":11.7,"nbhd_theme_ci":"9.3-14.5"},{"split":"Non-parent","n":98,"dist_q5_pct_4_5":56.1,"dist_q5_pct_4_5_ci":"46.3-65.5","dist_q8_top3_pct":14.3,"dist_q8_top3_pct_ci":"8.7-22.6","dist_q9_pct":3.1,"dist_q9_pct_ci":"1.0-8.6","bus_q3_pct_4_5":56.1,"bus_q3_pct_4_5_ci":"46.3-65.5","bus_q7_top3_pct":15.3,"bus_q7_top3_pct_ci":"9.5-23.7","dist_q5_mean":3.63,"bus_q3_mean":3.69,"writers":32.0,"walk_theme_pct_of_writers":12.5,"walk_theme_ci":"5.0-28.1","bus_theme_pct_of_writers":21.9,"bus_theme_ci":"11.0-38.8","keep_theme_pct_of_writers":9.4,"keep_theme_ci":"3.2-24.2","nbhd_theme_pct_of_writers":3.1,"nbhd_theme_ci":"0.6-15.7"},{"split":"Parent 30-39","n":289,"dist_q5_pct_4_5":64.0,"dist_q5_pct_4_5_ci":"58.3-69.3","dist_q8_top3_pct":29.1,"dist_q8_top3_pct_ci":"24.1-34.5","dist_q9_pct":9.0,"dist_q9_pct_ci":"6.2-12.9","bus_q3_pct_4_5":61.2,"bus_q3_pct_4_5_ci":"55.5-66.7","bus_q7_top3_pct":30.1,"bus_q7_top3_pct_ci":"25.1-35.6","dist_q5_mean":3.89,"bus_q3_mean":3.75,"writers":121.0,"walk_theme_pct_of_writers":19.8,"walk_theme_ci":"13.7-27.8","bus_theme_pct_of_writers":13.2,"bus_theme_ci":"8.3-20.4","keep_theme_pct_of_writers":25.6,"keep_theme_ci":"18.7-34.1","nbhd_theme_pct_of_writers":9.1,"nbhd_theme_ci":"5.2-15.5"},{"split":"Parent 40-49","n":852,"dist_q5_pct_4_5":60.3,"dist_q5_pct_4_5_ci":"57.0-63.6","dist_q8_top3_pct":28.3,"dist_q8_top3_pct_ci":"25.4-31.4","dist_q9_pct":9.6,"dist_q9_pct_ci":"7.8-11.8","bus_q3_pct_4_5":58.2,"bus_q3_pct_4_5_ci":"54.9-61.5","bus_q7_top3_pct":29.1,"bus_q7_top3_pct_ci":"26.2-32.2","dist_q5_mean":3.77,"bus_q3_mean":3.69,"writers":382.0,"walk_theme_pct_of_writers":21.7,"walk_theme_ci":"17.9-26.1","bus_theme_pct_of_writers":17.0,"bus_theme_ci":"13.6-21.1","keep_theme_pct_of_writers":16.5,"keep_theme_ci":"13.1-20.5","nbhd_theme_pct_of_writers":12.0,"nbhd_theme_ci":"9.2-15.7"},{"split":"Parent 50+","n":160,"dist_q5_pct_4_5":51.9,"dist_q5_pct_4_5_ci":"44.2-59.5","dist_q8_top3_pct":25.6,"dist_q8_top3_pct_ci":"19.5-32.9","dist_q9_pct":7.5,"dist_q9_pct_ci":"4.3-12.7","bus_q3_pct_4_5":59.4,"bus_q3_pct_4_5_ci":"51.6-66.7","bus_q7_top3_pct":28.1,"bus_q7_top3_pct_ci":"21.7-35.5","dist_q5_mean":3.64,"bus_q3_mean":3.76,"writers":69.0,"walk_theme_pct_of_writers":14.5,"walk_theme_ci":"8.1-24.7","bus_theme_pct_of_writers":23.2,"bus_theme_ci":"14.8-34.4","keep_theme_pct_of_writers":7.2,"keep_theme_ci":"3.1-15.9","nbhd_theme_pct_of_writers":14.5,"nbhd_theme_ci":"8.1-24.7"},{"split":"English sheet","n":1392,"dist_q5_pct_4_5":59.3,"dist_q5_pct_4_5_ci":"56.7-61.8","dist_q8_top3_pct":27.6,"dist_q8_top3_pct_ci":"25.3-30.0","dist_q9_pct":9.1,"dist_q9_pct_ci":"7.7-10.8","bus_q3_pct_4_5":58.2,"bus_q3_pct_4_5_ci":"55.6-60.8","bus_q7_top3_pct":27.7,"bus_q7_top3_pct_ci":"25.4-30.1","dist_q5_mean":3.76,"bus_q3_mean":3.69,"writers":608.0,"walk_theme_pct_of_writers":21.4,"walk_theme_ci":"18.3-24.8","bus_theme_pct_of_writers":17.9,"bus_theme_ci":"15.1-21.2","keep_theme_pct_of_writers":17.4,"keep_theme_ci":"14.6-20.7","nbhd_theme_pct_of_writers":12.5,"nbhd_theme_ci":"10.1-15.4"},{"split":"Other-language sheet","n":71,"dist_q5_pct_4_5":67.6,"dist_q5_pct_4_5_ci":"56.1-77.3","dist_q8_top3_pct":18.3,"dist_q8_top3_pct_ci":"11.0-28.8","dist_q9_pct":2.8,"dist_q9_pct_ci":"0.8-9.7","bus_q3_pct_4_5":70.4,"bus_q3_pct_4_5_ci":"59.0-79.8","bus_q7_top3_pct":31.0,"bus_q7_top3_pct_ci":"21.4-42.5","dist_q5_mean":4.0,"bus_q3_mean":4.03,"writers":29.0,"walk_theme_pct_of_writers":3.4,"walk_theme_ci":"0.6-17.2","bus_theme_pct_of_writers":6.9,"bus_theme_ci":"1.9-22.0","keep_theme_pct_of_writers":6.9,"keep_theme_ci":"1.9-22.0","nbhd_theme_pct_of_writers":0.0,"nbhd_theme_ci":"0.0-11.7"},{"split":"Parent, not CHCCS staff","n":1231,"dist_q5_pct_4_5":60.3,"dist_q5_pct_4_5_ci":"57.5-63.0","dist_q8_top3_pct":28.7,"dist_q8_top3_pct_ci":"26.2-31.3","dist_q9_pct":9.7,"dist_q9_pct_ci":"8.1-11.4","bus_q3_pct_4_5":58.8,"bus_q3_pct_4_5_ci":"56.0-61.5","bus_q7_top3_pct":29.8,"bus_q7_top3_pct_ci":"27.3-32.4","dist_q5_mean":3.79,"bus_q3_mean":3.71,"writers":539.0,"walk_theme_pct_of_writers":20.8,"walk_theme_ci":"17.6-24.4","bus_theme_pct_of_writers":17.6,"bus_theme_ci":"14.6-21.1","keep_theme_pct_of_writers":18.0,"keep_theme_ci":"15.0-21.5","nbhd_theme_pct_of_writers":12.1,"nbhd_theme_ci":"9.6-15.1"},{"split":"Parent who is CHCCS staff","n":84,"dist_q5_pct_4_5":54.8,"dist_q5_pct_4_5_ci":"44.1-65.0","dist_q8_top3_pct":17.9,"dist_q8_top3_pct_ci":"11.1-27.4","dist_q9_pct":1.2,"dist_q9_pct_ci":"0.2-6.4","bus_q3_pct_4_5":61.9,"bus_q3_pct_4_5_ci":"51.2-71.6","bus_q7_top3_pct":17.9,"bus_q7_top3_pct_ci":"11.1-27.4","dist_q5_mean":3.63,"bus_q3_mean":3.79,"writers":36.0,"walk_theme_pct_of_writers":13.9,"walk_theme_ci":"6.1-28.7","bus_theme_pct_of_writers":8.3,"bus_theme_ci":"2.9-21.8","keep_theme_pct_of_writers":5.6,"keep_theme_ci":"1.5-18.1","nbhd_theme_pct_of_writers":5.6,"nbhd_theme_ci":"1.5-18.1"},{"split":"Non-parent CHCCS staff","n":87,"dist_q5_pct_4_5":56.3,"dist_q5_pct_4_5_ci":"45.9-66.3","dist_q8_top3_pct":14.9,"dist_q8_top3_pct_ci":"8.9-23.9","dist_q9_pct":3.4,"dist_q9_pct_ci":"1.2-9.7","bus_q3_pct_4_5":54.0,"bus_q3_pct_4_5_ci":"43.6-64.1","bus_q7_top3_pct":14.9,"bus_q7_top3_pct_ci":"8.9-23.9","dist_q5_mean":3.63,"bus_q3_mean":3.69,"writers":27.0,"walk_theme_pct_of_writers":14.8,"walk_theme_ci":"5.9-32.5","bus_theme_pct_of_writers":22.2,"bus_theme_ci":"10.6-40.8","keep_theme_pct_of_writers":11.1,"keep_theme_ci":"3.9-28.1","nbhd_theme_pct_of_writers":3.7,"nbhd_theme_ci":"0.7-18.3"},{"split":"Board (n=7, from BOARD_VS_CPA)","n":7,"dist_q5_pct_4_5":57.0,"dist_q5_pct_4_5_ci":null,"dist_q8_top3_pct":0.0,"dist_q8_top3_pct_ci":null,"dist_q9_pct":null,"dist_q9_pct_ci":null,"bus_q3_pct_4_5":43.0,"bus_q3_pct_4_5_ci":null,"bus_q7_top3_pct":0.0,"bus_q7_top3_pct_ci":null,"dist_q5_mean":null,"bus_q3_mean":null,"writers":null,"walk_theme_pct_of_writers":null,"walk_theme_ci":null,"bus_theme_pct_of_writers":null,"bus_theme_ci":null,"keep_theme_pct_of_writers":null,"keep_theme_ci":null,"nbhd_theme_pct_of_writers":null,"nbhd_theme_ci":null}],"distance_prioritizers":[{"challenge":"Length of commute for students riding buses","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":4.45,"mean_others":3.64,"pct45_prioritizers":84.6,"pct45_others":56.4,"U":113622.0,"p":0.0,"rank_biserial":0.432,"p_bh":0.0},{"challenge":"Retaining highly effective employees","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":4.53,"mean_others":4.79,"pct45_prioritizers":89.4,"pct45_others":96.4,"U":67103.0,"p":0.0,"rank_biserial":-0.154,"p_bh":0.0001},{"challenge":"Unequal access to specialty programs","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":2.89,"mean_others":3.47,"pct45_prioritizers":30.1,"pct45_others":52.3,"U":59532.5,"p":0.0,"rank_biserial":-0.25,"p_bh":0.0},{"challenge":"Current school buildings do not fit the modern academic program (e.g. classroom layout and size, classroom flexibility, ADA compliance, etc.)","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":2.97,"mean_others":3.38,"pct45_prioritizers":31.7,"pct45_others":46.3,"U":64121.5,"p":0.0003,"rank_biserial":-0.192,"p_bh":0.0009},{"challenge":"Student populations have shifted, but school boundaries have not been adjusted to accommodate those changes","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":3.01,"mean_others":3.39,"pct45_prioritizers":35.0,"pct45_others":48.0,"U":66508.0,"p":0.0022,"rank_biserial":-0.162,"p_bh":0.0053},{"challenge":"Cost of maintaining aging buildings","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":3.24,"mean_others":3.56,"pct45_prioritizers":39.8,"pct45_others":53.6,"U":66795.0,"p":0.0024,"rank_biserial":-0.158,"p_bh":0.0053},{"challenge":"Current school buildings do not fit the modern operational expectations (e.g. right sized car rider lines, sports facilities, suitable sidewalks, meal service program, air quality, etc.)","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":3.19,"mean_others":3.48,"pct45_prioritizers":37.4,"pct45_others":51.4,"U":67765.5,"p":0.0056,"rank_biserial":-0.146,"p_bh":0.0105},{"challenge":"School buildings meeting safety codes","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":4.15,"mean_others":4.39,"pct45_prioritizers":73.2,"pct45_others":84.5,"U":69193.0,"p":0.0075,"rank_biserial":-0.128,"p_bh":0.0123},{"challenge":"Classroom technology updates","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":2.67,"mean_others":2.91,"pct45_prioritizers":21.1,"pct45_others":31.4,"U":70511.5,"p":0.0356,"rank_biserial":-0.111,"p_bh":0.0486},{"challenge":"Overcrowded school buildings","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":3.72,"mean_others":3.92,"pct45_prioritizers":61.0,"pct45_others":70.5,"U":70762.0,"p":0.0374,"rank_biserial":-0.108,"p_bh":0.0486},{"challenge":"Partially empty school buildings","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":2.5,"mean_others":2.71,"pct45_prioritizers":16.3,"pct45_others":21.6,"U":71960.5,"p":0.0766,"rank_biserial":-0.093,"p_bh":0.0906},{"challenge":"Appeal of the district to current and prospective students","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":3.33,"mean_others":3.56,"pct45_prioritizers":44.7,"pct45_others":53.8,"U":72876.0,"p":0.1234,"rank_biserial":-0.081,"p_bh":0.1336},{"challenge":"The number of trailers / mobile classrooms","n_distance_prioritizers":123,"n_others":1290,"mean_prioritizers":2.98,"mean_others":3.08,"pct45_prioritizers":31.7,"pct45_others":35.7,"U":75709.0,"p":0.3883,"rank_biserial":-0.046,"p_bh":0.3883}],"glenwood_themes":[{"theme":"Trust, transparency & communication","mentioners_pct":53.8,"lo":35.5,"hi":71.2,"others_pct":9.7,"q":4.187664905734483e-06,"k":14,"n":26},{"theme":"Teachers & staff (support, pay, retention)","mentioners_pct":50.0,"lo":32.1,"hi":67.9,"others_pct":25.0,"q":0.1061068822551292,"k":13,"n":26},{"theme":"Housing, growth & enrollment","mentioners_pct":26.9,"lo":13.7,"hi":46.1,"others_pct":11.3,"q":0.1526870731260585,"k":7,"n":26},{"theme":"Special programs (dual language, magnet, EC)","mentioners_pct":26.9,"lo":13.7,"hi":46.1,"others_pct":15.1,"q":0.47181547869205,"k":7,"n":26},{"theme":"Criticism of the survey itself","mentioners_pct":19.2,"lo":8.5,"hi":37.9,"others_pct":5.3,"q":0.1316470547538029,"k":5,"n":26},{"theme":"Neighborhood & community schools","mentioners_pct":15.4,"lo":6.2,"hi":33.5,"others_pct":11.8,"q":0.938768076805382,"k":4,"n":26},{"theme":"Keep current students in place / minimize disruption","mentioners_pct":15.4,"lo":6.2,"hi":33.5,"others_pct":17.1,"q":1.0,"k":4,"n":26},{"theme":"Screens & classroom technology","mentioners_pct":11.5,"lo":4.0,"hi":29.0,"others_pct":7.4,"q":0.8650843488026843,"k":3,"n":26},{"theme":"Buses, commute & traffic","mentioners_pct":11.5,"lo":4.0,"hi":29.0,"others_pct":17.8,"q":0.938768076805382,"k":3,"n":26},{"theme":"Equity & the achievement gap","mentioners_pct":11.5,"lo":4.0,"hi":29.0,"others_pct":10.9,"q":1.0,"k":3,"n":26},{"theme":"Walking, biking & walk zones","mentioners_pct":3.8,"lo":0.7,"hi":18.9,"others_pct":21.4,"q":0.1526653673647603,"k":1,"n":26},{"theme":"Siblings & keeping families together","mentioners_pct":3.8,"lo":0.7,"hi":18.9,"others_pct":2.8,"q":0.938768076805382,"k":1,"n":26},{"theme":"Class size, capacity & crowding","mentioners_pct":3.8,"lo":0.7,"hi":18.9,"others_pct":5.6,"q":1.0,"k":1,"n":26},{"theme":"Safety & security","mentioners_pct":0.0,"lo":0.0,"hi":12.9,"others_pct":10.4,"q":0.3595507687573594,"k":0,"n":26}],"exit_talk":{"n_mentioners":41,"pct_of_all":2.8,"pct_of_writers":6.5,"themes":[{"theme":"Special programs (dual language, magnet, EC)","mentioners_pct":39.0,"others_pct":14.0,"ratio":2.79},{"theme":"Teachers & staff (support, pay, retention)","mentioners_pct":36.6,"others_pct":25.3,"ratio":1.45},{"theme":"Housing, growth & enrollment","mentioners_pct":34.1,"others_pct":10.5,"ratio":3.27},{"theme":"Keep current students in place / minimize disruption","mentioners_pct":34.1,"others_pct":15.9,"ratio":2.15},{"theme":"Neighborhood & community schools","mentioners_pct":26.8,"others_pct":11.0,"ratio":2.45},{"theme":"Buses, commute & traffic","mentioners_pct":24.4,"others_pct":17.0,"ratio":1.43},{"theme":"Trust, transparency & communication","mentioners_pct":24.4,"others_pct":10.6,"ratio":2.3},{"theme":"Screens & classroom technology","mentioners_pct":19.5,"others_pct":6.7,"ratio":2.89},{"theme":"Criticism of the survey itself","mentioners_pct":12.2,"others_pct":5.4,"ratio":2.26},{"theme":"Walking, biking & walk zones","mentioners_pct":12.2,"others_pct":21.2,"ratio":0.57},{"theme":"Safety & security","mentioners_pct":7.3,"others_pct":10.1,"ratio":0.72},{"theme":"Class size, capacity & crowding","mentioners_pct":4.9,"others_pct":5.6,"ratio":0.88},{"theme":"Equity & the achievement gap","mentioners_pct":4.9,"others_pct":11.3,"ratio":0.43},{"theme":"Siblings & keeping families together","mentioners_pct":4.9,"others_pct":2.7,"ratio":1.81}]},"exit_patterns":[{"pattern":"charter","respondents_matching":11,"reported":"11"},{"pattern":"private","respondents_matching":26,"reported":"26"},{"pattern":"homeschool","respondents_matching":3,"reported":"<10"},{"pattern":"leave_the_district","respondents_matching":4,"reported":"<10"},{"pattern":"pull_my_child","respondents_matching":1,"reported":"<10"},{"pattern":"other_district","respondents_matching":8,"reported":"<10"},{"pattern":"voucher","respondents_matching":2,"reported":"<10"},{"pattern":"opportunity_scholarship","respondents_matching":0,"reported":"0"}],"orange_alternatives":[{"year":2015,"home_students_est":941.0,"private_students":1174.0,"charter_adm":528.0,"non_chccs_total_est":2643.0},{"year":2016,"home_students_est":1028.5,"private_students":1201.0,"charter_adm":515.0,"non_chccs_total_est":2744.5},{"year":2017,"home_students_est":1116.0,"private_students":1181.0,"charter_adm":622.0,"non_chccs_total_est":2919.0},{"year":2018,"home_students_est":1117.0,"private_students":1147.0,"charter_adm":870.0,"non_chccs_total_est":3134.0},{"year":2019,"home_students_est":1231.0,"private_students":1087.0,"charter_adm":1013.0,"non_chccs_total_est":3331.0},{"year":2020,"home_students_est":1400.0,"private_students":1115.0,"charter_adm":1075.0,"non_chccs_total_est":3590.0},{"year":2021,"home_students_est":1796.0,"private_students":1063.0,"charter_adm":1113.0,"non_chccs_total_est":3972.0},{"year":2022,"home_students_est":1601.0,"private_students":1224.0,"charter_adm":1110.0,"non_chccs_total_est":3935.0},{"year":2023,"home_students_est":1276.0,"private_students":1248.0,"charter_adm":1109.0,"non_chccs_total_est":3633.0},{"year":2024,"home_students_est":1251.0,"private_students":1249.0,"charter_adm":1157.0,"non_chccs_total_est":3657.0},{"year":2025,"home_students_est":1002.0,"private_students":1283.0,"charter_adm":1201.0,"non_chccs_total_est":3486.0},{"year":2026,"home_students_est":934.0,"private_students":1338.0,"charter_adm":null,"non_chccs_total_est":null}]}</script>
+<script>
+(function () {
+"use strict";
+const D = JSON.parse(document.getElementById("story-data").textContent);
+const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const C = () => ({ parents: css("--parents"), staff: css("--staff"), board: css("--board"), ink: css("--ink"), ink2: css("--ink-2"),
+                   muted: css("--muted"), grid: css("--grid"), axis: css("--axis"), de: css("--de"), surface: css("--surface"),
+                   seq2: css("--seq-2"), seq4: css("--seq-4"), seq6: css("--seq-6"), wash: css("--wash"), band: css("--band") });
+const NS = "http://www.w3.org/2000/svg";
+const fmt0 = (v) => v == null ? "" : Math.round(v).toLocaleString("en-US");
+const fmt1 = (v) => v == null ? "" : (Math.round(v * 10) / 10).toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const pct = (v) => v == null ? "" : fmt0(v) + "%";
+function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function text(parent, x, y, str, attrs) { const t = el("text", Object.assign({ x, y }, attrs || {}), parent); t.textContent = str; return t; }
+function html(tag, cls, parent, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; if (parent) parent.appendChild(e); return e; }
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+function showTip(evt, rows) {
+  tip.replaceChildren();
+  rows.forEach((r, i) => {
+    const line = html("div", null, tip);
+    if (r.color) { const k = html("span", "k", line); k.style.background = r.color; }
+    if (i === 0 && !r.color) { const s = html("strong", null, line, r.text); } else line.appendChild(document.createTextNode(r.text));
+  });
+  tip.style.opacity = 1; moveTip(evt);
+}
+function moveTip(evt) {
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = evt.clientX + 14, y = evt.clientY + 14;
+  if (x + w > window.innerWidth - 8) x = evt.clientX - w - 14;
+  if (y + h > window.innerHeight - 8) y = evt.clientY - h - 14;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.style.opacity = 0; }
+function hit(node, rows) {
+  node.addEventListener("mouseenter", (e) => showTip(e, typeof rows === "function" ? rows() : rows));
+  node.addEventListener("mousemove", moveTip);
+  node.addEventListener("mouseleave", hideTip);
+  node.setAttribute("tabindex", "0");
+  node.addEventListener("focus", (e) => { const r = node.getBoundingClientRect(); showTip({ clientX: r.left + r.width / 2, clientY: r.top + r.height / 2 }, typeof rows === "function" ? rows() : rows); });
+  node.addEventListener("blur", hideTip);
+}
+
+// ---------- figure shell ----------
+function shell(id, opts) {
+  const fig = document.getElementById(id);
+  fig.replaceChildren();
+  const head = html("div", "head", fig);
+  const tbox = html("div", null, head);
+  html("p", "title", tbox, opts.title);
+  if (opts.subtitle) html("p", "subtitle", tbox, opts.subtitle);
+  if (opts.legend && opts.legend.length) {
+    const lg = html("div", "legend", fig);
+    opts.legend.forEach((k) => { const key = html("span", "key", lg); const sw = html("span", "sw " + (k.kind || ""), key); if (k.color) sw.style.background = k.color; if (k.dash) { sw.style.background = "none"; sw.style.borderTop = "2px dashed " + k.color; sw.style.height = "0"; } html("span", null, key, k.label); });
+  }
+  const mount = html("div", "mount", fig);
+  const foot = html("div", "foot", fig);
+  html("span", "src", foot, opts.source || "");
+  const btn = html("button", "tbl", foot, "Show table"); btn.type = "button";
+  const wrap = html("div", "tablewrap", fig); wrap.hidden = true;
+  btn.addEventListener("click", () => { wrap.hidden = !wrap.hidden; btn.textContent = wrap.hidden ? "Show table" : "Hide table"; if (!wrap.childElementCount) buildTable(wrap, opts.table); });
+  let frame = null;
+  const render = () => { mount.replaceChildren(); opts.draw(mount, Math.max(300, mount.clientWidth)); };
+  render();
+  if (window.ResizeObserver) new ResizeObserver(() => { cancelAnimationFrame(frame); frame = requestAnimationFrame(render); }).observe(mount);
+  if (window.matchMedia) { const mq = window.matchMedia("(prefers-color-scheme: dark)"); if (mq.addEventListener) mq.addEventListener("change", render); }
+  new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+}
+function buildTable(wrap, t) {
+  const table = html("table", null, wrap); const thead = html("thead", null, table); const tr = html("tr", null, thead);
+  t.columns.forEach((c, i) => html("th", i ? "num" : "", tr, c));
+  const tb = html("tbody", null, table);
+  t.rows.forEach((r) => { const row = html("tr", null, tb); r.forEach((v, i) => html("td", i ? "num" : "", row, v == null ? "" : String(v))); });
+}
+function svgBase(mount, w, h) { const s = el("svg", { viewBox: `0 0 ${w} ${h}`, width: w, height: h, role: "img" }, mount); return s; }
+function roundedBarPath(x, y, w, h, r, dir) { // dir: "right" (horizontal bar growing right) or "up"
+  r = Math.min(r, h / 2, Math.abs(w) / 2);
+  if (dir === "right") return `M${x},${y} h${w - r} a${r},${r} 0 0 1 ${r},${r} v${h - 2 * r} a${r},${r} 0 0 1 ${-r},${r} h${-(w - r)} z`;
+  return `M${x},${y + h} v${-(h - r)} a${r},${r} 0 0 1 ${r},${-r} h${w - 2 * r} a${r},${r} 0 0 1 ${r},${r} v${h - r} z`;
+}
+function wrapLabel(parent, x, y, str, maxChars, attrs) {
+  const words = str.split(" "); const lines = []; let cur = "";
+  words.forEach((w) => { if ((cur + " " + w).trim().length > maxChars && cur) { lines.push(cur); cur = w; } else cur = (cur + " " + w).trim(); });
+  if (cur) lines.push(cur);
+  const t = el("text", Object.assign({ x, y: y - (lines.length - 1) * 7 }, attrs || {}), parent);
+  lines.forEach((l, i) => { const ts = el("tspan", { x, dy: i ? 14 : 0 }, t); ts.textContent = l; });
+  return t;
+}
+
+// ---------- generic: horizontal grouped bars ----------
+function hBars(mount, width, cfg) {
+  const k = C(); const narrow = width < 560; const labW = narrow ? Math.min(cfg.labelWidth || 190, 118) : (cfg.labelWidth || 190); const ml = labW + 8, mr = 52, mt = 10, mb = 26;
+  const wrapChars = narrow ? 17 : (cfg.wrapChars || 30);
+  const n = cfg.rows.length, s = cfg.series.length; const barH = Math.min(cfg.barH || 14, 22), gap = 2;
+  const groupH = Math.max(s * barH + (s - 1) * gap + (cfg.groupGap || 12), narrow ? 46 : 0);
+  const h = mt + n * groupH + mb; const svg = svgBase(mount, width, h); const pw = width - ml - mr; const max = cfg.max || 100;
+  const x = (v) => ml + (v / max) * pw;
+  const g = el("g", { class: "grid" }, svg);
+  let ticks = cfg.ticks || [0, 25, 50, 75, 100]; if (narrow && ticks.length > 4) ticks = ticks.filter((t, i) => i % 2 === 0);
+  ticks.filter((t) => t <= max).forEach((t) => { el("line", { x1: x(t), x2: x(t), y1: mt, y2: h - mb }, g); text(svg, x(t), h - 8, cfg.tickFmt ? cfg.tickFmt(t) : pct(t), { "text-anchor": "middle", "font-size": 11 }); });
+  cfg.rows.forEach((row, i) => {
+    const y0 = mt + i * groupH + (groupH - (s * barH + (s - 1) * gap + (cfg.groupGap || 12))) / 2;
+    wrapLabel(svg, ml - 8, y0 + (s * barH + (s - 1) * gap) / 2 + 4, row.label, wrapChars, { "text-anchor": "end", class: "lab", "font-size": narrow ? 11.5 : 12.5 });
+    cfg.series.forEach((ser, j) => {
+      const v = row.values[j]; if (v == null) return; const y = y0 + j * (barH + gap);
+      const p = el("path", { d: roundedBarPath(ml, y, Math.max(x(v) - ml, 1), barH, 4, "right"), fill: ser.color }, svg);
+      if (cfg.labelAll || j === cfg.labelSeries) text(svg, x(v) + 5, y + barH / 2 + 4, cfg.valFmt ? cfg.valFmt(v) : pct(v), { class: "val", "font-size": 11 });
+      const hitR = el("rect", { x: ml, y: y - 1, width: pw, height: barH + 2, fill: "transparent" }, svg);
+      hit(hitR, [{ text: row.label }, ...cfg.series.map((ss, jj) => ({ color: ss.color, text: `${ss.label}: ${row.values[jj] == null ? "n/a" : (cfg.valFmt ? cfg.valFmt(row.values[jj]) : pct(row.values[jj]))}${row.extra && row.extra[jj] ? " " + row.extra[jj] : ""}` }))]);
+    });
+  });
+  el("line", { x1: ml, x2: ml, y1: mt, y2: h - mb, class: "axis", stroke: k.axis }, svg);
+}
+
+// ---------- generic: dumbbell ----------
+function dumbbell(mount, width, cfg) {
+  const k = C(); const narrow = width < 560; const labW = narrow ? Math.min(cfg.labelWidth || 200, 118) : (cfg.labelWidth || 200); const ml = labW + 8, mr = 40, mt = 12, mb = 26; const rowH = narrow ? Math.max(cfg.rowH || 30, 44) : (cfg.rowH || 30);
+  const h = mt + cfg.rows.length * rowH + mb; const svg = svgBase(mount, width, h); const pw = width - ml - mr; const max = cfg.max || 100;
+  const x = (v) => ml + (v / max) * pw; const g = el("g", { class: "grid" }, svg);
+  (narrow ? [0, 50, 100] : [0, 25, 50, 75, 100]).filter((t) => t <= max).forEach((t) => { el("line", { x1: x(t), x2: x(t), y1: mt, y2: h - mb }, g); text(svg, x(t), h - 8, pct(t), { "text-anchor": "middle", "font-size": 11 }); });
+  cfg.rows.forEach((row, i) => {
+    const y = mt + i * rowH + rowH / 2;
+    wrapLabel(svg, ml - 8, y + 4, row.label, narrow ? 17 : (cfg.wrapChars || 32), { "text-anchor": "end", class: "lab", "font-size": narrow ? 11.5 : 12.5 });
+    const vals = row.values.filter((v) => v != null);
+    el("line", { x1: x(Math.min(...vals)), x2: x(Math.max(...vals)), y1: y, y2: y, stroke: k.grid, "stroke-width": 3, "stroke-linecap": "round" }, svg);
+    cfg.series.forEach((ser, j) => { const v = row.values[j]; if (v == null) return;
+      if (ser.hollow) el("circle", { cx: x(v), cy: y, r: 5.5, fill: k.surface, stroke: ser.color, "stroke-width": 2.5 }, svg);
+      else { el("circle", { cx: x(v), cy: y, r: 7, fill: k.surface }, svg); el("circle", { cx: x(v), cy: y, r: 5.5, fill: ser.color }, svg); }
+    });
+    if (row.note) text(svg, x(Math.max(...vals)) + 10, y + 4, row.note, { "font-size": 11 });
+    const hitR = el("rect", { x: ml, y: y - rowH / 2, width: pw + mr, height: rowH, fill: "transparent" }, svg);
+    hit(hitR, [{ text: row.label }, ...cfg.series.map((ss, jj) => ({ color: ss.color, text: `${ss.label}: ${row.values[jj] == null ? "n/a" : pct(row.values[jj])}` }))]);
+  });
+}
+
+// ---------- generic: line chart ----------
+function lineChart(mount, width, cfg) {
+  const k = C(); const ml = 52, mr = cfg.mr || 20, mt = 14, mb = 30; const h = cfg.height || 300; const svg = svgBase(mount, width, h);
+  const pw = width - ml - mr, ph = h - mt - mb;
+  const xs = cfg.xDomain, ys = cfg.yDomain;
+  const x = (v) => ml + ((v - xs[0]) / (xs[1] - xs[0])) * pw; const y = (v) => mt + ph - ((v - ys[0]) / (ys[1] - ys[0])) * ph;
+  const g = el("g", { class: "grid" }, svg);
+  cfg.yTicks.forEach((t) => { el("line", { x1: ml, x2: ml + pw, y1: y(t), y2: y(t) }, g); text(svg, ml - 8, y(t) + 4, cfg.yFmt ? cfg.yFmt(t) : fmt0(t), { "text-anchor": "end", "font-size": 11 }); });
+  cfg.xTicks.forEach((t) => text(svg, x(t), h - 8, cfg.xFmt ? cfg.xFmt(t) : String(t), { "text-anchor": "middle", "font-size": 11 }));
+  if (cfg.bands) cfg.bands.forEach((b) => { el("rect", { x: ml, y: y(b[1]), width: pw, height: y(b[0]) - y(b[1]), fill: k.band }, svg); });
+  if (cfg.vline) { el("line", { x1: x(cfg.vline), x2: x(cfg.vline), y1: mt, y2: mt + ph, stroke: k.axis, "stroke-dasharray": "3 3" }, svg); if (cfg.vlineLabel) text(svg, x(cfg.vline) + 5, mt + 12, cfg.vlineLabel, { "font-size": 11 }); }
+  if (cfg.area) { const a = cfg.area; let d = ""; a.upper.forEach((p, i) => { d += (i ? "L" : "M") + x(p[0]) + "," + y(p[1]); }); a.lower.slice().reverse().forEach((p) => { d += "L" + x(p[0]) + "," + y(p[1]); }); el("path", { d: d + "z", fill: a.fill || k.wash }, svg); }
+  cfg.series.forEach((ser) => {
+    const pts = ser.points.filter((p) => p[1] != null); if (!pts.length) return;
+    const d = pts.map((p, i) => (i ? "L" : "M") + x(p[0]) + "," + y(p[1])).join(" ");
+    const path = el("path", { d, fill: "none", stroke: ser.color, "stroke-width": ser.width || 2, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
+    if (ser.dash) path.setAttribute("stroke-dasharray", "6 4");
+    if (ser.markers !== false) pts.forEach((p) => { el("circle", { cx: x(p[0]), cy: y(p[1]), r: 5, fill: k.surface }, svg); el("circle", { cx: x(p[0]), cy: y(p[1]), r: (ser.r || 3.5), fill: ser.color }, svg); });
+    if (ser.endLabel) { const last = pts[pts.length - 1]; text(svg, x(last[0]) + 6, y(last[1]) + (ser.labelDy || 4), ser.endLabel, { "font-size": 11, class: "lab" }); }
+  });
+  // hover: nearest x
+  const allX = Array.from(new Set(cfg.series.flatMap((s) => s.points.filter((p) => p[1] != null).map((p) => p[0])))).sort((a, b) => a - b);
+  const cross = el("line", { x1: 0, x2: 0, y1: mt, y2: mt + ph, stroke: k.axis, "stroke-width": 1, opacity: 0 }, svg);
+  const hitR = el("rect", { x: ml, y: mt, width: pw, height: ph, fill: "transparent" }, svg);
+  hitR.addEventListener("mousemove", (e) => {
+    const r = svg.getBoundingClientRect(); const px = (e.clientX - r.left) * (width / r.width); const xv = xs[0] + ((px - ml) / pw) * (xs[1] - xs[0]);
+    let best = allX[0]; allX.forEach((v) => { if (Math.abs(v - xv) < Math.abs(best - xv)) best = v; });
+    cross.setAttribute("x1", x(best)); cross.setAttribute("x2", x(best)); cross.setAttribute("opacity", 1);
+    const rows = [{ text: cfg.xFmt ? cfg.xFmt(best) : String(best) }];
+    cfg.series.forEach((s) => { const p = s.points.find((q) => q[0] === best && q[1] != null); if (p) rows.push({ color: s.color, text: `${s.label}: ${cfg.yFmtTip ? cfg.yFmtTip(p[1]) : fmt0(p[1])}` }); });
+    showTip(e, rows);
+  });
+  hitR.addEventListener("mouseleave", () => { cross.setAttribute("opacity", 0); hideTip(); });
+  el("line", { x1: ml, x2: ml + pw, y1: mt + ph, y2: mt + ph, class: "axis", stroke: k.axis }, svg);
+}
+
+// ================= FIGURES =================
+const k0 = C();
+
+// 1. Four layers, indexed
+shell("fig-layers", {
+  title: "Four nested measures of the same community, 2019 to 2024 (2019 = 100)",
+  subtitle: "Each line is a subset of the one above it, and each falls faster. The gap between ages 5-17 and K-12 enrollment is the capture-rate loss.",
+  legend: D.layers.series.map((s, i) => ({ label: `${s.label} (${s.pct_change > 0 ? "+" : ""}${fmt1(s.pct_change)}%)`, color: [k0.muted, k0.board, k0.parents, k0.staff][i], kind: "line" })),
+  source: "Module 1 chccs_layers.csv: NC DPI ADM; Census SAIPE. 2024 population pairs with school year 2023-24.",
+  table: { columns: ["Year", ...D.layers.series.map((s) => s.label), "Capture rate"], rows: D.layers.years.map((y, i) => [y, ...D.layers.series.map((s) => fmt0(s.values[i])), D.layers.capture[i]]) },
+  draw: (m, w) => lineChart(m, w, { height: 280, xDomain: [2019, 2024.6], yDomain: [82, 102], yTicks: [85, 90, 95, 100], xTicks: D.layers.years, mr: 150,
+    yFmt: (t) => String(t),
+    series: D.layers.series.map((s, i) => ({ label: s.label, color: [C().muted, C().board, C().parents, C().staff][i], points: D.layers.years.map((y, j) => [y, s.index[j]]), endLabel: s.label.replace("enrollment", "enroll."), labelDy: [-2, 10, 4, 4][i] })),
+    yFmtTip: (v) => fmt1(v) + " (index)" })
+});
+
+// 2. Levers: what drives decline vs what the survey asks
+shell("fig-levers", {
+  title: "Where the decline came from, and what the survey asks about",
+  subtitle: "Left: Module 1's split of the 1,069 students lost 2019-2024. Right: the survey's 26 rated items, grouped by the lever they touch.",
+  legend: [],
+  source: "Module 1 decomposition (714 / 355); lever mapping of the 26 CPA items in results/ws_c/lever_mapping.csv.",
+  table: { columns: ["Lever", "Students lost 2019-24", "Survey items"], rows: [["Fewer children living here", 714, 0], ["Whether families choose CHCCS", 355, D.levers.n_items["DEMAND-CAPTURE"]], ["Buildings, boundaries and money", "", D.levers.n_items["SUPPLY-FACILITIES/COST"]], ["Getting to school, community", "", D.levers.n_items["LOGISTICS/COMMUNITY"]]] },
+  draw: (m, w) => {
+    const k = C(); const rows = [
+      { label: "Fewer children living here", students: 714, items: 0 },
+      { label: "Whether families choose CHCCS", students: 355, items: D.levers.n_items["DEMAND-CAPTURE"] },
+      { label: "Buildings, boundaries and money", students: null, items: D.levers.n_items["SUPPLY-FACILITIES/COST"] },
+      { label: "Getting to school, community", students: null, items: D.levers.n_items["LOGISTICS/COMMUNITY"] }];
+    const narrow = w < 640; const labW = narrow ? 0 : 200, mid = 16; const rowH = narrow ? 78 : 46; const h = (narrow ? 50 : 40) + rows.length * rowH; const svg = svgBase(m, w, h);
+    const half = (w - labW - mid - 16) / 2; const xl0 = labW, xr0 = labW + half + mid;
+    text(svg, xl0, 14, "Students lost, 2019 to 2024", { "font-size": 11.5, class: "lab" }); text(svg, xr0, 14, "Survey items (of 26)", { "font-size": 11.5, class: "lab" });
+    rows.forEach((r, i) => {
+      const y = (narrow ? 50 : 30) + i * rowH;
+      if (narrow) text(svg, 0, y - 6, r.label, { class: "lab", "font-size": 12.5 }); else wrapLabel(svg, labW - 10, y + 16, r.label, 26, { "text-anchor": "end", class: "lab", "font-size": 12.5 });
+      if (r.students != null) { const bw = (r.students / 714) * (half - 60); el("path", { d: roundedBarPath(xl0, y + 4, Math.max(bw, 1), 18, 4, "right"), fill: i === 0 ? k.muted : k.parents }, svg); text(svg, xl0 + bw + 6, y + 17, `${fmt0(r.students)} (${i === 0 ? "67%" : "33%"})`, { class: "val", "font-size": 11.5 }); }
+      else text(svg, xl0, y + 17, narrow ? "not measured" : "not measured in Module 1", { "font-size": 11, fill: k.muted });
+      const iw = (r.items / 13) * (half - 60);
+      if (r.items > 0) el("path", { d: roundedBarPath(xr0, y + 4, Math.max(iw, 1), 18, 4, "right"), fill: i === 1 ? k.parents : (i === 2 ? k.staff : k.board) }, svg);
+      text(svg, xr0 + (r.items > 0 ? iw + 6 : 4), y + 17, r.items > 0 ? String(r.items) : "0 items", { class: "val", "font-size": 11.5, fill: r.items > 0 ? k.ink : k.muted });
+      const hitR = el("rect", { x: 0, y, width: w, height: rowH, fill: "transparent" }, svg);
+      const items = D.levers.items[["DEMAND-DEMOGRAPHIC", "DEMAND-CAPTURE", "SUPPLY-FACILITIES/COST", "LOGISTICS/COMMUNITY"][i]] || [];
+      hit(hitR, [{ text: r.label }, { text: r.students != null ? `${fmt0(r.students)} students` : "no Module 1 measure" }, { text: items.length ? items.join("; ") : "No survey item asks about birth rates, housing cost or how many children live here." }]);
+    });
+  }
+});
+
+// 3. Lever share by stakeholder
+shell("fig-lever-share", {
+  title: "Share of each group's top-three picks, by lever",
+  subtitle: "Challenges (Q7) and values (Q8) pooled. Thirteen of the 26 items are about buildings and money, so an even spread would put 50% there.",
+  legend: [{ label: "Other parents (n = 1,231)", color: k0.parents }, { label: "Non-parents, mostly staff (n = 98)", color: k0.staff }, { label: "Board (n = 7)", color: k0.board }],
+  source: "results/ws_c/headline_lever_x_stakeholder_top3_share.csv; board from the district's Full Report.",
+  table: { columns: ["Lever", "Other parents", "Non-parents", "Board", "Share of items"], rows: ["DEMAND-CAPTURE", "SUPPLY-FACILITIES/COST", "LOGISTICS/COMMUNITY"].map((l) => [D.levers.labels[l], pct(D.levers.top3_share["Other parents"][l]), pct(D.levers.top3_share["Non-parent"][l]), pct(D.levers.top3_share["Board (n=7)"][l]), pct(D.levers.n_items[l] / 26 * 100)]) },
+  draw: (m, w) => hBars(m, w, { labelWidth: 200, max: 60, ticks: [0, 20, 40, 60], barH: 16, labelAll: true,
+    series: [{ label: "Other parents", color: C().parents }, { label: "Non-parents", color: C().staff }, { label: "Board", color: C().board }],
+    rows: ["DEMAND-CAPTURE", "SUPPLY-FACILITIES/COST", "LOGISTICS/COMMUNITY"].map((l) => ({ label: `${D.levers.labels[l]} (${D.levers.n_items[l]} items)`, values: [D.levers.top3_share["Other parents"][l], D.levers.top3_share["Non-parent"][l], D.levers.top3_share["Board (n=7)"][l]] })) })
+});
+
+// 4. Representation
+shell("fig-represent", {
+  title: "Children outside CHCCS, and the parents who speak for them in the survey",
+  subtitle: "Share of resident school-age children not enrolled in CHCCS, against the share of parent respondents whose children are outside CHCCS.",
+  legend: [{ label: "Resident children ages 5-17 (Census SAIPE vs DPI ADM)", color: k0.muted }, { label: "Survey parents of school-age children (n = 1,323)", color: k0.parents }],
+  source: "results/ws_a/representation_vs_population.csv; respondent_roles.csv. Ages 5-17 is not exactly K-12; the survey counts adults, not children.",
+  table: { columns: ["Measure", "Percent"], rows: [["Resident children not in CHCCS, 2019", pct(D.representation.pct_children_not_enrolled_2019)], ["Resident children not in CHCCS, 2024", pct(D.representation.pct_children_not_enrolled_2024)], ["Parent respondents, all children outside CHCCS", fmt1(D.representation.survey_pct_excl) + "%"], ["Parent respondents, any child outside CHCCS", fmt1(D.representation.survey_pct_any) + "%"]] },
+  draw: (m, w) => hBars(m, w, { labelWidth: 230, max: 10, ticks: [0, 2, 4, 6, 8, 10], barH: 18, groupGap: 10, labelAll: true, wrapChars: 34, valFmt: (v) => fmt1(v) + "%", tickFmt: (t) => t + "%",
+    series: [{ label: "Share", color: C().parents }],
+    rows: [
+      { label: "Resident children not enrolled in CHCCS, 2019", values: [D.representation.pct_children_not_enrolled_2019] },
+      { label: "Resident children not enrolled in CHCCS, 2024", values: [D.representation.pct_children_not_enrolled_2024] },
+      { label: "Survey parents with any child outside CHCCS", values: [D.representation.survey_pct_any], extra: [`(${D.representation.n_any} respondents)`] },
+      { label: "Survey parents with all children outside CHCCS", values: [D.representation.survey_pct_excl], extra: [`(${D.representation.n_excl} respondents)`] }] })
+});
+// recolor the two population bars after draw: simpler to patch by order
+(function () { const fig = document.getElementById("fig-represent"); const fix = () => { const paths = fig.querySelectorAll("svg path"); if (paths.length >= 4) { paths[0].setAttribute("fill", C().muted); paths[1].setAttribute("fill", C().muted); } }; fix(); new MutationObserver(fix).observe(fig.querySelector(".mount"), { childList: true }); })();
+
+// 5. Cohort ladder
+shell("fig-ladder", {
+  title: "Children who will be in K-5 during the new boundaries' first six years, by birth year",
+  subtitle: "Fall 2027 to spring 2033. Bars are estimated single-year cohorts for Orange County from the 2024 Census age structure.",
+  legend: [{ label: "Enrolled when the survey ran (born 2017-2021)", color: k0.parents }, { label: "Not yet in school (born 2022-2027)", color: k0.de }],
+  source: "results/ws_a/summary.json (age_pipeline); Census county population estimates, Vintage 2024. County-wide, so includes Orange County Schools; births after 2024 assumed equal to the under-5 per-year size.",
+  table: { columns: ["Birth year", "Estimated cohort", "In K-5 (school years)", "Status fall 2026"], rows: D.cohort_ladder.rows.map((r) => [r.birth_year, fmt0(r.size), r.k5_years, r.in_school_fall_2026 ? "enrolled" : "not yet"]) },
+  draw: (m, w) => {
+    const k = C(); const rows = D.cohort_ladder.rows; const ml = 60, mr = 20, mt = 12, mb = 28; const h = 280; const svg = svgBase(m, w, h);
+    const pw = w - ml - mr, ph = h - mt - mb; const bw = Math.min(26, pw / rows.length - 6); const max = 1600;
+    const x = (i) => ml + (i + 0.5) * (pw / rows.length); const y = (v) => mt + ph - (v / max) * ph;
+    const g = el("g", { class: "grid" }, svg); [0, 500, 1000, 1500].forEach((t) => { el("line", { x1: ml, x2: ml + pw, y1: y(t), y2: y(t) }, g); text(svg, ml - 8, y(t) + 4, fmt0(t), { "text-anchor": "end", "font-size": 11 }); });
+    rows.forEach((r, i) => { const col = r.in_school_fall_2026 ? k.parents : k.de; el("path", { d: roundedBarPath(x(i) - bw / 2, y(r.size), bw, ph - (y(r.size) - mt), 4, "up"), fill: col }, svg);
+      text(svg, x(i), h - 10, String(r.birth_year), { "text-anchor": "middle", "font-size": 11 });
+      const hr = el("rect", { x: x(i) - pw / rows.length / 2, y: mt, width: pw / rows.length, height: ph, fill: "transparent" }, svg);
+      hit(hr, [{ text: `Born ${r.birth_year}` }, { color: col, text: `about ${fmt0(r.size)} children; in K-5 ${r.k5_years}` }, { text: r.in_school_fall_2026 ? "Enrolled when the survey ran" : "Not yet in school when the survey ran" }]); });
+    const split = x(4.5); el("line", { x1: split, x2: split, y1: mt, y2: mt + ph, stroke: k.axis, "stroke-dasharray": "3 3" }, svg);
+    text(svg, split - 6, mt + 14, "48% enrolled", { "text-anchor": "end", "font-size": 11.5, class: "lab" }); text(svg, split + 6, mt + 14, `${fmt0(D.cohort_ladder.share_not_yet)}% not yet in school`, { "font-size": 11.5, class: "lab" });
+    el("line", { x1: ml, x2: ml + pw, y1: mt + ph, y2: mt + ph, class: "axis", stroke: k.axis }, svg);
+  }
+});
+
+// 6. Dumbbell: parents vs staff vs board
+shell("fig-dumbbell", {
+  title: "Share putting each item in their top three: parents, staff and the board",
+  subtitle: "Sorted by the staff-minus-parent gap. The board's seven answers sit on the staff side of every large gap.",
+  legend: [{ label: "Parents (n = 1,315)", color: k0.parents, kind: "dot" }, { label: "Non-parents, mostly staff (n = 98)", color: k0.staff, kind: "dot" }, { label: "Board (n = 7)", color: k0.board, kind: "dot hollow" }],
+  source: "results/ws_a/pooled_vs_parent_top3.csv; board percentages transcribed from the district's Full Report. Non-parent intervals are about ±9 points.",
+  table: { columns: ["Item", "Parents", "Non-parents", "Pooled", "Board"], rows: D.top3_dumbbell.map((r) => [r.item, pct(r.parent), pct(r.nonparent), pct(r.pooled), pct(r.board)]) },
+  draw: (m, w) => dumbbell(m, w, { labelWidth: 220, rowH: 30, wrapChars: 34,
+    series: [{ label: "Parents", color: C().parents }, { label: "Non-parents (staff)", color: C().staff }, { label: "Board", color: C().board, hollow: true }],
+    rows: D.top3_dumbbell.map((r) => ({ label: r.item, values: [r.parent, r.nonparent, r.board] })) })
+});
+
+// KPIs money
+(function () { const box = document.getElementById("kpis-money"); const dec = D.decomposition; const tot = dec["Total K-12 ADM decline 2019->2024"], dem = dec["Demographic (fewer 5-17 residents; Module 1 convention)"], cap = dec["Capture-rate loss (residents enrolling elsewhere; Module 1 convention)"];
+  [["Students lost, 2019 to 2024", fmt0(tot.students), "K-12 Average Daily Membership"], ["Fewer children living here", `${fmt0(dem.students)} · $${(dem.state_per_year_fy2027 / 1e6).toFixed(1)}M/yr`, `${fmt0(dem.share_pct)}% · state funding at the FY2027 rate`], ["Enrolling elsewhere", `${fmt0(cap.students)} · $${(cap.state_per_year_fy2027 / 1e6).toFixed(1)}M/yr`, `${fmt0(cap.share_pct)}% · the recoverable part`], ["Deck's five-year state reduction", "$38.3M", "FY2027 to FY2031, replicated exactly"]].forEach((t) => { const c = html("div", "kpi", box); html("div", "label", c, t[0]); html("div", "value", c, t[1]); html("div", "sub", c, t[2]); }); })();
+
+// 7. Forecasts
+shell("fig-forecast", {
+  title: "CHCCS elementary enrollment: six years of actuals and five paths forward",
+  subtitle: "Solid: NC DPI ADM. Dashed: the closure study's forecast, the retreat deck scaled to elementary, and two Census-trend scenarios.",
+  legend: [{ label: "Actual elementary ADM", color: k0.ink, kind: "line" }, { label: "Closure study (Carolina Demography)", color: k0.board, kind: "line", dash: true }, { label: "Board deck, scaled to elementary", color: k0.staff, kind: "line", dash: true }, { label: "Scenario A: demographics only", color: k0.parents, kind: "line", dash: true }, { label: "Scenario B: capture keeps falling", color: k0.muted, kind: "line", dash: true }],
+  source: "results/ws_c/elementary_adm_actual_and_forecasts.csv. Deck scaled by the 2025 elementary share (40.9%); scenarios anchored to the 2025 actual.",
+  table: { columns: ["Year", "Actual", "Closure study", "Deck scaled", "Scenario A", "Scenario B"], rows: D.forecasts.actual.map((p, i) => [p[0], fmt0(p[1]), fmt0(D.forecasts.closure_study[i][1]), fmt0(D.forecasts.deck_scaled[i][1]), fmt0(D.forecasts.scenario_A[i][1]), fmt0(D.forecasts.scenario_B[i][1])]).filter((r) => r[0] <= 2031) },
+  draw: (m, w) => lineChart(m, w, { height: 320, xDomain: [2015, 2031.8], yDomain: [3700, 5700], yTicks: [4000, 4500, 5000, 5500], xTicks: [2015, 2019, 2022, 2025, 2028, 2031], mr: 34, vline: 2025.5, vlineLabel: "forecast",
+    series: [
+      { label: "Actual", color: C().ink, points: D.forecasts.actual, r: 3.5 },
+      { label: "Closure study", color: C().board, points: D.forecasts.closure_study.filter((p) => p[0] <= 2031), dash: true, markers: false, width: 2.5 },
+      { label: "Deck scaled", color: C().staff, points: D.forecasts.deck_scaled, dash: true, markers: false },
+      { label: "Scenario A", color: C().parents, points: D.forecasts.scenario_A, dash: true, markers: false },
+      { label: "Scenario B", color: C().muted, points: D.forecasts.scenario_B, dash: true, markers: false }],
+    yFmt: (t) => fmt0(t) })
+});
+(function () { const t = document.getElementById("tbl-scenarios"); const thead = html("thead", null, t); const tr = html("tr", null, thead); ["Path, 2025 to 2031", "K-12 ADM 2031", "Change", "Elementary 2031", "State reduction FY27-31"].forEach((c, i) => html("th", i ? "num" : "", tr, c)); const tb = html("tbody", null, t);
+  D.scenarios.forEach((s) => { const r = html("tr", null, tb); [s.name, fmt0(s.adm_2031), fmt1(s.pct_change) + "%", fmt0(s.elementary_2031), "$" + fmt1(s.state_reduction_m) + "M"].forEach((v, i) => html("td", i ? "num" : "", r, v)); });
+  const r = html("tr", null, tb); ["Closure study (elementary only)", "", "", fmt0(4177), ""].forEach((v, i) => html("td", i ? "num" : "", r, v)); })();
+
+// 8. Fiscal by age
+shell("fig-fiscal", {
+  title: "\"Fiscal responsibility\" by respondent age: rated high, and kept in the top three",
+  subtitle: "The board rated it 4 or 5 unanimously and four of seven ranked it. Lines show 95% Wilson intervals.",
+  legend: [{ label: "Rated 4 or 5", color: k0.de, kind: "dot" }, { label: "In top three values", color: k0.parents, kind: "dot" }],
+  source: "results/ws_c/item_profiles_by_subgroup.csv. Under-30 (n = 20) and 65+ (n = 10) omitted.",
+  table: { columns: ["Age", "Rated 4-5", "Top three", "n"], rows: ["30 to 39 years", "40 to 49 years", "50 to 64 years"].map((a) => { const r1 = D.fiscal_by_age.find((x) => x.age === a && x.measure === "rated 4-5"), r2 = D.fiscal_by_age.find((x) => x.age === a && x.measure === "top-3"); return [a, pct(r1.pct), pct(r2.pct), fmt0(r1.n)]; }) },
+  draw: (m, w) => { const k = C(); const ages = ["30 to 39 years", "40 to 49 years", "50 to 64 years", "Board (n = 7)"]; const ml = w < 560 ? 110 : 150, mr = 56, mt = 10, mb = 26, rowH = 34; const h = mt + ages.length * rowH + mb; const svg = svgBase(m, w, h); const pw = w - ml - mr; const x = (v) => ml + v / 100 * pw;
+    const g = el("g", { class: "grid" }, svg); [0, 25, 50, 75, 100].forEach((t) => { el("line", { x1: x(t), x2: x(t), y1: mt, y2: h - mb }, g); text(svg, x(t), h - 8, pct(t), { "text-anchor": "middle", "font-size": 11 }); });
+    ages.forEach((a, i) => { const y = mt + i * rowH + rowH / 2; text(svg, ml - 8, y + 4, a, { "text-anchor": "end", class: "lab", "font-size": 12.5 });
+      let r1, r2; if (i < 3) { r1 = D.fiscal_by_age.find((q) => q.age === a && q.measure === "rated 4-5"); r2 = D.fiscal_by_age.find((q) => q.age === a && q.measure === "top-3"); } else { r1 = { pct: 100, lo: 100, hi: 100 }; r2 = { pct: 57, lo: 57, hi: 57 }; }
+      el("line", { x1: x(r2.pct), x2: x(r1.pct), y1: y, y2: y, stroke: k.grid, "stroke-width": 3, "stroke-linecap": "round" }, svg);
+      [[r1, k.de], [r2, k.parents]].forEach(([r, col]) => { if (i < 3) el("line", { x1: x(r.lo), x2: x(r.hi), y1: y, y2: y, stroke: col, "stroke-width": 1.5, opacity: 0.6 }, svg); el("circle", { cx: x(r.pct), cy: y, r: 7, fill: k.surface }, svg); el("circle", { cx: x(r.pct), cy: y, r: 5.5, fill: col }, svg); });
+      text(svg, x(r2.pct) - 10, y + 4, pct(r2.pct), { "text-anchor": "end", class: "val", "font-size": 11 }); text(svg, x(r1.pct) + 10, y + 4, pct(r1.pct), { class: "val", "font-size": 11 });
+      const hr = el("rect", { x: ml, y: y - rowH / 2, width: pw, height: rowH, fill: "transparent" }, svg); hit(hr, [{ text: a }, { color: k.de, text: `Rated 4-5: ${pct(r1.pct)}${i < 3 ? ` (${fmt0(r1.lo)}-${fmt0(r1.hi)})` : ""}` }, { color: k.parents, text: `Top three: ${pct(r2.pct)}${i < 3 ? ` (${fmt0(r2.lo)}-${fmt0(r2.hi)})` : ""}` }]); }); }
+});
+
+// 9. Slope chart utilization
+shell("fig-slope", {
+  title: "Projected utilization of each elementary school against 2026 program capacity",
+  subtitle: "The district's own forecast at current boundaries. The three schools forecast emptiest in 2031 are highlighted; Glenwood closes in 2027.",
+  legend: [{ label: "Rashkis, Northside, Scroggs (emptiest in 2031)", color: k0.parents, kind: "line" }, { label: "McDougle (over capacity)", color: k0.staff, kind: "line" }, { label: "Glenwood (closing fall 2027)", color: k0.muted, kind: "line", dash: true }, { label: "Other schools", color: k0.de, kind: "line" }, { label: "75% to 100% band", color: k0.band }],
+  source: "results/ws_b/school_table.csv: closure study forecast 2026-2036 and 2026 program capacity (p.34).",
+  table: { columns: ["School", "2026", "2031", "2036", "Program capacity"], rows: D.schools.map((s) => [s.school, pct(s.util_2026_forecast_on_program_cap_pct), pct(s.util_2031_projected_pct), pct(s.util_2036_forecast_on_program_cap_pct), fmt0(s.program_capacity_2026)]) },
+  draw: (m, w) => { const k = C(); const ml = 50, mr = w < 560 ? 120 : 175, mt = 12, mb = 28; const h = 380; const svg = svgBase(m, w, h); const pw = w - ml - mr, ph = h - mt - mb;
+    const xs = [2026, 2031, 2036]; const x = (v) => ml + ((v - 2026) / 10) * pw; const y = (v) => mt + ph - ((v - 50) / 70) * ph;
+    el("rect", { x: ml, y: y(100), width: pw, height: y(75) - y(100), fill: k.band }, svg);
+    const g = el("g", { class: "grid" }, svg); [50, 60, 70, 80, 90, 100, 110, 120].forEach((t) => { el("line", { x1: ml, x2: ml + pw, y1: y(t), y2: y(t) }, g); text(svg, ml - 8, y(t) + 4, pct(t), { "text-anchor": "end", "font-size": 11 }); });
+    xs.forEach((t) => text(svg, x(t), h - 8, String(t), { "text-anchor": "middle", "font-size": 11 }));
+    const emph = { Rashkis: k.parents, Northside: k.parents, Scroggs: k.parents, McDougle: k.staff, Glenwood: k.muted };
+    const sorted = D.schools.slice().sort((a, b) => (emph[a.school] ? 1 : 0) - (emph[b.school] ? 1 : 0));
+    // end labels: resolve collisions by sorting on desired y and pushing down, then pulling back up if the last runs past the plot
+    const want = sorted.map((s) => ({ s, y: y(s.util_2036_forecast_on_program_cap_pct) + 4 })).sort((a, b) => a.y - b.y);
+    for (let i = 1; i < want.length; i++) if (want[i].y - want[i - 1].y < 13) want[i].y = want[i - 1].y + 13;
+    const over = want[want.length - 1].y - (mt + ph + 2); if (over > 0) { for (let i = want.length - 1; i >= 0; i--) { want[i].y -= over; if (i > 0 && want[i].y - want[i - 1].y >= 13) break; } }
+    const labelY = Object.fromEntries(want.map((q) => [q.s.school, q.y]));
+    sorted.forEach((s) => { const col = emph[s.school] || k.de; const pts = [[2026, s.util_2026_forecast_on_program_cap_pct], [2031, s.util_2031_projected_pct], [2036, s.util_2036_forecast_on_program_cap_pct]];
+      const p = el("path", { d: pts.map((q, i) => (i ? "L" : "M") + x(q[0]) + "," + y(q[1])).join(" "), fill: "none", stroke: col, "stroke-width": emph[s.school] ? 2.5 : 1.5, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
+      if (s.school === "Glenwood") p.setAttribute("stroke-dasharray", "5 4");
+      pts.forEach((q) => { el("circle", { cx: x(q[0]), cy: y(q[1]), r: 5, fill: k.surface }, svg); el("circle", { cx: x(q[0]), cy: y(q[1]), r: 3.5, fill: col }, svg); });
+      const ly = labelY[s.school]; const short = w < 560 && s.school === "Frank Porter Graham" ? "FPG" : s.school;
+      text(svg, x(2036) + 8, ly, `${short} ${pct(pts[2][1])}`, { "font-size": 11, class: emph[s.school] ? "lab" : "", fill: emph[s.school] ? k.ink : k.muted });
+      const hp = el("path", { d: p.getAttribute("d"), fill: "none", stroke: "transparent", "stroke-width": 14 }, svg);
+      hit(hp, [{ text: s.school + (s.school === "Glenwood" ? " (closing fall 2027)" : "") }, { color: col, text: `2026: ${pct(pts[0][1])} · 2031: ${pct(pts[1][1])} · 2036: ${pct(pts[2][1])}` }, { text: `Program capacity ${fmt0(s.program_capacity_2026)}; forecast ${fmt0(s.forecast_2031)} students in 2031` }]); });
+    el("line", { x1: ml, x2: ml + pw, y1: mt + ph, y2: mt + ph, class: "axis", stroke: k.axis }, svg); }
+});
+(function () { const t = document.getElementById("tbl-sixschools"); const thead = html("thead", null, t); const tr = html("tr", null, thead); ["School", "Set", "Built", "2024-25 util.", "2031 util.", "ADM change 2019-25", "Econ. disadv. 2025", "Walkers + bikers"].forEach((c, i) => html("th", i > 1 ? "num" : "", tr, c)); const tb = html("tbody", null, t);
+  const order = ["Ephesus", "Glenwood", "Seawell", "Rashkis", "Northside", "Scroggs"]; order.forEach((n) => { const s = D.schools.find((q) => q.school === n); const r = html("tr", null, tb); [s.school, s.closure_candidate ? "studied for closure" : "forecast emptiest", s.year_built ? String(Math.round(s.year_built)) : "n/a", fmt1(s.util_2024_25_pct) + "%", pct(s.util_2031_projected_pct), fmt1(s.adm_change_2019_2025_pct) + "%", fmt1(s.eds_pct_2024_25) + "%", s.srts_walkers != null ? `${fmt0(s.srts_walkers + s.srts_bikers)}${n === "Glenwood" ? " (2-4 true)" : ""}` : "not counted"].forEach((v, i) => html("td", i > 1 ? "num" : "", r, v)); }); })();
+
+// 10. Well-balanced dumbbell
+shell("fig-wb", {
+  title: "\"Ensuring well-balanced student populations\": three groups, three measures",
+  subtitle: "The widest parent-staff gap in the survey. Excluding heavy 5-raters leaves the rated-4-5 gap at 33 points.",
+  legend: [{ label: "Other parents (n = 1,231)", color: k0.parents, kind: "dot" }, { label: "Parents who are staff (n = 84)", color: k0.staff, kind: "dot hollow" }, { label: "Non-parents, mostly staff (n = 98)", color: k0.staff, kind: "dot" }],
+  source: "results/ws_e/wellbalanced_gap_excluding_heavy_5_raters.csv; board: 71% rated 4-5, 14% top three.",
+  table: { columns: ["Group", "Rated 4-5", "Rated 5", "In top three", "n"], rows: D.wellbalanced.map((r) => [r.group, pct(r.rated_4_5), pct(r.rated_5), pct(r.top3), fmt0(r.n)]) },
+  draw: (m, w) => { const wb = D.wellbalanced; const g = (n) => wb.find((r) => r.group.startsWith(n)); dumbbell(m, w, { labelWidth: 150, rowH: 36,
+    series: [{ label: "Other parents", color: C().parents }, { label: "Parents who are staff", color: C().staff, hollow: true }, { label: "Non-parents", color: C().staff }],
+    rows: [{ label: "Rated 4 or 5", values: [g("Other").rated_4_5, g("Parents who").rated_4_5, g("Non").rated_4_5] }, { label: "Rated 5", values: [g("Other").rated_5, g("Parents who").rated_5, g("Non").rated_5] }, { label: "In top three values", values: [g("Other").top3, g("Parents who").top3, g("Non").top3] }, { label: "The one value (Q9)", values: [2.5, 20.3, 18.1] }] }); }
+});
+
+// 11. Odds ratios
+shell("fig-or", {
+  title: "What else people who kept \"well-balanced\" in their top three also chose",
+  subtitle: "Odds ratio for also picking each challenge as a top-three challenge, all 1,463 respondents; Fisher tests, Benjamini-Hochberg across 13. The equity row uses write-in themes.",
+  legend: [{ label: "More likely than other respondents", color: k0.parents }, { label: "Less likely", color: k0.de }],
+  source: "results/ws_e/q7_x_q8_wellbalanced_coselection.csv; equity_writers_vs_wellbalanced.csv.",
+  table: { columns: ["Item", "Odds ratio", "% given well-balanced", "% given not", "BH p"], rows: [...D.wellbalanced_or.map((r) => [r.item, fmt1(r.or), pct(r.pct_given), pct(r.pct_not), r.q < 0.001 ? "<0.001" : fmt1(r.q * 100) / 100]), ["Equity in write-ins (reverse direction)", fmt1(D.equity_or.or), pct(D.equity_or.pct_given), pct(D.equity_or.pct_not), "0.002"]] },
+  draw: (m, w) => { const k = C(); const rows = D.wellbalanced_or.filter((r) => r.q < 0.05).map((r) => ({ label: r.item.replace("Student populations have shifted, but school boundaries have not been adjusted to accommodate those changes", "Boundaries not adjusted to population shifts"), or: r.or, a: r.pct_given, b: r.pct_not }));
+    rows.splice(3, 0, { label: "Wrote about equity (reverse: % keeping well-balanced)", or: D.equity_or.or, a: D.equity_or.pct_given, b: D.equity_or.pct_not, eq: true });
+    const narrow = w < 560; const ml = narrow ? 150 : 240, mr = 50, mt = 10, mb = 26, rowH = narrow ? 44 : 30; const h = mt + rows.length * rowH + mb; const svg = svgBase(m, w, h); const pw = w - ml - mr; const lg = (v) => Math.log(v); const x = (v) => ml + (lg(v) - lg(0.4)) / (lg(4) - lg(0.4)) * pw;
+    const g = el("g", { class: "grid" }, svg); (narrow ? [0.5, 1, 2, 4] : [0.5, 1, 2, 3, 4]).forEach((t) => { el("line", { x1: x(t), x2: x(t), y1: mt, y2: h - mb, stroke: t === 1 ? k.axis : k.grid }, g); text(svg, x(t), h - 8, t + "x", { "text-anchor": "middle", "font-size": 11 }); });
+    rows.forEach((r, i) => { const y = mt + i * rowH + (rowH - 16) / 2; const x0 = x(1), x1 = x(r.or); const col = r.or >= 1 ? (r.eq ? k.board : k.parents) : k.de;
+      wrapLabel(svg, ml - 8, y + 11, r.label, narrow ? 22 : 40, { "text-anchor": "end", class: "lab", "font-size": narrow ? 11 : 12 });
+      el("rect", { x: Math.min(x0, x1), y, width: Math.abs(x1 - x0), height: 16, fill: col, rx: 0 }, svg);
+      text(svg, r.or >= 1 ? x1 + 5 : x1 - 5, y + 12, fmt1(r.or) + "x", { class: "val", "font-size": 11, "text-anchor": r.or >= 1 ? "start" : "end" });
+      const hr = el("rect", { x: ml, y: y - 7, width: pw + mr, height: rowH, fill: "transparent" }, svg); hit(hr, [{ text: r.label }, { color: col, text: `Odds ratio ${fmt1(r.or)}` }, { text: `${pct(r.a)} vs ${pct(r.b)}` }]); }); }
+});
+
+// 12. EDS band
+shell("fig-edsband", {
+  title: "Economically disadvantaged share across the 11 elementary schools, 2017 to 2025",
+  subtitle: "The shaded band runs from the lowest school to the highest each year. The 2021 and 2022 dip is pandemic-era identification, not real change.",
+  legend: [{ label: "Range across schools", color: k0.band }, { label: "Northside", color: k0.parents, kind: "line" }, { label: "Rashkis", color: k0.staff, kind: "line" }, { label: "Glenwood", color: k0.board, kind: "line" }, { label: "District, all grades", color: k0.muted, kind: "line", dash: true }],
+  source: "results/ws_e/school_balance_long_2017_2025.csv: NC DPI rcd_acc_eds. DPI year 2025 = 2024-25.",
+  table: { columns: ["Year", "Lowest school", "Highest school", "Range", "Northside", "Rashkis", "Glenwood", "District"], rows: D.eds_band.years.map((y, i) => [y, fmt1(D.eds_band.min[i]), fmt1(D.eds_band.max[i]), fmt1(D.eds_band.max[i] - D.eds_band.min[i]), fmt1(D.eds_band.schools.Northside[i]), fmt1(D.eds_band.schools.Rashkis[i]), fmt1(D.eds_band.schools.Glenwood[i]), fmt1(D.eds_band.district[i])]) },
+  draw: (m, w) => { const b = D.eds_band; const ys = b.years; lineChart(m, w, { height: 300, xDomain: [2017, 2025.4], yDomain: [10, 60], yTicks: [10, 20, 30, 40, 50, 60], xTicks: ys, mr: 80, yFmt: (t) => pct(t), yFmtTip: (v) => fmt1(v) + "%",
+    area: { upper: ys.map((y, i) => [y, b.max[i]]), lower: ys.map((y, i) => [y, b.min[i]]), fill: C().band },
+    series: [{ label: "Northside", color: C().parents, points: ys.map((y, i) => [y, b.schools.Northside[i]]), endLabel: "Northside" }, { label: "Rashkis", color: C().staff, points: ys.map((y, i) => [y, b.schools.Rashkis[i]]), endLabel: "Rashkis" }, { label: "Glenwood", color: C().board, points: ys.map((y, i) => [y, b.schools.Glenwood[i]]), endLabel: "Glenwood" }, { label: "District", color: C().muted, points: ys.map((y, i) => [y, b.district[i]]), dash: true, markers: false, endLabel: "District", labelDy: 14 }] }); }
+});
+
+// 13. Scatter EDS vs 2031 utilization
+shell("fig-scatter", {
+  title: "Economic disadvantage against projected 2031 utilization, 11 elementary schools",
+  subtitle: "Bubble area is projected empty seats in 2031. Glenwood is shown hollow because it closes in 2027.",
+  legend: [{ label: "School (area = empty seats, 2031)", color: k0.parents, kind: "dot" }, { label: "Glenwood, closing", color: k0.parents, kind: "dot hollow" }],
+  source: "results/ws_e/eds_vs_utilization_scatter.csv; empty_seats_on_gradient.csv. Spearman rank correlation −0.31 (p = 0.35, n = 11).",
+  table: { columns: ["School", "Econ. disadv. 2025", "Utilization 2031", "Empty seats 2031", "Share of empty seats"], rows: D.eds_scatter.map((s) => [s.school, fmt1(s.pct_eds_2025) + "%", pct(s.util_projected_2031), fmt0(s.projected_empty_seats_2031), fmt1(s.share_of_2031_empty_seats) + "%"]) },
+  draw: (m, w) => { const k = C(); const ml = 52, mr = 24, mt = 14, mb = 40; const h = 360; const svg = svgBase(m, w, h); const pw = w - ml - mr, ph = h - mt - mb;
+    const x = (v) => ml + ((v - 15) / 45) * pw; const y = (v) => mt + ph - ((v - 50) / 75) * ph;
+    el("rect", { x: ml, y: y(100), width: pw, height: y(75) - y(100), fill: k.band }, svg);
+    const g = el("g", { class: "grid" }, svg); [20, 30, 40, 50, 60].forEach((t) => { el("line", { x1: x(t), x2: x(t), y1: mt, y2: mt + ph }, g); text(svg, x(t), h - 22, pct(t), { "text-anchor": "middle", "font-size": 11 }); });
+    [50, 75, 100, 125].forEach((t) => { el("line", { x1: ml, x2: ml + pw, y1: y(t), y2: y(t) }, g); text(svg, ml - 8, y(t) + 4, pct(t), { "text-anchor": "end", "font-size": 11 }); });
+    text(svg, ml + pw / 2, h - 6, "Share of students economically disadvantaged, 2024-25", { "text-anchor": "middle", "font-size": 11.5 });
+    text(svg, 14, mt + ph / 2, "Projected utilization, 2031", { "text-anchor": "middle", "font-size": 11.5, transform: `rotate(-90 14 ${mt + ph / 2})` });
+    const scale = (v) => Math.sqrt(Math.max(v, 0) / 208) * 22 + 5;
+    D.eds_scatter.slice().sort((a, b) => b.projected_empty_seats_2031 - a.projected_empty_seats_2031).forEach((s) => { const cx = x(s.pct_eds_2025), cy = y(s.util_projected_2031), r = scale(s.projected_empty_seats_2031); const hollow = s.school === "Glenwood";
+      el("circle", { cx, cy, r: r + 2, fill: k.surface }, svg); el("circle", { cx, cy, r, fill: hollow ? k.surface : k.parents, "fill-opacity": hollow ? 1 : 0.85, stroke: k.parents, "stroke-width": hollow ? 2 : 0 }, svg);
+      const side = { Ephesus: "left", Seawell: "left", Glenwood: "right", Carrboro: "right" }[s.school] || "top";
+      const dx = side === "left" ? -r - 6 : (side === "right" ? r + 6 : 0); const anchor = side === "left" ? "end" : (side === "right" ? "start" : "middle");
+      const dy = side === "top" ? (s.school === "McDougle" ? r + 14 : -r - 6) : 4;
+      text(svg, cx + dx, cy + dy, s.school, { "text-anchor": anchor, "font-size": 11, class: "lab" });
+      const hc = el("circle", { cx, cy, r: Math.max(r + 4, 14), fill: "transparent" }, svg); hit(hc, [{ text: s.school + (hollow ? " (closing fall 2027)" : "") }, { color: k.parents, text: `Economically disadvantaged: ${fmt1(s.pct_eds_2025)}%` }, { text: `2031 utilization ${pct(s.util_projected_2031)}; ${fmt0(s.projected_empty_seats_2031)} empty seats (${fmt1(s.share_of_2031_empty_seats)}% of district total)` }]); });
+    el("line", { x1: ml, x2: ml + pw, y1: mt + ph, y2: mt + ph, class: "axis", stroke: k.axis }, svg); }
+});
+
+// 14. Distance: board vs community rated vs ranked
+shell("fig-distance", {
+  title: "Rated high, but ranked: distance and bus commute, board against respondents",
+  subtitle: "Share rating the item 4 or 5, and share keeping it in their top three.",
+  legend: [{ label: "All respondents (n = 1,463)", color: k0.parents }, { label: "Parents", color: k0.seq2 }, { label: "Non-parents, mostly staff", color: k0.staff }, { label: "Board (n = 7)", color: k0.board }],
+  source: "results/ws_d/survey_distance_by_split.csv; board from the district's Full Report.",
+  table: { columns: ["Measure", "All", "Parents", "Non-parents", "Board"], rows: (() => { const a = D.distance_splits.find((r) => r.split === "All respondents"), p = D.distance_splits.find((r) => r.split === "Parent"), n = D.distance_splits.find((r) => r.split === "Non-parent"); return [["Distance rated 4-5", pct(a.dist_q5_pct_4_5), pct(p.dist_q5_pct_4_5), pct(n.dist_q5_pct_4_5), "57%"], ["Distance in top three", pct(a.dist_q8_top3_pct), pct(p.dist_q8_top3_pct), pct(n.dist_q8_top3_pct), "0%"], ["Bus commute rated 4-5", pct(a.bus_q3_pct_4_5), pct(p.bus_q3_pct_4_5), pct(n.bus_q3_pct_4_5), "43%"], ["Bus commute in top three", pct(a.bus_q7_top3_pct), pct(p.bus_q7_top3_pct), pct(n.bus_q7_top3_pct), "0%"]]; })() },
+  draw: (m, w) => { const a = D.distance_splits.find((r) => r.split === "All respondents"), p = D.distance_splits.find((r) => r.split === "Parent"), n = D.distance_splits.find((r) => r.split === "Non-parent"); hBars(m, w, { labelWidth: 170, barH: 12, groupGap: 14, labelAll: true,
+    series: [{ label: "All respondents", color: C().parents }, { label: "Parents", color: C().seq2 }, { label: "Non-parents", color: C().staff }, { label: "Board", color: C().board }],
+    rows: [{ label: "Distance: rated 4 or 5", values: [a.dist_q5_pct_4_5, p.dist_q5_pct_4_5, n.dist_q5_pct_4_5, 57] }, { label: "Distance: in top three", values: [a.dist_q8_top3_pct, p.dist_q8_top3_pct, n.dist_q8_top3_pct, 0] }, { label: "Bus commute: rated 4 or 5", values: [a.bus_q3_pct_4_5, p.bus_q3_pct_4_5, n.bus_q3_pct_4_5, 43] }, { label: "Bus commute: in top three", values: [a.bus_q7_top3_pct, p.bus_q7_top3_pct, n.bus_q7_top3_pct, 0] }] }); }
+});
+
+// 15. Walk flags vs observed walking
+shell("fig-walkflag", {
+  title: "Walk-flagged share of each attendance zone against the share of students observed walking",
+  subtitle: "Seven schools with both a zone and a Safe Routes to School count (Nov 12, 2024). Spearman −0.14 on seven points.",
+  legend: [{ label: "Share of zone area flagged as walk zone", color: k0.de, kind: "dot" }, { label: "Share of students observed walking", color: k0.parents, kind: "dot" }],
+  source: "results/ws_d/zone_geography.csv (Carrboro GIS ESWALK flags, areas in UTM 17N); srts_walk_counts.csv (closure study p.28). Glenwood's 9.3% includes arrivals from an adjacent parking lot.",
+  table: { columns: ["School", "Walk-flagged area", "Observed walking", "Observed biking", "Zone area (sq mi)"], rows: D.zones.filter((z) => D.srts.find((s) => s.zone === z.zone)).map((z) => { const s = D.srts.find((q) => q.zone === z.zone); return [z.zone, pct(z.walk_area_share * 100), fmt1(s.walk_pct) + "%", fmt1(s.bike_pct) + "%", fmt1(z.area_sqmi)]; }) },
+  draw: (m, w) => { const rows = D.zones.filter((z) => D.srts.find((s) => s.zone === z.zone)).map((z) => { const s = D.srts.find((q) => q.zone === z.zone); return { label: z.zone, values: [Math.round(z.walk_area_share * 1000) / 10, s.walk_pct] }; }).sort((a, b) => b.values[1] - a.values[1]);
+    dumbbell(m, w, { labelWidth: 110, rowH: 32, max: 60, series: [{ label: "Walk-flagged area", color: C().de }, { label: "Observed walking", color: C().parents }], rows }); }
+});
+
+// 16. Walkers by school
+shell("fig-walkers", {
+  title: "Students counted walking or biking to school, one morning in November 2024",
+  subtitle: "Eight elementary schools counted by the Town of Chapel Hill. Carrboro, McDougle and Morris Grove were not counted.",
+  legend: [{ label: "Walking", color: k0.parents }, { label: "Biking", color: k0.seq2 }],
+  source: "results/ws_d/srts_walk_counts.csv (closure study p.28/61/93). Glenwood: the Town estimates 2 to 4 true walkers; 34 of 38 came from an adjacent lot.",
+  table: { columns: ["School", "Set", "Walking", "Biking", "Enrollment at count"], rows: D.srts.slice().sort((a, b) => (b.walk + b.bike) - (a.walk + a.bike)).map((s) => [s.zone, ["Rashkis", "Northside", "Scroggs"].includes(s.zone) ? "forecast emptiest" : (["Ephesus", "Glenwood", "Seawell"].includes(s.zone) ? "studied for closure" : ""), fmt0(s.walk), fmt0(s.bike), fmt0(s.enrollment_at_count)]) },
+  draw: (m, w) => { const k = C(); const rows = D.srts.slice().sort((a, b) => (b.walk + b.bike) - (a.walk + a.bike)); const ml = 180, mr = 60, mt = 10, mb = 26, rowH = 30; const h = mt + rows.length * rowH + mb; const svg = svgBase(m, w, h); const pw = w - ml - mr; const x = (v) => ml + v / 140 * pw;
+    const g = el("g", { class: "grid" }, svg); [0, 25, 50, 75, 100, 125].forEach((t) => { el("line", { x1: x(t), x2: x(t), y1: mt, y2: h - mb }, g); text(svg, x(t), h - 8, fmt0(t), { "text-anchor": "middle", "font-size": 11 }); });
+    rows.forEach((s, i) => { const y = mt + i * rowH + 6; const set = ["Rashkis", "Northside", "Scroggs"].includes(s.zone) ? "emptiest in 2031" : (["Ephesus", "Glenwood", "Seawell"].includes(s.zone) ? "studied for closure" : "");
+      text(svg, ml - 8, y + 13, s.zone, { "text-anchor": "end", class: "lab", "font-size": 12.5 }); if (set) text(svg, ml - 8, y + 25, set, { "text-anchor": "end", "font-size": 10, fill: k.muted });
+      el("rect", { x: ml, y, width: Math.max(x(s.walk) - ml, 1), height: 16, fill: k.parents }, svg); el("path", { d: roundedBarPath(x(s.walk) + 2, y, Math.max(x(s.walk + s.bike) - x(s.walk) - 2, 1), 16, 4, "right"), fill: k.seq2 }, svg);
+      text(svg, x(s.walk + s.bike) + 6, y + 12, fmt0(s.walk + s.bike), { class: "val", "font-size": 11 });
+      const hr = el("rect", { x: ml, y: y - 6, width: pw + mr, height: rowH, fill: "transparent" }, svg); hit(hr, [{ text: s.zone }, { color: k.parents, text: `Walking: ${fmt0(s.walk)} (${fmt1(s.walk_pct)}%)` }, { color: k.seq2, text: `Biking: ${fmt0(s.bike)} (${fmt1(s.bike_pct)}%)` }, { text: `Enrollment at count: ${fmt0(s.enrollment_at_count)}` }]); }); }
+});
+
+// 17. Glenwood themes
+shell("fig-glenwood", {
+  title: "What the 26 writers who named Glenwood raised, against all other writers",
+  subtitle: "Share of writers whose free text matched each keyword theme. Only the trust theme survives correction across 182 school-by-theme tests.",
+  legend: [{ label: "Writers naming Glenwood (n = 26)", color: k0.parents }, { label: "All other writers (n = 608)", color: k0.de }],
+  source: "results/ws_b/theme_cooccurrence_by_school.csv; keyword rules from the Module 2 write-in analysis. Counts, not quotes.",
+  table: { columns: ["Theme", "Glenwood writers", "Other writers", "BH q"], rows: D.glenwood_themes.map((r) => [r.theme, `${pct(r.mentioners_pct)} (${r.k} of ${r.n})`, pct(r.others_pct), r.q < 0.001 ? "<0.001" : fmt1(r.q * 100) / 100]) },
+  draw: (m, w) => hBars(m, w, { labelWidth: 230, barH: 11, groupGap: 10, labelAll: true, wrapChars: 36, max: 60, ticks: [0, 20, 40, 60],
+    series: [{ label: "Glenwood writers", color: C().parents }, { label: "Other writers", color: C().de }],
+    rows: D.glenwood_themes.slice(0, 7).map((r) => ({ label: r.theme, values: [r.mentioners_pct, r.others_pct], extra: [`(${r.k} of ${r.n})`, ""] })) })
+});
+
+// 18. Exit talk
+shell("fig-exit", {
+  title: "Themes that travel with exit talk in the free text",
+  subtitle: "41 writers mentioned private schools, charters, home schooling, vouchers or leaving. Share of those writers matching each theme, against all other writers.",
+  legend: [{ label: "Writers with exit talk (n = 41)", color: k0.parents }, { label: "All other writers (n = 593)", color: k0.de }],
+  source: "results/ws_a/alt_mentions_cooccurring_themes.csv. Keyword matching; cells under 10 are shown as percentages only.",
+  table: { columns: ["Theme", "Exit-talk writers", "Other writers", "Ratio"], rows: D.exit_talk.themes.map((r) => [r.theme, pct(r.mentioners_pct), pct(r.others_pct), fmt1(r.ratio) + "x"]) },
+  draw: (m, w) => hBars(m, w, { labelWidth: 230, barH: 11, groupGap: 10, labelAll: true, wrapChars: 36, max: 50, ticks: [0, 10, 20, 30, 40, 50],
+    series: [{ label: "Exit-talk writers", color: C().parents }, { label: "Other writers", color: C().de }],
+    rows: D.exit_talk.themes.slice(0, 7).map((r) => ({ label: r.theme, values: [r.mentioners_pct, r.others_pct], extra: [`(${fmt1(r.ratio)}x)`, ""] })) })
+});
+})();
+</script>
+</body>
+</html>

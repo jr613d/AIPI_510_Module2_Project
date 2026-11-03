@@ -1,0 +1,57 @@
+target,write_in_theme,n_writers_picking,n_writers_not,pct_pickers_mentioning,pct_nonpickers_mentioning,k_pickers,odds_ratio,p_fisher,q_bh_within_target
+Appeal of the district (Q7 top 3),"Buses, commute & traffic",136,338,21.3,22.5,29.0,0.93,0.8082,0.8704
+Appeal of the district (Q7 top 3),"Class size, capacity & crowding",136,338,5.9,7.4,,0.78,0.691,0.8704
+Appeal of the district (Q7 top 3),Criticism of the survey itself,136,338,10.3,6.2,14.0,1.73,0.1724,0.4697
+Appeal of the district (Q7 top 3),Equity & the achievement gap,136,338,11.8,14.5,16.0,0.79,0.4648,0.6507
+Appeal of the district (Q7 top 3),"Housing, growth & enrollment",136,338,21.3,13.0,29.0,1.81,0.0341,0.1591
+Appeal of the district (Q7 top 3),Keep current students in place / minimize disruption,136,338,25.0,20.1,34.0,1.32,0.2665,0.533
+Appeal of the district (Q7 top 3),Neighborhood & community schools,136,338,18.4,12.7,25.0,1.55,0.1137,0.398
+Appeal of the district (Q7 top 3),Safety & security,136,338,7.4,14.5,10.0,0.47,0.0322,0.1591
+Appeal of the district (Q7 top 3),Screens & classroom technology,136,338,11.8,8.9,16.0,1.37,0.3909,0.6081
+Appeal of the district (Q7 top 3),Siblings & keeping families together,136,338,2.9,4.1,,0.7,0.7908,0.8704
+Appeal of the district (Q7 top 3),"Special programs (dual language, magnet, EC)",136,338,22.8,19.2,31.0,1.24,0.3795,0.6081
+Appeal of the district (Q7 top 3),"Teachers & staff (support, pay, retention)",136,338,33.1,34.0,45.0,0.96,0.9146,0.9146
+Appeal of the district (Q7 top 3),"Trust, transparency & communication",136,338,20.6,12.4,28.0,1.83,0.0312,0.1591
+Appeal of the district (Q7 top 3),"Walking, biking & walk zones",136,338,21.3,27.2,29.0,0.72,0.2013,0.4697
+Retaining highly effective employees (Q7 top 3),"Buses, commute & traffic",390,84,20.0,32.1,78.0,0.53,0.02,0.1927
+Retaining highly effective employees (Q7 top 3),"Class size, capacity & crowding",390,84,6.2,10.7,24.0,0.55,0.1547,0.361
+Retaining highly effective employees (Q7 top 3),Criticism of the survey itself,390,84,6.4,11.9,25.0,0.51,0.1041,0.2915
+Retaining highly effective employees (Q7 top 3),Equity & the achievement gap,390,84,12.1,21.4,47.0,0.5,0.0344,0.1927
+Retaining highly effective employees (Q7 top 3),"Housing, growth & enrollment",390,84,14.6,19.0,57.0,0.73,0.3186,0.446
+Retaining highly effective employees (Q7 top 3),Keep current students in place / minimize disruption,390,84,22.3,17.9,87.0,1.32,0.4642,0.5908
+Retaining highly effective employees (Q7 top 3),Neighborhood & community schools,390,84,15.4,9.5,60.0,1.73,0.2284,0.4013
+Retaining highly effective employees (Q7 top 3),Safety & security,390,84,11.3,17.9,44.0,0.58,0.103,0.2915
+Retaining highly effective employees (Q7 top 3),Screens & classroom technology,390,84,10.5,6.0,41.0,1.86,0.2293,0.4013
+Retaining highly effective employees (Q7 top 3),Siblings & keeping families together,390,84,3.8,3.6,15.0,1.08,1.0,1.0
+Retaining highly effective employees (Q7 top 3),"Special programs (dual language, magnet, EC)",390,84,20.5,19.0,80.0,1.1,0.8812,1.0
+Retaining highly effective employees (Q7 top 3),"Teachers & staff (support, pay, retention)",390,84,35.9,23.8,140.0,1.79,0.0413,0.1927
+Retaining highly effective employees (Q7 top 3),"Trust, transparency & communication",390,84,15.6,10.7,61.0,1.55,0.3097,0.446
+Retaining highly effective employees (Q7 top 3),"Walking, biking & walk zones",390,84,25.6,25.0,100.0,1.03,1.0,1.0
+Fiscal responsibility rated 4-5 (Q5),"Buses, commute & traffic",320,154,21.6,23.4,69.0,0.9,0.7232,0.8437
+Fiscal responsibility rated 4-5 (Q5),"Class size, capacity & crowding",320,154,5.3,10.4,17.0,0.48,0.0532,0.149
+Fiscal responsibility rated 4-5 (Q5),Criticism of the survey itself,320,154,6.6,9.1,21.0,0.7,0.3504,0.4906
+Fiscal responsibility rated 4-5 (Q5),Equity & the achievement gap,320,154,15.0,11.0,48.0,1.42,0.2577,0.4009
+Fiscal responsibility rated 4-5 (Q5),"Housing, growth & enrollment",320,154,12.8,20.8,41.0,0.56,0.0296,0.1477
+Fiscal responsibility rated 4-5 (Q5),Keep current students in place / minimize disruption,320,154,18.8,27.3,60.0,0.62,0.0422,0.1477
+Fiscal responsibility rated 4-5 (Q5),Neighborhood & community schools,320,154,12.5,18.2,40.0,0.64,0.1232,0.2875
+Fiscal responsibility rated 4-5 (Q5),Safety & security,320,154,13.8,9.7,44.0,1.48,0.2375,0.4009
+Fiscal responsibility rated 4-5 (Q5),Screens & classroom technology,320,154,10.0,9.1,32.0,1.11,0.8688,0.8688
+Fiscal responsibility rated 4-5 (Q5),Siblings & keeping families together,320,154,2.5,6.5,,0.37,0.041,0.1477
+Fiscal responsibility rated 4-5 (Q5),"Special programs (dual language, magnet, EC)",320,154,21.9,16.9,70.0,1.38,0.224,0.4009
+Fiscal responsibility rated 4-5 (Q5),"Teachers & staff (support, pay, retention)",320,154,33.4,34.4,107.0,0.96,0.8364,0.8688
+Fiscal responsibility rated 4-5 (Q5),"Trust, transparency & communication",320,154,13.8,16.9,44.0,0.78,0.4073,0.5184
+Fiscal responsibility rated 4-5 (Q5),"Walking, biking & walk zones",320,154,29.7,16.9,95.0,2.08,0.0033,0.0462
+Fiscal responsibility (Q8 top 3),"Buses, commute & traffic",85,389,22.4,22.1,19.0,1.01,1.0,1.0
+Fiscal responsibility (Q8 top 3),"Class size, capacity & crowding",85,389,5.9,7.2,,0.81,0.8161,1.0
+Fiscal responsibility (Q8 top 3),Criticism of the survey itself,85,389,10.6,6.7,,1.65,0.2496,0.8263
+Fiscal responsibility (Q8 top 3),Equity & the achievement gap,85,389,17.6,12.9,15.0,1.45,0.2951,0.8263
+Fiscal responsibility (Q8 top 3),"Housing, growth & enrollment",85,389,12.9,15.9,11.0,0.78,0.6188,1.0
+Fiscal responsibility (Q8 top 3),Keep current students in place / minimize disruption,85,389,10.6,23.9,,0.38,0.0056,0.0784
+Fiscal responsibility (Q8 top 3),Neighborhood & community schools,85,389,12.9,14.7,11.0,0.87,0.8643,1.0
+Fiscal responsibility (Q8 top 3),Safety & security,85,389,8.2,13.4,,0.58,0.2751,0.8263
+Fiscal responsibility (Q8 top 3),Screens & classroom technology,85,389,9.4,9.8,,0.96,1.0,1.0
+Fiscal responsibility (Q8 top 3),Siblings & keeping families together,85,389,1.2,4.4,,0.26,0.2192,0.8263
+Fiscal responsibility (Q8 top 3),"Special programs (dual language, magnet, EC)",85,389,23.5,19.5,20.0,1.27,0.4562,1.0
+Fiscal responsibility (Q8 top 3),"Teachers & staff (support, pay, retention)",85,389,35.3,33.4,30.0,1.09,0.8003,1.0
+Fiscal responsibility (Q8 top 3),"Trust, transparency & communication",85,389,14.1,14.9,12.0,0.94,1.0,1.0
+Fiscal responsibility (Q8 top 3),"Walking, biking & walk zones",85,389,25.9,25.4,22.0,1.02,1.0,1.0

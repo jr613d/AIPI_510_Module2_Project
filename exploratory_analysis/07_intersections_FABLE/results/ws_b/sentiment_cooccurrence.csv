@@ -1,0 +1,71 @@
+school,mentioners,word_group,regex,cooccurring_respondents,pct_of_mentioners
+Northside,11,close,\bclos(e|ed|es|ing|ure|ures)\b,1,9.1
+Northside,11,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,2,18.2
+Northside,11,walk,\bwalk,1,9.1
+Northside,11,bus,\bbus(es|sed|sing|ses|ing)?\b,1,9.1
+Northside,11,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,0,0.0
+Carrboro,8,close,\bclos(e|ed|es|ing|ure|ures)\b,0,0.0
+Carrboro,8,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,2,25.0
+Carrboro,8,walk,\bwalk,1,12.5
+Carrboro,8,bus,\bbus(es|sed|sing|ses|ing)?\b,1,12.5
+Carrboro,8,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,2,25.0
+Seawell,8,close,\bclos(e|ed|es|ing|ure|ures)\b,4,50.0
+Seawell,8,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,1,12.5
+Seawell,8,walk,\bwalk,2,25.0
+Seawell,8,bus,\bbus(es|sed|sing|ses|ing)?\b,2,25.0
+Seawell,8,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,0,0.0
+Ephesus,2,close,\bclos(e|ed|es|ing|ure|ures)\b,2,100.0
+Ephesus,2,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,1,50.0
+Ephesus,2,walk,\bwalk,0,0.0
+Ephesus,2,bus,\bbus(es|sed|sing|ses|ing)?\b,0,0.0
+Ephesus,2,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,1,50.0
+Estes Hills,6,close,\bclos(e|ed|es|ing|ure|ures)\b,2,33.3
+Estes Hills,6,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,1,16.7
+Estes Hills,6,walk,\bwalk,1,16.7
+Estes Hills,6,bus,\bbus(es|sed|sing|ses|ing)?\b,1,16.7
+Estes Hills,6,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,1,16.7
+Frank Porter Graham,8,close,\bclos(e|ed|es|ing|ure|ures)\b,2,25.0
+Frank Porter Graham,8,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,3,37.5
+Frank Porter Graham,8,walk,\bwalk,0,0.0
+Frank Porter Graham,8,bus,\bbus(es|sed|sing|ses|ing)?\b,0,0.0
+Frank Porter Graham,8,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,4,50.0
+Glenwood,26,close,\bclos(e|ed|es|ing|ure|ures)\b,14,53.8
+Glenwood,26,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,6,23.1
+Glenwood,26,walk,\bwalk,0,0.0
+Glenwood,26,bus,\bbus(es|sed|sing|ses|ing)?\b,1,3.8
+Glenwood,26,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,4,15.4
+McDougle,10,close,\bclos(e|ed|es|ing|ure|ures)\b,1,10.0
+McDougle,10,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,5,50.0
+McDougle,10,walk,\bwalk,5,50.0
+McDougle,10,bus,\bbus(es|sed|sing|ses|ing)?\b,1,10.0
+McDougle,10,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,0,0.0
+Scroggs,10,close,\bclos(e|ed|es|ing|ure|ures)\b,3,30.0
+Scroggs,10,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,2,20.0
+Scroggs,10,walk,\bwalk,3,30.0
+Scroggs,10,bus,\bbus(es|sed|sing|ses|ing)?\b,0,0.0
+Scroggs,10,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,1,10.0
+Morris Grove,0,close,\bclos(e|ed|es|ing|ure|ures)\b,0,
+Morris Grove,0,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,0,
+Morris Grove,0,walk,\bwalk,0,
+Morris Grove,0,bus,\bbus(es|sed|sing|ses|ing)?\b,0,
+Morris Grove,0,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,0,
+Rashkis,10,close,\bclos(e|ed|es|ing|ure|ures)\b,2,20.0
+Rashkis,10,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,4,40.0
+Rashkis,10,walk,\bwalk,1,10.0
+Rashkis,10,bus,\bbus(es|sed|sing|ses|ing)?\b,1,10.0
+Rashkis,10,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,2,20.0
+Culbreth MS,7,close,\bclos(e|ed|es|ing|ure|ures)\b,1,14.3
+Culbreth MS,7,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,3,42.9
+Culbreth MS,7,walk,\bwalk,1,14.3
+Culbreth MS,7,bus,\bbus(es|sed|sing|ses|ing)?\b,1,14.3
+Culbreth MS,7,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,1,14.3
+Smith MS,2,close,\bclos(e|ed|es|ing|ure|ures)\b,1,50.0
+Smith MS,2,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,0,0.0
+Smith MS,2,walk,\bwalk,1,50.0
+Smith MS,2,bus,\bbus(es|sed|sing|ses|ing)?\b,1,50.0
+Smith MS,2,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,0,0.0
+Phillips MS,2,close,\bclos(e|ed|es|ing|ure|ures)\b,1,50.0
+Phillips MS,2,keep_save_stay,\bkeep(s|ing)?\b|\bsave\b|\bstay(s|ing|ed)?\b,0,0.0
+Phillips MS,2,walk,\bwalk,1,50.0
+Phillips MS,2,bus,\bbus(es|sed|sing|ses|ing)?\b,2,100.0
+Phillips MS,2,dual_language,dual[\s-]language|\bDLI\b|immersion|mandarin|spanish,0,0.0

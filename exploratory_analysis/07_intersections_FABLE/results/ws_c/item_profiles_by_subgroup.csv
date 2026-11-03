@@ -1,0 +1,73 @@
+target,breakdown,level,n,k,pct,ci_lo,ci_hi
+Appeal of the district (Q7 top 3),all,"Parent + Non-parent (n=1,413)",1413,336.0,23.8,21.6,26.1
+Appeal of the district (Q7 top 3),stakeholder,Other parents,1231,309.0,25.1,22.8,27.6
+Appeal of the district (Q7 top 3),stakeholder,Non-parent,98,12.0,12.2,7.1,20.2
+Appeal of the district (Q7 top 3),stakeholder,Parents who work for CHCCS,84,15.0,17.9,11.1,27.4
+Appeal of the district (Q7 top 3),age_band,40 to 49 years,873,234.0,26.8,24.0,29.8
+Appeal of the district (Q7 top 3),age_band,30 to 39 years,318,62.0,19.5,15.5,24.2
+Appeal of the district (Q7 top 3),age_band,50 to 64 years,187,34.0,18.2,13.3,24.3
+Appeal of the district (Q7 top 3),age_band,Under 30,20,4.0,20.0,8.1,41.6
+Appeal of the district (Q7 top 3),age_band,65+ years,10,2.0,20.0,5.7,51.0
+Appeal of the district (Q7 top 3),age_band,Missing,<10,,,,
+Appeal of the district (Q7 top 3),language,English form,1345,322.0,23.9,21.7,26.3
+Appeal of the district (Q7 top 3),language,Non-English form,68,14.0,20.6,12.7,31.6
+Appeal of the district (Q7 top 3),q9_theme,Student Learning,927,249.0,26.9,24.1,29.8
+Appeal of the district (Q7 top 3),q9_theme,Student logistics & well-being,317,50.0,15.8,12.2,20.2
+Appeal of the district (Q7 top 3),q9_theme,Money & buildings,58,8.0,13.8,7.2,24.9
+Appeal of the district (Q7 top 3),q9_theme,Other,44,14.0,31.8,20.0,46.6
+Appeal of the district (Q7 top 3),q9_theme,Community,39,11.0,28.2,16.5,43.8
+Appeal of the district (Q7 top 3),q9_theme,Missing,28,,,,
+Retaining highly effective employees (Q7 top 3),all,"Parent + Non-parent (n=1,413)",1413,1140.0,80.7,78.5,82.7
+Retaining highly effective employees (Q7 top 3),stakeholder,Other parents,1231,1009.0,82.0,79.7,84.0
+Retaining highly effective employees (Q7 top 3),stakeholder,Non-parent,98,69.0,70.4,60.7,78.5
+Retaining highly effective employees (Q7 top 3),stakeholder,Parents who work for CHCCS,84,62.0,73.8,63.5,82.0
+Retaining highly effective employees (Q7 top 3),age_band,40 to 49 years,873,709.0,81.2,78.5,83.7
+Retaining highly effective employees (Q7 top 3),age_band,30 to 39 years,318,257.0,80.8,76.1,84.8
+Retaining highly effective employees (Q7 top 3),age_band,50 to 64 years,187,150.0,80.2,73.9,85.3
+Retaining highly effective employees (Q7 top 3),age_band,Under 30,20,13.0,65.0,43.3,81.9
+Retaining highly effective employees (Q7 top 3),age_band,65+ years,10,7.0,70.0,39.7,89.2
+Retaining highly effective employees (Q7 top 3),age_band,Missing,<10,,,,
+Retaining highly effective employees (Q7 top 3),language,English form,1345,1099.0,81.7,79.6,83.7
+Retaining highly effective employees (Q7 top 3),language,Non-English form,68,41.0,60.3,48.4,71.1
+Retaining highly effective employees (Q7 top 3),q9_theme,Student Learning,927,794.0,85.7,83.2,87.8
+Retaining highly effective employees (Q7 top 3),q9_theme,Student logistics & well-being,317,214.0,67.5,62.2,72.4
+Retaining highly effective employees (Q7 top 3),q9_theme,Money & buildings,58,44.0,75.9,63.5,85.0
+Retaining highly effective employees (Q7 top 3),q9_theme,Other,44,35.0,79.5,65.5,88.8
+Retaining highly effective employees (Q7 top 3),q9_theme,Community,39,31.0,79.5,64.5,89.2
+Retaining highly effective employees (Q7 top 3),q9_theme,Missing,28,,,,
+Fiscal responsibility rated 4-5 (Q5),all,"Parent + Non-parent (n=1,413)",1413,950.0,67.2,64.7,69.6
+Fiscal responsibility rated 4-5 (Q5),stakeholder,Other parents,1231,801.0,65.1,62.4,67.7
+Fiscal responsibility rated 4-5 (Q5),stakeholder,Non-parent,98,80.0,81.6,72.8,88.1
+Fiscal responsibility rated 4-5 (Q5),stakeholder,Parents who work for CHCCS,84,69.0,82.1,72.6,88.9
+Fiscal responsibility rated 4-5 (Q5),age_band,40 to 49 years,873,563.0,64.5,61.3,67.6
+Fiscal responsibility rated 4-5 (Q5),age_band,30 to 39 years,318,207.0,65.1,59.7,70.1
+Fiscal responsibility rated 4-5 (Q5),age_band,50 to 64 years,187,153.0,81.8,75.7,86.7
+Fiscal responsibility rated 4-5 (Q5),age_band,Under 30,20,16.0,80.0,58.4,91.9
+Fiscal responsibility rated 4-5 (Q5),age_band,65+ years,10,7.0,70.0,39.7,89.2
+Fiscal responsibility rated 4-5 (Q5),age_band,Missing,<10,,,,
+Fiscal responsibility rated 4-5 (Q5),language,English form,1345,895.0,66.5,64.0,69.0
+Fiscal responsibility rated 4-5 (Q5),language,Non-English form,68,55.0,80.9,70.0,88.5
+Fiscal responsibility rated 4-5 (Q5),q9_theme,Student Learning,927,623.0,67.2,64.1,70.2
+Fiscal responsibility rated 4-5 (Q5),q9_theme,Student logistics & well-being,317,202.0,63.7,58.3,68.8
+Fiscal responsibility rated 4-5 (Q5),q9_theme,Money & buildings,58,53.0,91.4,81.4,96.3
+Fiscal responsibility rated 4-5 (Q5),q9_theme,Other,44,24.0,54.5,40.1,68.3
+Fiscal responsibility rated 4-5 (Q5),q9_theme,Community,39,25.0,64.1,48.4,77.3
+Fiscal responsibility rated 4-5 (Q5),q9_theme,Missing,28,,,,
+Fiscal responsibility (Q8 top 3),all,"Parent + Non-parent (n=1,413)",1413,273.0,19.3,17.3,21.5
+Fiscal responsibility (Q8 top 3),stakeholder,Other parents,1231,228.0,18.5,16.5,20.8
+Fiscal responsibility (Q8 top 3),stakeholder,Non-parent,98,24.0,24.5,17.0,33.9
+Fiscal responsibility (Q8 top 3),stakeholder,Parents who work for CHCCS,84,21.0,25.0,17.0,35.2
+Fiscal responsibility (Q8 top 3),age_band,40 to 49 years,873,171.0,19.6,17.1,22.4
+Fiscal responsibility (Q8 top 3),age_band,30 to 39 years,318,35.0,11.0,8.0,14.9
+Fiscal responsibility (Q8 top 3),age_band,50 to 64 years,187,56.0,29.9,23.8,36.9
+Fiscal responsibility (Q8 top 3),age_band,Under 30,20,3.0,15.0,5.2,36.0
+Fiscal responsibility (Q8 top 3),age_band,65+ years,10,4.0,40.0,16.8,68.7
+Fiscal responsibility (Q8 top 3),age_band,Missing,<10,,,,
+Fiscal responsibility (Q8 top 3),language,English form,1345,264.0,19.6,17.6,21.8
+Fiscal responsibility (Q8 top 3),language,Non-English form,68,9.0,13.2,7.1,23.3
+Fiscal responsibility (Q8 top 3),q9_theme,Student Learning,927,183.0,19.7,17.3,22.4
+Fiscal responsibility (Q8 top 3),q9_theme,Student logistics & well-being,317,34.0,10.7,7.8,14.6
+Fiscal responsibility (Q8 top 3),q9_theme,Money & buildings,58,35.0,60.3,47.5,71.9
+Fiscal responsibility (Q8 top 3),q9_theme,Other,44,8.0,18.2,9.5,32.0
+Fiscal responsibility (Q8 top 3),q9_theme,Community,39,6.0,15.4,7.2,29.7
+Fiscal responsibility (Q8 top 3),q9_theme,Missing,28,,,,

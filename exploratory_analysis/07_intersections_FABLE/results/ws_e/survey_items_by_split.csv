@@ -1,0 +1,181 @@
+split,level,item,measure,n,k,pct,wilson_lo,wilson_hi
+group,Parent (all),Well-balanced populations,Q5 rated 4-5,1315,670,50.950570342205324,48.24979172139373,53.64581141064271
+group,Parent (all),Well-balanced populations,Q5 rated 5,1315,306,23.269961977186313,21.065979412218365,25.62966051491727
+group,Parent (all),Well-balanced populations,Q8 top-3,1315,193,14.67680608365019,12.867066226565457,16.692321386960867
+group,Parent (all),Well-balanced populations,Q9 the one value,1291,46,3.563129357087529,2.6818753061076617,4.719915713773945
+group,Parent (all),Unequal access to specialty programs,Q3 rated 4-5,1315,656,49.88593155893536,47.18777468241824,52.58475294173739
+group,Parent (all),Unequal access to specialty programs,Q7 top-3,1315,226,17.186311787072242,15.243570826932809,19.320209055169677
+group,Parent (all),Boundaries not adjusted,Q3 rated 4-5,1315,593,45.09505703422053,42.423825509339444,47.79486232935257
+group,Parent (all),Boundaries not adjusted,Q7 top-3,1315,220,16.730038022813687,14.810221454035997,18.84366892468901
+group,Parent (all),Partially empty buildings,Q3 rated 4-5,1315,268,20.380228136882128,18.290755748088287,22.6422506576566
+group,Parent (all),Partially empty buildings,Q7 top-3,1315,51,3.8783269961977185,2.962003341997609,5.063332691594888
+group,Parent (all),Equity & achievement gap write-in theme,any text field coded equity,1315,59,4.486692015209125,3.4941823498321827,5.7443396882636275
+group,Parent (all),Equity & achievement gap write-in theme,among those who wrote any text,572,59,10.314685314685315,8.08116768312788,13.077687233331545
+group,Other parents (not staff),Well-balanced populations,Q5 rated 4-5,1231,600,48.7408610885459,45.9568911100431,51.53266515820808
+group,Other parents (not staff),Well-balanced populations,Q5 rated 5,1231,265,21.527213647441105,19.32164961659778,23.90992922353338
+group,Other parents (not staff),Well-balanced populations,Q8 top-3,1231,161,13.078797725426483,11.309582375877591,15.07772884477751
+group,Other parents (not staff),Well-balanced populations,Q9 the one value,1212,30,2.4752475247524752,1.7392619672248484,3.5115425975921113
+group,Other parents (not staff),Unequal access to specialty programs,Q3 rated 4-5,1231,615,49.959382615759544,47.17074119686535,52.748276747271795
+group,Other parents (not staff),Unequal access to specialty programs,Q7 top-3,1231,207,16.815597075548336,14.830251964998778,19.007408395039967
+group,Other parents (not staff),Boundaries not adjusted,Q3 rated 4-5,1231,532,43.21689683184403,40.47493076157638,46.001065909325064
+group,Other parents (not staff),Boundaries not adjusted,Q7 top-3,1231,188,15.272136474411047,13.37092003317936,17.389422204070485
+group,Other parents (not staff),Partially empty buildings,Q3 rated 4-5,1231,237,19.252640129975628,17.147078092175818,21.549505619634868
+group,Other parents (not staff),Partially empty buildings,Q7 top-3,1231,42,3.4118602761982126,2.5339592787110674,4.579622646582
+group,Other parents (not staff),Equity & achievement gap write-in theme,any text field coded equity,1231,50,4.061738424045491,3.0943936363917297,5.314901182707189
+group,Other parents (not staff),Equity & achievement gap write-in theme,among those who wrote any text,536,50,9.328358208955224,7.147446524427231,12.088100713374782
+group,Parents who are staff,Well-balanced populations,Q5 rated 4-5,84,70,83.33333333333333,73.9469602546601,89.80425785102926
+group,Parents who are staff,Well-balanced populations,Q5 rated 5,84,41,48.80952380952381,38.408353671938514,59.31481711000114
+group,Parents who are staff,Well-balanced populations,Q8 top-3,84,32,38.095238095238095,28.44714924548898,48.784558573907674
+group,Parents who are staff,Well-balanced populations,Q9 the one value,79,16,20.253164556962027,12.869110270706585,30.396012447944514
+group,Parents who are staff,Unequal access to specialty programs,Q3 rated 4-5,84,41,48.80952380952381,38.408353671938514,59.31481711000114
+group,Parents who are staff,Unequal access to specialty programs,Q7 top-3,84,19,22.61904761904762,14.986020837445107,32.64690714716722
+group,Parents who are staff,Boundaries not adjusted,Q3 rated 4-5,84,61,72.61904761904762,62.252580838915605,81.00717430423072
+group,Parents who are staff,Boundaries not adjusted,Q7 top-3,84,32,38.095238095238095,28.44714924548898,48.784558573907674
+group,Parents who are staff,Partially empty buildings,Q3 rated 4-5,84,31,36.904761904761905,27.370118509020248,47.58476009231609
+group,Parents who are staff,Partially empty buildings,Q7 top-3,84,<10,10.714285714285714,5.740021287664479,19.12461451634451
+group,Parents who are staff,Equity & achievement gap write-in theme,any text field coded equity,84,<10,10.714285714285714,5.740021287664479,19.12461451634451
+group,Parents who are staff,Equity & achievement gap write-in theme,among those who wrote any text,36,<10,25.0,13.75047766299483,41.070453766728356
+group,Non-parent (mostly staff),Well-balanced populations,Q5 rated 4-5,98,82,83.6734693877551,75.11341643197603,89.6931964781965
+group,Non-parent (mostly staff),Well-balanced populations,Q5 rated 5,98,54,55.10204081632653,45.24754605807967,64.57163771618889
+group,Non-parent (mostly staff),Well-balanced populations,Q8 top-3,98,29,29.591836734693878,21.463180671461895,39.26008423146385
+group,Non-parent (mostly staff),Well-balanced populations,Q9 the one value,94,17,18.085106382978722,11.609340661678441,27.066962080335056
+group,Non-parent (mostly staff),Unequal access to specialty programs,Q3 rated 4-5,98,56,57.142857142857146,47.25843630037067,66.4884209836053
+group,Non-parent (mostly staff),Unequal access to specialty programs,Q7 top-3,98,19,19.387755102040817,12.778072974537736,28.30682437985087
+group,Non-parent (mostly staff),Boundaries not adjusted,Q3 rated 4-5,98,69,70.40816326530613,60.73991576853616,78.5368193285381
+group,Non-parent (mostly staff),Boundaries not adjusted,Q7 top-3,98,34,34.69387755102041,26.00859166796014,44.53385700923416
+group,Non-parent (mostly staff),Partially empty buildings,Q3 rated 4-5,98,31,31.632653061224488,23.26706012892279,41.38387828371039
+group,Non-parent (mostly staff),Partially empty buildings,Q7 top-3,98,10,10.204081632653061,5.637600332589364,17.772766228115827
+group,Non-parent (mostly staff),Equity & achievement gap write-in theme,any text field coded equity,98,<10,6.122448979591836,2.835932368138567,12.719087173151774
+group,Non-parent (mostly staff),Equity & achievement gap write-in theme,among those who wrote any text,32,<10,18.75,8.88954468956595,35.309155201375965
+group,Non-parent staff,Well-balanced populations,Q5 rated 4-5,87,73,83.9080459770115,74.78296289321997,90.16535560137416
+group,Non-parent staff,Well-balanced populations,Q5 rated 5,87,48,55.172413793103445,44.72454774597166,65.18282287184778
+group,Non-parent staff,Well-balanced populations,Q8 top-3,87,28,32.18390804597701,23.30072138814503,42.57389092825466
+group,Non-parent staff,Well-balanced populations,Q9 the one value,84,17,20.238095238095237,13.037456789632405,30.041812758859255
+group,Non-parent staff,Unequal access to specialty programs,Q3 rated 4-5,87,48,55.172413793103445,44.72454774597166,65.18282287184778
+group,Non-parent staff,Unequal access to specialty programs,Q7 top-3,87,17,19.54022988505747,12.573381598890307,29.083213651728524
+group,Non-parent staff,Boundaries not adjusted,Q3 rated 4-5,87,60,68.96551724137932,58.616180742047774,77.71084485662354
+group,Non-parent staff,Boundaries not adjusted,Q7 top-3,87,30,34.48275862068966,25.342661173559026,44.93522697298264
+group,Non-parent staff,Partially empty buildings,Q3 rated 4-5,87,27,31.03448275862069,22.289155143376473,41.38381925795224
+group,Non-parent staff,Partially empty buildings,Q7 top-3,87,10,11.494252873563218,6.364547795653457,19.880582049468455
+group,Non-parent staff,Equity & achievement gap write-in theme,any text field coded equity,87,<10,6.896551724137931,3.1988839442576764,14.239694240580286
+group,Non-parent staff,Equity & achievement gap write-in theme,among those who wrote any text,27,<10,22.22222222222222,10.607239452360037,40.75692886663258
+group,All respondents,Well-balanced populations,Q5 rated 4-5,1463,779,53.246753246753244,50.68489447466922,55.791606406099284
+group,All respondents,Well-balanced populations,Q5 rated 5,1463,377,25.76896787423103,23.59333206464244,28.071519256779897
+group,All respondents,Well-balanced populations,Q8 top-3,1463,236,16.131237183868762,14.335539231253195,18.104330528308925
+group,All respondents,Well-balanced populations,Q9 the one value,1435,66,4.599303135888502,3.631409752091773,5.809620598259177
+group,All respondents,Unequal access to specialty programs,Q3 rated 4-5,1463,734,50.17088174982912,47.61170708294107,52.729161384467815
+group,All respondents,Unequal access to specialty programs,Q7 top-3,1463,255,17.429938482570062,15.571959015884099,19.458511095985422
+group,All respondents,Boundaries not adjusted,Q3 rated 4-5,1463,691,47.23171565276829,44.68413781458873,49.793793013387585
+group,All respondents,Boundaries not adjusted,Q7 top-3,1463,262,17.908407382091593,16.02849226789891,19.95640955271545
+group,All respondents,Partially empty buildings,Q3 rated 4-5,1463,311,21.25768967874231,19.23788921216578,23.42803456966242
+group,All respondents,Partially empty buildings,Q7 top-3,1463,63,4.30622009569378,3.380181576906243,5.47159023796212
+group,All respondents,Equity & achievement gap write-in theme,any text field coded equity,1463,69,4.716336295283663,3.743619246674179,5.92623688997547
+group,All respondents,Equity & achievement gap write-in theme,among those who wrote any text,634,69,10.883280757097792,8.690551593557878,13.547177995695382
+age,18 to 29 years,Well-balanced populations,Q5 rated 4-5,19,15,78.94736842105263,56.66572155618583,91.49232336708376
+age,18 to 29 years,Well-balanced populations,Q5 rated 5,19,12,63.1578947368421,41.03953316480305,80.85048725486493
+age,18 to 29 years,Well-balanced populations,Q8 top-3,19,<10,26.31578947368421,11.806412346782508,48.791550897815114
+age,18 to 29 years,Well-balanced populations,Q9 the one value,19,<10,21.05263157894737,8.507676632916251,43.33427844381418
+age,18 to 29 years,Unequal access to specialty programs,Q3 rated 4-5,19,11,57.89473684210526,36.27590353425503,76.85810871754578
+age,18 to 29 years,Unequal access to specialty programs,Q7 top-3,19,<10,15.789473684210526,5.520471638534142,37.56547527032909
+age,18 to 29 years,Boundaries not adjusted,Q3 rated 4-5,19,10,52.63157894736842,31.707809245113154,72.67019483882042
+age,18 to 29 years,Boundaries not adjusted,Q7 top-3,19,<10,10.526315789473685,2.9358560298870158,31.394082711109018
+age,18 to 29 years,Partially empty buildings,Q3 rated 4-5,19,<10,36.8421052631579,19.149512745135073,58.96046683519693
+age,18 to 29 years,Partially empty buildings,Q7 top-3,19,<10,5.2631578947368425,0.9351994062300389,24.638731166898793
+age,18 to 29 years,Equity & achievement gap write-in theme,any text field coded equity,19,0,0.0,1.3877787807814457e-15,16.817922405261633
+age,18 to 29 years,Equity & achievement gap write-in theme,among those who wrote any text,<10,<10,,,
+age,30 to 39 years,Well-balanced populations,Q5 rated 4-5,330,187,56.666666666666664,51.2737942421009,61.90611461506484
+age,30 to 39 years,Well-balanced populations,Q5 rated 5,330,98,29.696969696969695,25.023618544167835,34.837568118100116
+age,30 to 39 years,Well-balanced populations,Q8 top-3,330,43,13.030303030303031,9.819638972334518,17.091775547019076
+age,30 to 39 years,Well-balanced populations,Q9 the one value,325,16,4.923076923076923,3.0527425199831324,7.84657016073248
+age,30 to 39 years,Unequal access to specialty programs,Q3 rated 4-5,330,171,51.81818181818182,46.437270759061875,57.15724983834696
+age,30 to 39 years,Unequal access to specialty programs,Q7 top-3,330,61,18.484848484848484,14.667780912784266,23.02719539879584
+age,30 to 39 years,Boundaries not adjusted,Q3 rated 4-5,330,148,44.84848484848485,39.57248053879625,50.24304443521203
+age,30 to 39 years,Boundaries not adjusted,Q7 top-3,330,54,16.363636363636363,12.763454290338993,20.737914657597468
+age,30 to 39 years,Partially empty buildings,Q3 rated 4-5,330,65,19.696969696969695,15.76521178109705,24.326111595422283
+age,30 to 39 years,Partially empty buildings,Q7 top-3,330,10,3.0303030303030303,1.654172817610047,5.487378415994927
+age,30 to 39 years,Equity & achievement gap write-in theme,any text field coded equity,330,13,3.9393939393939394,2.3164227522784757,6.622388780030919
+age,30 to 39 years,Equity & achievement gap write-in theme,among those who wrote any text,141,13,9.21985815602837,5.467374521216714,15.135468797032543
+age,40 to 49 years,Well-balanced populations,Q5 rated 4-5,884,433,48.98190045248869,45.698086581054824,52.27452442723157
+age,40 to 49 years,Well-balanced populations,Q5 rated 5,884,193,21.832579185520363,19.23436931572533,24.674535246865652
+age,40 to 49 years,Well-balanced populations,Q8 top-3,884,141,15.950226244343892,13.684629802498948,18.510471696858023
+age,40 to 49 years,Well-balanced populations,Q9 the one value,865,32,3.699421965317919,2.6325029128158874,5.175763846550946
+age,40 to 49 years,Unequal access to specialty programs,Q3 rated 4-5,884,435,49.20814479638009,45.923083790088185,52.500058105245685
+age,40 to 49 years,Unequal access to specialty programs,Q7 top-3,884,145,16.402714932126695,14.107988620511138,18.988174652940756
+age,40 to 49 years,Boundaries not adjusted,Q3 rated 4-5,884,398,45.022624434389144,41.771528113925136,48.3167923710307
+age,40 to 49 years,Boundaries not adjusted,Q7 top-3,884,157,17.760180995475114,15.381923590851398,20.41742500488527
+age,40 to 49 years,Partially empty buildings,Q3 rated 4-5,884,185,20.92760180995475,18.37464214929347,23.732138865107668
+age,40 to 49 years,Partially empty buildings,Q7 top-3,884,40,4.524886877828054,3.3403687033681435,6.102923000092001
+age,40 to 49 years,Equity & achievement gap write-in theme,any text field coded equity,884,42,4.751131221719457,3.5339880690281182,6.3598345214794865
+age,40 to 49 years,Equity & achievement gap write-in theme,among those who wrote any text,392,42,10.714285714285714,8.024862870333592,14.166208040327142
+age,50 to 64 years,Well-balanced populations,Q5 rated 4-5,204,130,63.72549019607843,56.93047468524398,70.01313912392942
+age,50 to 64 years,Well-balanced populations,Q5 rated 5,204,68,33.333333333333336,27.225192793197845,40.05756186709159
+age,50 to 64 years,Well-balanced populations,Q8 top-3,204,44,21.568627450980394,16.47784999261598,27.710378545524822
+age,50 to 64 years,Well-balanced populations,Q9 the one value,201,13,6.467661691542289,3.8183454925374902,10.74973022440785
+age,50 to 64 years,Unequal access to specialty programs,Q3 rated 4-5,204,105,51.470588235294116,44.64875062958423,58.238065135684344
+age,50 to 64 years,Unequal access to specialty programs,Q7 top-3,204,39,19.11764705882353,14.312084433073306,25.064784496286528
+age,50 to 64 years,Boundaries not adjusted,Q3 rated 4-5,204,118,57.84313725490196,50.98321762732071,64.4131331207784
+age,50 to 64 years,Boundaries not adjusted,Q7 top-3,204,43,21.07843137254902,16.042304734528845,27.183651881855763
+age,50 to 64 years,Partially empty buildings,Q3 rated 4-5,204,44,21.568627450980394,16.47784999261598,27.710378545524822
+age,50 to 64 years,Partially empty buildings,Q7 top-3,204,10,4.901960784313726,2.6841365292188586,8.78684666921138
+age,50 to 64 years,Equity & achievement gap write-in theme,any text field coded equity,204,13,6.372549019607843,3.7616220091813735,10.596176954517441
+age,50 to 64 years,Equity & achievement gap write-in theme,among those who wrote any text,84,13,15.476190476190476,9.273310465265514,24.698642210984815
+age,65+ years,Well-balanced populations,Q5 rated 4-5,18,10,55.55555555555556,33.716415642042776,75.44048187299437
+age,65+ years,Well-balanced populations,Q5 rated 5,18,<10,27.77777777777778,12.499753379553994,50.87265656029747
+age,65+ years,Well-balanced populations,Q8 top-3,18,<10,11.11111111111111,3.1019522645612363,32.79976513017881
+age,65+ years,Well-balanced populations,Q9 the one value,18,<10,5.555555555555555,0.9875190978303083,25.7573007818726
+age,65+ years,Unequal access to specialty programs,Q3 rated 4-5,18,10,55.55555555555556,33.716415642042776,75.44048187299437
+age,65+ years,Unequal access to specialty programs,Q7 top-3,18,<10,27.77777777777778,12.499753379553994,50.87265656029747
+age,65+ years,Boundaries not adjusted,Q3 rated 4-5,18,13,72.22222222222223,49.12734343970256,87.50024662044602
+age,65+ years,Boundaries not adjusted,Q7 top-3,18,<10,27.77777777777778,12.499753379553994,50.87265656029747
+age,65+ years,Partially empty buildings,Q3 rated 4-5,18,<10,44.44444444444444,24.55951812700563,66.28358435795722
+age,65+ years,Partially empty buildings,Q7 top-3,18,<10,5.555555555555555,0.9875190978303083,25.7573007818726
+age,65+ years,Equity & achievement gap write-in theme,any text field coded equity,18,<10,5.555555555555555,0.9875190978303083,25.7573007818726
+age,65+ years,Equity & achievement gap write-in theme,among those who wrote any text,10,<10,10.0,1.7876213095072924,40.41500267952385
+language,English sheet,Well-balanced populations,Q5 rated 4-5,1392,723,51.939655172413794,49.31327547807422,54.55535871807747
+language,English sheet,Well-balanced populations,Q5 rated 5,1392,338,24.2816091954023,22.10186046941214,26.602915744576546
+language,English sheet,Well-balanced populations,Q8 top-3,1392,224,16.091954022988507,14.255328325992048,18.11521461535617
+language,English sheet,Well-balanced populations,Q9 the one value,1366,60,4.392386530014641,3.427574397119229,5.612994350691198
+language,English sheet,Unequal access to specialty programs,Q3 rated 4-5,1392,685,49.20977011494253,46.58926098148993,51.834628790448264
+language,English sheet,Unequal access to specialty programs,Q7 top-3,1392,240,17.24137931034483,15.347853275648934,19.315213633789178
+language,English sheet,Boundaries not adjusted,Q3 rated 4-5,1392,648,46.55172413793103,43.944431494179256,49.17799660155107
+language,English sheet,Boundaries not adjusted,Q7 top-3,1392,255,18.31896551724138,16.375005826796922,20.437302302725456
+language,English sheet,Partially empty buildings,Q3 rated 4-5,1392,281,20.186781609195403,18.161510091236043,22.37614948643241
+language,English sheet,Partially empty buildings,Q7 top-3,1392,61,4.382183908045977,3.4265609929656695,5.588894023466779
+language,English sheet,Equity & achievement gap write-in theme,any text field coded equity,1392,69,4.956896551724138,3.93546756421211,6.226249436265284
+language,English sheet,Equity & achievement gap write-in theme,among those who wrote any text,605,69,11.40495867768595,9.111837295397944,14.185107543975572
+language,Non-English sheets (all),Well-balanced populations,Q5 rated 4-5,71,56,78.87323943661971,68.02502178379414,86.7574485823009
+language,Non-English sheets (all),Well-balanced populations,Q5 rated 5,71,39,54.929577464788736,43.401065871474486,65.95203882517589
+language,Non-English sheets (all),Well-balanced populations,Q8 top-3,71,12,16.901408450704224,9.94145475242826,27.259127998633492
+language,Non-English sheets (all),Well-balanced populations,Q9 the one value,69,<10,8.695652173913043,4.046362120153398,17.701498338942184
+language,Non-English sheets (all),Unequal access to specialty programs,Q3 rated 4-5,71,49,69.01408450704226,57.515987429058235,78.56027354373607
+language,Non-English sheets (all),Unequal access to specialty programs,Q7 top-3,71,15,21.12676056338028,13.2425514176991,31.974978216205834
+language,Non-English sheets (all),Boundaries not adjusted,Q3 rated 4-5,71,43,60.563380281690144,48.935768499400844,71.10659870770711
+language,Non-English sheets (all),Boundaries not adjusted,Q7 top-3,71,<10,9.859154929577464,4.858282372396931,18.980722240592858
+language,Non-English sheets (all),Partially empty buildings,Q3 rated 4-5,71,30,42.25352112676056,31.453012070149654,53.84925197797118
+language,Non-English sheets (all),Partially empty buildings,Q7 top-3,71,<10,2.816901408450704,0.7759263582683515,9.701500116649472
+language,Non-English sheets (all),Equity & achievement gap write-in theme,any text field coded equity,71,0,0.0,0.0,5.1327952196890365
+language,Non-English sheets (all),Equity & achievement gap write-in theme,among those who wrote any text,29,0,0.0,0.0,11.696979849974081
+language,Spanish sheet,Well-balanced populations,Q5 rated 4-5,37,35,94.5945945945946,82.29534564918688,98.50490231668422
+language,Spanish sheet,Well-balanced populations,Q5 rated 5,37,26,70.27027027027027,54.21686408886435,82.51052135016799
+language,Spanish sheet,Well-balanced populations,Q8 top-3,37,<10,18.91891891891892,9.479978730312013,34.20469692983841
+language,Spanish sheet,Well-balanced populations,Q9 the one value,36,<10,13.88888888888889,6.081815009132837,28.659530389356213
+language,Spanish sheet,Unequal access to specialty programs,Q3 rated 4-5,37,30,81.08108108108108,65.7953030701616,90.52002126968799
+language,Spanish sheet,Unequal access to specialty programs,Q7 top-3,37,10,27.027027027027028,15.397461511049087,42.97816832471427
+language,Spanish sheet,Boundaries not adjusted,Q3 rated 4-5,37,23,62.16216216216216,46.10043043921765,75.93600082420173
+language,Spanish sheet,Boundaries not adjusted,Q7 top-3,37,<10,13.513513513513514,5.913294425732015,27.977411784009792
+language,Spanish sheet,Partially empty buildings,Q3 rated 4-5,37,19,51.351351351351354,35.89489666561879,66.55359569698336
+language,Spanish sheet,Partially empty buildings,Q7 top-3,37,<10,5.405405405405405,1.4950976833157672,17.704654350813104
+language,Spanish sheet,Equity & achievement gap write-in theme,any text field coded equity,37,0,0.0,6.938893903907228e-16,9.405782583720251
+language,Spanish sheet,Equity & achievement gap write-in theme,among those who wrote any text,17,0,0.0,0.0,18.431813500885184
+language,Chinese sheet,Well-balanced populations,Q5 rated 4-5,12,<10,66.66666666666667,39.06220888727995,86.18799089087868
+language,Chinese sheet,Well-balanced populations,Q5 rated 5,12,<10,50.0,25.3781597633706,74.6218402366294
+language,Chinese sheet,Well-balanced populations,Q8 top-3,12,<10,8.333333333333334,1.4865094404917096,35.387991114111706
+language,Chinese sheet,Well-balanced populations,Q9 the one value,12,<10,8.333333333333334,1.4865094404917096,35.387991114111706
+language,Chinese sheet,Unequal access to specialty programs,Q3 rated 4-5,12,<10,58.333333333333336,31.951131254954973,80.67396863412435
+language,Chinese sheet,Unequal access to specialty programs,Q7 top-3,12,<10,33.333333333333336,13.812009109121309,60.93779111272004
+language,Chinese sheet,Boundaries not adjusted,Q3 rated 4-5,12,<10,58.333333333333336,31.951131254954973,80.67396863412435
+language,Chinese sheet,Boundaries not adjusted,Q7 top-3,12,<10,8.333333333333334,1.4865094404917096,35.387991114111706
+language,Chinese sheet,Partially empty buildings,Q3 rated 4-5,12,<10,25.0,8.894166839405477,53.23053349335658
+language,Chinese sheet,Partially empty buildings,Q7 top-3,12,0,0.0,0.0,24.249400665524096
+language,Chinese sheet,Equity & achievement gap write-in theme,any text field coded equity,12,0,0.0,0.0,24.249400665524096
+language,Chinese sheet,Equity & achievement gap write-in theme,among those who wrote any text,<10,<10,,,

@@ -1,0 +1,21 @@
+target,breakdown,n,chi_square,p_monte_carlo,cramers_v,q_bh_within_target
+Appeal of the district (Q7 top 3),stakeholder,1413,10.01,0.0074,0.084,0.0123
+Appeal of the district (Q7 top 3),age_band,1408,11.06,0.0261,0.089,0.0326
+Appeal of the district (Q7 top 3),language,1413,0.4,0.5684,0.017,0.5684
+Appeal of the district (Q7 top 3),q9_theme,1385,21.1,0.0003,0.123,0.0015
+Appeal of the district (Q7 top 3),Parent vs Non-parent (Fisher),1413,,0.0045,0.074,0.0112
+Retaining highly effective employees (Q7 top 3),stakeholder,1413,10.48,0.0046,0.086,0.0077
+Retaining highly effective employees (Q7 top 3),age_band,1408,4.08,0.3932,0.054,0.3932
+Retaining highly effective employees (Q7 top 3),language,1413,19.04,0.0001,0.116,0.0002
+Retaining highly effective employees (Q7 top 3),q9_theme,1385,51.01,0.0,0.192,0.0
+Retaining highly effective employees (Q7 top 3),Parent vs Non-parent (Fisher),1413,,0.0112,0.071,0.014
+Fiscal responsibility rated 4-5 (Q5),stakeholder,1413,20.32,0.0001,0.12,0.0005
+Fiscal responsibility rated 4-5 (Q5),age_band,1408,23.19,0.0002,0.128,0.0005
+Fiscal responsibility rated 4-5 (Q5),language,1413,6.04,0.0174,0.065,0.0174
+Fiscal responsibility rated 4-5 (Q5),q9_theme,1385,20.36,0.0004,0.121,0.0007
+Fiscal responsibility rated 4-5 (Q5),Parent vs Non-parent (Fisher),1413,,0.0016,0.084,0.002
+Fiscal responsibility (Q8 top 3),stakeholder,1413,3.92,0.1388,0.053,0.2076
+Fiscal responsibility (Q8 top 3),age_band,1408,30.89,0.0,0.148,0.0
+Fiscal responsibility (Q8 top 3),language,1413,1.7,0.2076,0.035,0.2076
+Fiscal responsibility (Q8 top 3),q9_theme,1385,78.52,0.0,0.238,0.0
+Fiscal responsibility (Q8 top 3),Parent vs Non-parent (Fisher),1413,,0.1852,0.036,0.2076

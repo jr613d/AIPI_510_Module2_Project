@@ -1,0 +1,28 @@
+key,question,rating_label,board_label,lever,q9_theme,why
+aging_cost,C,Cost of maintaining aging buildings,Cost of maintaining aging buildings,SUPPLY-FACILITIES/COST,,Cost of the building stock
+safety_codes,C,School buildings meeting safety codes,School buildings meeting safety codes,SUPPLY-FACILITIES/COST,,Building condition
+bus_commute,C,Length of commute for students riding buses,Length of commute for students riding buses,LOGISTICS/COMMUNITY,,Getting to school
+retain_staff,C,Retaining highly effective employees,Retaining highly effective employees,DEMAND-CAPTURE,,Teacher quality is the most-cited reason families choose or leave a district
+empty,C,Partially empty school buildings,Partially empty school buildings,SUPPLY-FACILITIES/COST,,Under-used buildings
+overcrowded,C,Overcrowded school buildings,Overcrowded school buildings,SUPPLY-FACILITIES/COST,,Over-used buildings
+trailers,C,The number of trailers / mobile classrooms,The number of trailers / mobile classrooms,SUPPLY-FACILITIES/COST,,Capacity shortfall
+fit_academic,C,"Current school buildings do not fit the modern academic program (e.g. classroom layout and size, classroom flexibility, ADA compliance, etc.)",Buildings do not fit the modern academic program,SUPPLY-FACILITIES/COST,,Building fitness
+fit_operational,C,"Current school buildings do not fit the modern operational expectations (e.g. right sized car rider lines, sports facilities, suitable sidewalks, meal service program, air quality, etc.)",Buildings do not fit modern operational expectations,SUPPLY-FACILITIES/COST,,Building fitness
+specialty_access,C,Unequal access to specialty programs,Unequal access to specialty programs,DEMAND-CAPTURE,,"Program access shapes whether families stay (magnets, DLI, EC)"
+technology,C,Classroom technology updates,Classroom technology updates,DEMAND-CAPTURE,,Classroom offer
+appeal,C,Appeal of the district to current and prospective students,Appeal of the district to current and prospective students,DEMAND-CAPTURE,,The survey's own capture-rate item
+boundaries,C,"Student populations have shifted, but school boundaries have not been adjusted to accommodate those changes",Boundaries not adjusted to shifted student populations,SUPPLY-FACILITIES/COST,,Matching boundaries to where children live is a supply-side fix
+excellence,V,Educational excellence (quality & student outcomes),Educational excellence,DEMAND-CAPTURE,Student Learning,Core of the district's offer
+student_centered,V,Student-centered focus,Student-centered focus,DEMAND-CAPTURE,Student Learning,Core of the district's offer
+fiscal,V,Fiscal responsibility,Fiscal responsibility,SUPPLY-FACILITIES/COST,Money & buildings,Money
+engagement,V,Community engagement & trust building,Community engagement & trust building,LOGISTICS/COMMUNITY,Community,Relationship with the community
+distance,V,Minimizing the distance students travel between home and school,Minimizing the distance students travel,LOGISTICS/COMMUNITY,Student logistics & well-being,Getting to school
+max_buildings,V,Maximizing the use of currently available buildings,Maximizing the use of currently available buildings,SUPPLY-FACILITIES/COST,Money & buildings,Buildings
+safety,V,School safety,School safety,DEMAND-CAPTURE,Student logistics & well-being,A reason families choose a school
+long_term,V,Long-term planning,Long-term planning,SUPPLY-FACILITIES/COST,Money & buildings,Planning the supply side
+county_collab,V,Collaboration between schools and county leadership,Collaboration between schools and county leadership,LOGISTICS/COMMUNITY,Community,"County relationship (also the funder, but framed as collaboration)"
+partnerships,V,Community partnerships,Community partnerships,LOGISTICS/COMMUNITY,Community,Community relationship
+meals,V,High quality school meal service,High-quality school meal service,DEMAND-CAPTURE,Student logistics & well-being,Part of the daily offer to families
+renewable,V,Increasing the use of renewable energy districtwide,Increasing the use of renewable energy,SUPPLY-FACILITIES/COST,Money & buildings,Facilities policy
+balanced,V,Ensuring well-balanced student populations across all school sites,Ensuring well-balanced student populations,SUPPLY-FACILITIES/COST,Student logistics & well-being,A boundary-drawing objective (listed under supply per workstream brief; arguably capture too)
+(none),-,"No survey item asks about birth rates, housing cost or the number of children in the district",-,DEMAND-DEMOGRAPHIC,,The 714-student (67%) demographic driver has no survey item

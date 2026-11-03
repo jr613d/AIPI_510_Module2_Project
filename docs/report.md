@@ -134,13 +134,13 @@ By conventional benchmarks (0.1 small), the test can detect a small effect overa
 
 ### 5.1 Source
 
-The data is the CHCCS Community Priorities Assessment raw response workbook, published with the Full Report among the October 21, 2026 Board retreat materials on the district's CHCCS Together document library (https://www.chccstogether.org/document-library). Because the results are public, the raw workbook is included in the repository. It contains one tab per language; in most non-English tabs, each response row is paired with an adjacent English translation row.
+The data is the CHCCS Community Priorities Assessment raw response workbook, published with the Full Report among the October 21, 2026 Board retreat materials on the district's CHCCS Together document library (https://www.chccstogether.org/document-library). The district's workbook is public, but some free-text answers contain personal details (a home address, an email address, children's health information tied to a named school). The repository therefore includes a copy with the three open-ended free-text fields (Q4 other challenges, Q6 other values, Q10 additional thoughts) blanked by `src/redact_raw_workbook.py`; every other cell, including Q1 and Q9, is unchanged, so the analysis gives identical results with either copy. The original is available from the district's document library. The workbook contains one tab per language; in most non-English tabs, each response row is paired with an adjacent English translation row.
 
 The district describes the 1,463 records as "unique respondents," but the published workbook contains no respondent identifiers, so uniqueness cannot be verified independently (Limitation 5). My processed data reconciles closely with the Full Report. My count of current parents (1,315) differs slightly from the report's 1,319, most likely because of differences in coding translated and write-in responses; for example, I used the original-language answer where a translation disagreed with it. The share choosing "Educational excellence" as the single top value matches the report's 50%.
 
 ### 5.2 Data organization
 
-Following the data storytelling text's recommended structure (raw, interim, processed and final stages, plus a data catalog), the repository separates the unmodified workbook (`data/raw/`), analysis-ready tables (`data/processed/`) and reported results (`data/final/`), documented in `data/README.md`. All cleaning and analysis is scripted in `src/`, so every reported number can be regenerated from the raw workbook (Section 13).
+Following the data storytelling text's recommended structure (raw, interim, processed and final stages, plus a data catalog), the repository separates the source workbook (`data/raw/`, redacted as described in Section 5.1), analysis-ready tables (`data/processed/`) and reported results (`data/final/`), documented in `data/README.md`. All cleaning and analysis is scripted in `src/`, so every reported number can be regenerated from the raw workbook (Section 13).
 
 ### 5.3 Processing steps
 

@@ -44,6 +44,11 @@ FIELDS = {"other_challenges": "Q4 other challenges", "other_values": "Q6 other v
 
 
 def main():
+    if not c.HAS_FREE_TEXT:
+        # Without the original workbook every free-text field is blank, and rerunning
+        # would overwrite the committed results with empty codes.
+        print("Skipped: needs the original CHCCS workbook in data/raw/private/ (see src/redact_raw_workbook.py).")
+        return
     RES.mkdir(exist_ok=True)
     df = c.load_responses()
     q9 = pd.read_csv(c.ROOT / "data" / "processed" / "q9_value_themes.csv")[["participant_id", "q9_english"]]

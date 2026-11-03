@@ -24,7 +24,7 @@ Each subfolder has its own `README.md` (findings and caveats), `run.py`, `figure
 ## Shared code and data
 
 - `common.py`: builds one row per response from the raw workbook with the same response IDs and group rules as the main project, plus shared plotting style and an exploratory Monte Carlo chi-square helper.
-- `data/processed/responses_wide.csv`: that combined table (generated).
+- `data/processed/responses_wide.csv`: that combined table (generated, not committed). `common.py` reads the original workbook from `data/raw/private/` when present, since the committed copy has its free-text fields blanked; only `04_write_ins` needs the free text.
 - `data/raw/full_report_board_vs_cpa_transcribed.csv`: Board vs. survey percentages typed by hand from the district's Full Report (*CHCCS Priorities & Values Conversations, Fall 2026*), pp. 2 and 4.
 
 The scripts read the main project's processed data without changing it. Two figures of the confirmatory result itself (pooled vs. groups, and the residual heatmap) belong to the main project and are made by `src/make_result_figures.py`.

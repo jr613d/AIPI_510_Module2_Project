@@ -19,6 +19,11 @@ from explore_respondent_groups import load as load_groups  # noqa: E402
 from one_hot_encode_q1 import DEFAULT_INPUT, read_records  # noqa: E402
 
 CACHE = HERE / "data" / "processed" / "responses_wide.csv"
+# The committed workbook has the free-text answers (Q4, Q6, Q10) blanked; see
+# src/redact_raw_workbook.py. Use the district's original, kept out of Git, when present.
+PRIVATE_INPUT = ROOT / "data" / "raw" / "private" / "CHCCS Community Priorities Asessment (SHARED) - original.xlsx"
+SOURCE = PRIVATE_INPUT if PRIVATE_INPUT.exists() else DEFAULT_INPUT
+HAS_FREE_TEXT = SOURCE == PRIVATE_INPUT
 
 THEMES = ["Student Learning", "Money & buildings", "Community", "Student logistics & well-being"]
 CHALLENGE_COLS = range(2, 15)   # C-O: 13 challenge ratings
@@ -55,8 +60,8 @@ def load_responses(refresh=False):
     """One row per response: groups, age, all ratings, text answers and Q9 theme."""
     if CACHE.exists() and not refresh:
         return pd.read_csv(CACHE, keep_default_na=False, na_values=[""])
-    records, _ = read_records(DEFAULT_INPUT)
-    book = openpyxl.load_workbook(DEFAULT_INPUT, read_only=True, data_only=True)
+    records, _ = read_records(SOURCE)
+    book = openpyxl.load_workbook(SOURCE, read_only=True, data_only=True)
     try:
         sheets = {s.title: list(s.values) for s in book}
     finally:

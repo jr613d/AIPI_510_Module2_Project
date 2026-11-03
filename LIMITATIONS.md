@@ -44,6 +44,6 @@ Running list of limitations, caveats and open data questions for the Module 2 re
 
 | # | Limitation | Why it matters | Status |
 |---|---|---|---|
-| P1 | Respondent-level data in a public repo. | Rubric asks for raw and cleaned data in the repo. | Handled: CHCCS already publishes the results at https://www.chccstogether.org/document-library, so the data is committed. |
-| P2 | Some write-ins mention a specific school plus family details. | Already public, but quoting them adds nothing to the analysis. | Handled: report write-ins as counts by category, not verbatim. |
+| P1 | Respondent-level data in a public repo. | Rubric asks for raw and cleaned data in the repo. | Handled: CHCCS publishes the results at https://www.chccstogether.org/document-library, but the free-text fields contain personal details, so the committed workbook has Q4, Q6 and Q10 blanked (`src/redact_raw_workbook.py`) and the original was removed from the Git history. |
+| P2 | Some write-ins mention a specific school plus family details. | Already public, but quoting them adds nothing to the analysis, and a few include a home address, an email address or a child's health details. | Handled: free-text fields redacted from the committed workbook; write-ins reported as counts by category, not verbatim. |
 | P3 | Some role counts are very small (1 municipal official, 3 county officials, 9 students). | Small cells draw attention to individuals even in public data. | Report small groups as "<10" in the written report as good practice. |

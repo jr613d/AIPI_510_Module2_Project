@@ -28,7 +28,7 @@ In total, 637 respondents wrote something (575 parents, 32 non-parents).
 - Walk zones, keeping current students in place, and neighborhood schools aren't among the survey's 13 values, yet they're among respondents' most common write-ins. The district's Full Report found the same top write-in themes.
 - Non-parents' percentages rest on only 32 people and shouldn't be compared closely with parents'.
 
-**Privacy:** outputs contain codes and counts, not quotes. The raw text is in the public workbook.
+**Privacy:** outputs contain codes and counts, not quotes. Some write-ins include personal details, so the committed workbook has these free-text fields blanked. Rerunning this analysis needs the district's original workbook in `data/raw/private/` (see `data/README.md`); without it the script skips itself rather than overwrite the committed results.
 
 **Results:** `results/write_in_themes.csv`, `results/write_in_themes_by_field.csv`, `results/write_in_codes_by_response.csv`
 

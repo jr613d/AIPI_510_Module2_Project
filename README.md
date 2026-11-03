@@ -31,12 +31,13 @@ The respondent pool is about 13 parents for every non-parent, and the design is 
 │   └── report.md               written report
 ├── data/
 │   ├── README.md               data catalog
-│   ├── raw/                    CHCCS survey workbook, unmodified
+│   ├── raw/                    CHCCS survey workbook (free-text fields redacted)
 │   ├── processed/              analysis-ready tables (generated)
 │   └── final/                  results tables (generated)
 ├── figures/                    generated figures
 ├── exploratory_analysis/       post-project exploration, outside the pre-registered scope (see its README)
 └── src/
+    ├── redact_raw_workbook.py       makes the committed workbook from the district's original (free text blanked)
     ├── one_hot_encode_q1.py         Q1 respondent roles -> one-hot table
     ├── explore_respondent_groups.py group sizes, power, Figure 3
     ├── prepare_q9.py                Q9 answers -> values, themes, groups
@@ -48,7 +49,7 @@ The respondent pool is about 13 parents for every non-parent, and the design is 
 
 **Source:** Chapel Hill-Carrboro City Schools, *Community Priorities Assessment* raw response workbook (eight language tabs), published with the district's *Priorities & Values Conversations, Fall 2026* report on the CHCCS Together document library: https://www.chccstogether.org/document-library
 
-The survey ran September 28 to October 9, 2026. The results are public, so the raw workbook and all derived data are committed. See [`data/README.md`](data/README.md) for what each file contains and which script produces it.
+The survey ran September 28 to October 9, 2026. The workbook is public, but some free-text answers contain personal details, so the committed copy has the three open-ended free-text fields (Q4, Q6, Q10) blanked by `src/redact_raw_workbook.py`. The analysis reads only Q1 and Q9, so results are identical with the original. All derived data is committed. See [`data/README.md`](data/README.md) for what each file contains and which script produces it.
 
 ## Reproducing the analysis
 

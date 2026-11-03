@@ -221,3 +221,7 @@ __marimo__/
 
 # macOS
 .DS_Store
+
+# Original CHCCS workbook (unredacted free text) and caches built from it
+data/raw/private/
+exploratory_analysis/data/processed/responses_wide.csv
